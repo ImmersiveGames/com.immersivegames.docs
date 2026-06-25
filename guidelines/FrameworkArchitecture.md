@@ -11,9 +11,9 @@
 
 `com.immersivegames.docs` is an offline-first documentation framework for designing, organizing, rendering, distributing, and maintaining documentation across Immersive Games projects.
 
-The framework establishes a shared documentation model, information architecture, navigation model, semantic component system, visual language, and set of quality standards. Its purpose is to make documentation consistent and portable without coupling project-specific knowledge to a particular presentation technology.
+The framework establishes a shared Markdown authoring model, information architecture, navigation model, semantic Component system, visual language, and set of quality standards. Its primary purpose is to make authored documentation consistent, maintainable, and portable without coupling project-specific knowledge to a particular presentation technology.
 
-The framework is not an HTML template. Offline HTML is the first renderer of the framework and one implementation of its rendering contracts. The architecture must remain capable of supporting other renderers without requiring the documentation model to be redesigned.
+The framework is not primarily an HTML generator or template. Markdown Documents are the source of truth. Offline HTML is the first Renderer and one implementation of the Rendering System contracts. The architecture must remain capable of supporting other Renderers without requiring the authoring model to be redesigned.
 
 ---
 
@@ -22,7 +22,7 @@ The framework is not an HTML template. Offline HTML is the first renderer of the
 This document defines the root architecture of `com.immersivegames.docs`. It establishes:
 
 - The primary architectural concepts and terminology.
-- The root entity from which documentation is composed.
+- The root entity and editorial hierarchy from which documentation is authored.
 - The framework layers and their dependency direction.
 - The core modules and their responsibilities.
 - The boundaries between framework-owned and project-owned concerns.
@@ -63,41 +63,41 @@ Detailed module contracts belong to their respective architecture documents and 
 
 ## 4. Core Concepts
 
-### 3.1 Documentation as Structured Knowledge
+### 4.1 Documentation as Structured Knowledge
 
-Documentation is treated as structured knowledge rather than as a collection of presentation files. Content must communicate what a subject is, why it exists, how it works, how it is used, how it can be extended, and why relevant decisions were made.
+Documentation is treated as structured knowledge authored in Markdown rather than as a collection of presentation files. Content must communicate what a subject is, why it exists, how it works, how it is used, how it can be extended, and why relevant decisions were made.
 
-The framework does not require every content source to use the same authoring format. It requires every supported source to be representable through a stable documentation model before rendering.
+Markdown is the official authoring language and source of truth. Future import sources must be transformed into the same stable editorial model before rendering.
 
-### 3.2 Content and Presentation Separation
+### 4.2 Content and Presentation Separation
 
 Project-specific content must remain independent from layout, styling, and output technology. Content structures describe meaning. Themes describe visual identity. Renderers translate the model into an output format.
 
 A project must be able to replace or revise its content without modifying framework presentation logic. A renderer or theme must be replaceable without rewriting project knowledge.
 
-### 3.3 Offline-First Operation
+### 4.3 Offline-First Operation
 
 Published documentation must remain usable without an internet connection, external service, external content delivery network, or application server.
 
 Offline-first is an architectural constraint, not an optional renderer feature. Features such as search, navigation, glossary access, cross-references, and required assets must remain functional in the distributed offline package.
 
-### 3.4 Semantic Components
+### 4.4 Semantic Components
 
 Documentation components are semantic structures before they are visual elements. A warning, parameter definition, procedure, API method, timeline, or feature comparison must be represented by its meaning and required data rather than by renderer-specific markup.
 
 Renderers determine how semantic components appear in each output format.
 
-### 3.5 Predictable Navigation
+### 4.5 Predictable Navigation
 
-Navigation must be derived from explicit project structure whenever possible. Page hierarchy, ordering, breadcrumbs, local tables of contents, and sequential relationships must remain predictable across documentation projects.
+Navigation must be derived from the rendered representation of the authored editorial structure whenever possible. Page hierarchy, ordering, breadcrumbs, local tables of contents, and sequential relationships must remain predictable across documentation projects.
 
-### 3.6 First-Class Terminology
+### 4.6 First-Class Terminology
 
-Project terminology is part of the documentation model. Glossary entries, aliases, relationships, and usage references must be maintainable independently from their rendered presentation.
+Project terminology is part of the authoring model. Glossary entries, aliases, relationships, and usage references must be maintainable independently from their rendered presentation.
 
-### 3.7 Renderer Independence
+### 4.7 Renderer Independence
 
-The documentation model must not depend on HTML, CSS, JavaScript, browser APIs, or renderer-specific file structures. Renderers depend on the model; the model does not depend on renderers.
+The authoring model must not depend on HTML, CSS, JavaScript, browser APIs, Pages, or Renderer-specific file structures. Renderers depend on the authoring model; the authoring model does not depend on Renderers.
 
 ---
 
@@ -120,8 +120,8 @@ A Documentation Project contains or references:
 
 - Project identity and metadata.
 - Documentation type and version.
-- Content pages and semantic content blocks.
-- Information hierarchy and navigation order.
+- Markdown Documents organized into Chapters, Sections, and Content Blocks.
+- Editorial hierarchy and authored relationships.
 - Glossary terms and terminology relationships.
 - Documentation assets and stable asset references.
 - Theme selection and supported theme configuration.
@@ -134,8 +134,10 @@ Conceptually, the entity is structured as follows:
 ```text
 DocumentationProject
 |-- metadata
-|-- content
-|-- navigation
+|-- documents
+|   |-- chapters
+|   |   `-- sections
+|   |       `-- content blocks
 |-- components
 |-- glossary
 |-- assets
@@ -146,13 +148,13 @@ DocumentationProject
 
 The Documentation Project is the source boundary for a documentation build. It must contain enough information for a compatible renderer to produce a complete output without deriving project knowledge from renderer code.
 
-### 4.1 Root Entity Invariants
+### 5.1 Root Entity Invariants
 
 Every valid Documentation Project must:
 
 - Have a stable identity, title, and documentation version.
-- Define or reference at least one content entry point.
-- Use stable identifiers for pages, terms, components, and cross-references where identity is required.
+- Define or reference at least one Markdown Document.
+- Use stable identifiers for Documents, terms, Components, and cross-references where identity is required.
 - Resolve all required local assets through portable paths or framework-defined asset references.
 - Remain valid independently from any single renderer.
 - Declare renderer-specific settings only inside isolated output configuration.
@@ -162,86 +164,99 @@ Every valid Documentation Project must:
 
 ## 6. Architectural Layers
 
-The framework is organized into layers with a one-way dependency direction:
+The framework is organized around a primary one-way dependency direction:
 
 ```text
-Documentation Sources
+Knowledge
         |
         v
-Documentation Model
+Authoring / Content System
         |
         v
-Information Architecture
+Markdown Source of Truth
         |
         v
-Navigation, Glossary, Search, and Cross-References
+Rendering System
         |
         v
-Semantic Components and Theme Tokens
-        |
-        v
-Renderer
-        |
-        v
-Distributed Output
+Presentation / Output
 ```
 
-### 5.1 Documentation Sources
+Knowledge is organized through the Content System. Authoring produces the authoritative Markdown structure. The Rendering System consumes that structure and transforms it into an output-specific representation. Presentation applies the interaction and visual behavior appropriate to that output.
 
-Documentation Sources are the author-controlled inputs from which the project model is assembled. Sources may include Markdown, structured data, metadata files, or future supported formats.
+### 6.1 Authoring Layer
 
-This layer owns authoring convenience, not output presentation.
+The Authoring Layer is owned by the Content System. It defines the renderer-independent editorial hierarchy:
 
-### 5.2 Documentation Model
+```text
+Documentation Project
+        |
+        v
+Documents
+        |
+        v
+Chapters
+        |
+        v
+Sections
+        |
+        v
+Subsections
+        |
+        v
+Content Blocks
+```
 
-The Documentation Model is the renderer-independent representation of a Documentation Project. It defines project identity, pages, sections, semantic blocks, assets, glossary terms, relationships, and configuration.
+Markdown Documents are the source of truth. This layer also incorporates Metadata, Components, glossary terms, assets, and authored cross-references without depending on output-specific structures.
 
-This layer is the architectural source of truth.
+### 6.2 Rendering Layer
 
-### 5.3 Information Architecture
+The Rendering Layer is owned by the Rendering System. It consumes the editorial model and maps Documents, Chapters, Sections, Content Blocks, Components, Metadata, and assets into structures supported by a target Renderer.
 
-The Information Architecture layer defines how knowledge is grouped, ordered, classified, and related. It gives the content a coherent project-wide structure without prescribing how that structure is visually rendered.
+The Rendering Layer may create output-specific concepts such as Pages, routes, files, tabs, sidebar entries, search records, or printable divisions. Those concepts are derivative and must not redefine the authored Markdown hierarchy.
 
-### 5.4 Discovery and Relationship Services
+### 6.3 Presentation Layer
 
-Navigation, Glossary, Search, and Cross-Reference services make project knowledge discoverable and connected. These services consume the Documentation Model and Information Architecture.
+The Presentation Layer applies a Theme and output-specific interaction or layout behavior to the rendered structure.
 
-They must not become alternate stores for project content.
+Presentation must preserve the meaning, order, and relationships established during Authoring and Rendering.
 
-### 5.5 Semantic Components and Theme Tokens
+### 6.4 Navigation and Discovery
 
-Semantic Components define reusable documentation patterns and their data contracts. Theme Tokens define presentation values such as color roles, typography roles, spacing scales, and other renderer-consumable design decisions.
+The Navigation System consumes the rendered structure produced by the Rendering System. It exposes output-appropriate navigation such as tabs, sidebars, breadcrumbs, tables of contents, and previous or next relationships.
 
-Components must not contain final renderer markup. Theme Tokens must not alter content meaning or hierarchy.
+Search, Glossary, and Cross-Reference services also consume authored or rendered data as defined by their subsystem specifications. They must not become alternate stores for project content.
 
-### 5.6 Renderer
+### 6.5 Renderer
 
 A Renderer transforms a valid Documentation Project into a specific output format. It maps semantic structures and theme tokens to the capabilities of that format.
 
-Offline HTML is the first renderer. It does not define the framework model or architectural boundaries.
+Offline HTML is the first Renderer. It does not define the authoring model or architectural boundaries.
 
-### 5.7 Distributed Output
+### 6.6 Distributed Output
 
 Distributed Output is the portable artifact delivered to documentation users. It may be an offline HTML package, PDF, EPUB, Markdown export, static wiki package, or another supported format.
 
 Output artifacts are products of the framework and are not authoritative sources for project content.
 
-### 5.8 Dependency Rules
+### 6.7 Dependency Rules
 
 The following dependency rules are mandatory:
 
-- Lower-level source and model layers must not import or require renderer concerns.
-- Discovery services may consume the model but must not redefine it.
+- Authoring must not import or require Rendering or Presentation concerns.
+- Rendering consumes the authoring model and must not redefine its editorial meaning.
+- Presentation consumes rendered structures and must not become a content source.
+- The Navigation System consumes rendered structure and must not redefine the editorial hierarchy.
 - Themes may provide presentation tokens but must not control content structure.
-- Renderers may depend on model, service, component, and theme contracts.
-- Generated output must not be required to reconstruct the authoritative model.
-- Renderer-specific extensions must be isolated and must degrade safely when another renderer does not support them.
+- Renderers may depend on authoring, service, Component, and Theme contracts.
+- Generated output must not be required to reconstruct the authoritative Markdown source.
+- Renderer-specific extensions must be isolated and must degrade safely when another Renderer does not support them.
 
 ---
 
 ## 7. Core Modules and Responsibilities
 
-### 6.1 Project and Metadata Module
+### 7.1 Project and Metadata Module
 
 The Project and Metadata Module defines project-level identity and configuration.
 
@@ -256,35 +271,36 @@ Responsibilities:
 
 It does not render metadata, author content, or generate navigation.
 
-### 6.2 Content Module
+### 7.2 Content System
 
-The Content Module defines the semantic structure of documentation knowledge.
+The Content System defines the renderer-independent authoring model for documentation knowledge.
 
 Responsibilities:
 
-- Define pages, sections, headings, and content blocks.
-- Define text, code, tables, images, links, procedures, and callouts.
-- Define reusable semantic content patterns.
-- Preserve content hierarchy and stable identities.
-- Provide the source of truth for documentation information.
+- Define Documents, Chapters, recursively nested Sections, and Content Blocks.
+- Define Markdown heading interpretation and authoring rules.
+- Define how Components participate in authored content.
+- Preserve the editorial hierarchy and stable identities.
+- Establish Markdown Documents as the source of truth.
+- Provide the authoring model consumed by the Rendering System.
 
-It does not define final styling, execute search, or emit HTML directly.
+It does not define Pages, navigation, final styling, search behavior, or rendered output.
 
-### 6.3 Information Architecture Module
+### 7.3 Information Architecture Module
 
 The Information Architecture Module organizes content at project scale.
 
 Responsibilities:
 
-- Define documentation sections and classifications.
-- Define page hierarchy and grouping.
+- Define documentation classifications and subject groupings.
+- Define relationships among Documents and their editorial subjects.
 - Define required and optional structures for documentation types.
 - Express relationships between related areas of knowledge.
 - Support projects of different sizes without requiring unused sections.
 
 It does not decide final navigation controls or visual layout.
 
-### 6.4 Navigation Module
+### 7.4 Navigation Module
 
 The Navigation Module defines movement through a Documentation Project.
 
@@ -299,7 +315,7 @@ Responsibilities:
 
 It does not author content, style controls, or perform full-text search.
 
-### 6.5 Component Module
+### 7.5 Component Module
 
 The Component Module defines reusable semantic documentation components.
 
@@ -316,7 +332,7 @@ Examples include alerts, warnings, cards, API methods, parameter definitions, ti
 
 It does not contain final CSS, renderer-specific markup, or project-specific copy.
 
-### 6.6 Theme Module
+### 7.6 Theme Module
 
 The Theme Module defines portable visual identity through semantic design tokens and presentation policies.
 
@@ -330,7 +346,7 @@ Responsibilities:
 
 It does not define navigation logic, content hierarchy, or search indexing.
 
-### 6.7 Glossary Module
+### 7.7 Glossary Module
 
 The Glossary Module manages project terminology.
 
@@ -344,7 +360,7 @@ Responsibilities:
 
 It does not replace complete conceptual documentation or publish unreviewed inferred definitions.
 
-### 6.8 Search Module
+### 7.8 Search Module
 
 The Search Module provides renderer-consumable, offline-capable discovery data.
 
@@ -358,7 +374,7 @@ Responsibilities:
 
 It does not depend on online services, external search providers, or server-side execution.
 
-### 6.9 Asset Module
+### 7.9 Asset Module
 
 The Asset Module manages documentation-owned assets and references.
 
@@ -372,20 +388,20 @@ Responsibilities:
 
 It does not edit media, create project art, or manage the source assets of the documented product.
 
-### 6.10 Cross-Reference Module
+### 7.10 Cross-Reference Module
 
 The Cross-Reference Module defines validated relationships among documentation entities.
 
 Responsibilities:
 
-- Resolve links to pages, sections, glossary terms, components, and assets.
+- Resolve links to Documents, Chapters, Sections, output Pages, glossary terms, Components, and assets.
 - Preserve references when output paths differ between renderers.
 - Detect broken or ambiguous internal references.
 - Provide renderer-neutral link targets.
 
 It does not define external website availability or replace source-control history.
 
-### 6.11 Validation Module
+### 7.11 Validation Module
 
 The Validation Module evaluates a Documentation Project against framework contracts.
 
@@ -399,7 +415,7 @@ Responsibilities:
 
 It does not rewrite content silently or make undocumented architectural decisions.
 
-### 6.12 Rendering Module
+### 7.12 Rendering Module
 
 The Rendering Module transforms a valid Documentation Project into a target output.
 
@@ -422,7 +438,7 @@ It does not define project knowledge, terminology, information hierarchy, or arc
 
 The framework owns:
 
-- Documentation model contracts.
+- Authoring model contracts.
 - Information architecture conventions.
 - Semantic components.
 - Navigation, glossary, search, and cross-reference contracts.
@@ -437,7 +453,7 @@ Each Documentation Project owns:
 
 - Subject-specific knowledge.
 - Project metadata and versioning information.
-- Page content and examples.
+- Markdown Documents, Chapters, Sections, Content Blocks, and examples.
 - Project terminology.
 - Project assets.
 - Project-specific navigation choices within framework rules.
@@ -463,7 +479,7 @@ The framework may integrate with external authoring, validation, or publishing t
 
 ## 9. Design Decisions
 
-### 8.1 Documentation Project Is the Root Entity
+### 9.1 Documentation Project Is the Root Entity
 
 **Decision:** The framework uses Documentation Project as its root entity.
 
@@ -471,15 +487,15 @@ The framework may integrate with external authoring, validation, or publishing t
 
 **Consequence:** All modules operate within or against an explicit Documentation Project boundary.
 
-### 8.2 The Model Is Renderer-Independent
+### 9.2 The Authoring Model Is Renderer-Independent
 
-**Decision:** The Documentation Model must not depend on HTML or another output technology.
+**Decision:** The Content System's authoring model must not depend on HTML or another output technology.
 
 **Rationale:** Renderer independence permits future outputs and prevents presentation constraints from becoming content constraints.
 
-**Consequence:** Renderer-specific markup and behavior must remain outside authoritative project content, except for explicitly isolated extensions with defined fallback behavior.
+**Consequence:** Renderer-specific markup and behavior must remain outside authoritative Markdown Documents, except for explicitly isolated extensions with defined fallback behavior.
 
-### 8.3 HTML Is the First Renderer
+### 9.3 HTML Is the First Renderer
 
 **Decision:** Offline HTML is the first supported renderer, not the framework itself.
 
@@ -487,7 +503,7 @@ The framework may integrate with external authoring, validation, or publishing t
 
 **Consequence:** The initial implementation may prioritize HTML capabilities, but architecture contracts must remain meaningful for non-HTML renderers.
 
-### 8.4 Offline-First Is Mandatory
+### 9.4 Offline-First Is Mandatory
 
 **Decision:** Distributed documentation must function without network access or a server.
 
@@ -495,15 +511,23 @@ The framework may integrate with external authoring, validation, or publishing t
 
 **Consequence:** Required runtime dependencies, search data, themes, scripts, fonts, and assets must be included locally or replaced with offline-safe alternatives.
 
-### 8.5 Content, Structure, and Presentation Are Separate
+### 9.5 Authoring, Rendering, and Presentation Are Separate
 
-**Decision:** Content meaning, information structure, navigation, and presentation are distinct architectural concerns.
+**Decision:** Authoring, Rendering, Presentation, and Navigation are distinct architectural concerns.
 
 **Rationale:** Separation permits reuse, controlled evolution, theme replacement, and renderer portability.
 
 **Consequence:** A module must not absorb another module's responsibility for implementation convenience.
 
-### 8.6 Components Are Semantic
+### 9.6 Markdown Is the Source of Truth
+
+**Decision:** Markdown Documents are the authoritative source of framework content.
+
+**Rationale:** Markdown supports natural technical authoring, version control, portability, and structured generation by human authors and AI agents.
+
+**Consequence:** The Rendering System consumes Markdown semantics, and generated outputs remain derivative.
+
+### 9.7 Components Are Semantic
 
 **Decision:** Reusable components are defined by purpose and data contracts before visual treatment.
 
@@ -511,7 +535,7 @@ The framework may integrate with external authoring, validation, or publishing t
 
 **Consequence:** Component specifications must define required information, usage rules, and fallback behavior.
 
-### 8.7 Glossary and Cross-References Are First-Class
+### 9.8 Glossary and Cross-References Are First-Class
 
 **Decision:** Terminology and internal relationships are part of the project model.
 
@@ -519,7 +543,7 @@ The framework may integrate with external authoring, validation, or publishing t
 
 **Consequence:** Terms and targets require stable identifiers and validation.
 
-### 8.8 Generated Output Is Not Authoritative
+### 9.9 Generated Output Is Not Authoritative
 
 **Decision:** Rendered artifacts are derivative outputs.
 
@@ -527,7 +551,7 @@ The framework may integrate with external authoring, validation, or publishing t
 
 **Consequence:** Changes must be made in project sources or model data and then rendered again.
 
-### 8.9 AI Agents Follow the Same Contracts as Human Contributors
+### 9.10 AI Agents Follow the Same Contracts as Human Contributors
 
 **Decision:** AI-generated and AI-modified documentation must comply with the same architecture, validation, terminology, and review requirements as human-authored work.
 
@@ -595,7 +619,7 @@ The architecture is successful when:
 - Required documentation features remain functional offline.
 - Assets and cross-references remain portable and valid.
 - The HTML renderer produces a self-contained, usable package.
-- Additional renderers can be introduced without redesigning the Documentation Model.
+- Additional Renderers can be introduced without redesigning the Content System's authoring model.
 - Module boundaries are sufficiently explicit to support independent implementation and testing.
 - Developers and AI agents can determine where a change belongs and which contracts it must preserve.
 - Generated or modified documentation can be validated consistently.
@@ -610,7 +634,7 @@ The following documents should refine this root specification in order:
    Defines the root schema, identity rules, lifecycle, configuration, and project invariants.
 
 2. `ContentSystem.md`  
-   Defines pages, sections, semantic content blocks, source formats, identifiers, and composition rules.
+   Defines Documents, Chapters, recursively nested Sections, Content Blocks, Markdown authoring rules, identifiers, and composition rules.
 
 3. `InformationArchitecture.md`  
    Defines classification, hierarchy, documentation-type profiles, and project-scale organization.
@@ -659,20 +683,24 @@ This document governs the architecture of `com.immersivegames.docs`.
 Contributors must preserve the following foundational constraints:
 
 1. Documentation Project is the root entity.
-2. The Documentation Model is independent from renderers.
-3. Offline HTML is the first renderer, not the framework.
-4. Published documentation is offline-first.
-5. Content, structure, discovery services, presentation, and rendering remain separate concerns.
-6. Semantic components, glossary terms, assets, and cross-references use explicit contracts.
-7. Generated output is derivative and must not become the source of truth.
-8. Human and AI contributors follow the same architectural and validation rules.
+2. Markdown Documents are the source of truth.
+3. The Content System's authoring model is independent from Renderers.
+4. Offline HTML is the first Renderer, not the framework.
+5. Published documentation is offline-first.
+6. Authoring, Rendering, Presentation, and Navigation remain separate concerns.
+7. The Navigation System consumes rendered structure.
+8. Components, glossary terms, assets, and cross-references use explicit contracts.
+9. Generated output is derivative and must not become the source of truth.
+10. Human and AI contributors follow the same architectural and validation rules.
 
 Changes to these constraints require an explicit architectural review and an update to this specification before dependent implementations are changed.
 
 # Related Documents
 
 - [DocumentationStandards.md](DocumentationStandards.md) — Defines the authoring and maintenance requirements for guideline documents.
-- [ContentSystem.md](ContentSystem.md) — Planned specification for pages, sections, semantic content blocks, and composition rules.
+- [DocumentationFramework.md](DocumentationFramework.md) — Defines the framework vision, principles, and intended documentation experience.
+- [Terminology.md](Terminology.md) — Defines the official vocabulary used by the framework architecture.
+- [ContentSystem.md](ContentSystem.md) — Defines the editorial hierarchy, Markdown authoring model, and Content Block composition rules.
 - [NavigationSystem.md](NavigationSystem.md) — Planned specification for navigation structures and relationships.
 - [ComponentLibrary.md](ComponentLibrary.md) — Planned specification for semantic documentation components.
 - [ThemeSystem.md](ThemeSystem.md) — Planned specification for themes and semantic design tokens.
@@ -683,6 +711,10 @@ Changes to these constraints require an explicit architectural review and an upd
 
 # Revision History
 
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1.0 | 2026-06-25 | Immersive Games | Initial draft. |
+| Version | Date       | Author          | Description                     |
+|---------|------------|-----------------|---------------------------------|
+| 0.2.1   | 2026-06-25 | Immersive Games | Removed residual Page-centered wording and aligned the architecture flow. |
+| 0.2.0   | 2026-06-25 | Immersive Games | Established the authoring, rendering, and presentation architecture. |
+| 0.1.2   | 2026-06-25 | Immersive Games | Added the terminology reference. |
+| 0.1.1   | 2026-06-25 | Immersive Games | Normalized Markdown formatting. |
+| 0.1.0   | 2026-06-25 | Immersive Games | Initial draft.                  |

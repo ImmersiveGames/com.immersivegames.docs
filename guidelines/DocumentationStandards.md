@@ -122,12 +122,84 @@ Information is defined in the document that owns the topic and referenced elsewh
 
 Related-document references and revision history are mandatory closing sections so contributors can identify dependencies and document evolution consistently.
 
+# Documentation Governance
+
+This section defines the governance rules for the evolution of the Immersive Games Documentation Framework.
+
+## Terminology First
+
+Before introducing any new architectural concept, subsystem, component, or documentation entity, contributors must verify whether the term already exists in [Terminology.md](Terminology.md).
+
+If the concept does not exist, it must be added to `Terminology.md` before it is referenced by any other guideline document.
+
+All guideline documents must use the official terminology defined in `Terminology.md`.
+
+Contributors must avoid creating synonyms for existing concepts.
+
+The terminology document is the single source of truth for the framework vocabulary.
+
+## Architecture Before Implementation
+
+New features must first be described in the appropriate guideline document before implementation begins.
+
+Implementation must never define architecture.
+
+Architecture defines implementation.
+
+## Single Responsibility
+
+Each guideline document should describe one architectural concern only.
+
+Contributors must avoid mixing responsibilities across documents.
+
+When a topic belongs to another document, the owning document must be referenced instead of duplicating its information.
+
+## Progressive Refinement
+
+The framework should evolve incrementally.
+
+Architecture must be established first.
+
+Subsystem specifications should follow.
+
+Implementation must always be the final step.
+
+## Backward Compatibility
+
+When possible, architectural changes should preserve compatibility with existing Documentation Projects.
+
+Breaking changes must be documented explicitly in the Revision History of each affected document.
+
+## Living Documentation
+
+Guideline documents are living specifications.
+
+Whenever architecture changes, the affected guideline documents must be updated.
+
+Documentation must always reflect the current architecture.
+
+## AI Collaboration
+
+AI-generated documentation must follow the same standards as human-written documentation.
+
+AI agents must never invent terminology when an official term already exists.
+
+When introducing a new concept, AI agents should recommend updating `Terminology.md` before using the new term throughout the documentation.
+
 # Related Documents
 
+- [DocumentationFramework.md](DocumentationFramework.md) — Defines the framework vision, principles, and intended documentation experience.
 - [FrameworkArchitecture.md](FrameworkArchitecture.md) — Defines the root architecture governed by these documentation standards.
+- [Terminology.md](Terminology.md) — Defines the official vocabulary used by guideline and specification documents.
+- [ContentSystem.md](ContentSystem.md) — Applies these standards to the framework's editorial authoring model.
 
 # Revision History
 
-| Version | Date | Author | Description |
-|---------|------|--------|-------------|
-| 0.1.0 | 2026-06-25 | Immersive Games | Initial draft. |
+| Version | Date       | Author          | Description                     |
+|---------|------------|-----------------|---------------------------------|
+| 0.2.2   | 2026-06-25 | Immersive Games | Validated governance against the authoring-first architecture. |
+| 0.2.1   | 2026-06-25 | Immersive Games | Added the Content System reference. |
+| 0.2.0   | 2026-06-25 | Immersive Games | Added Documentation Governance principles. |
+| 0.1.2   | 2026-06-25 | Immersive Games | Added the terminology reference. |
+| 0.1.1   | 2026-06-25 | Immersive Games | Normalized Markdown formatting. |
+| 0.1.0   | 2026-06-25 | Immersive Games | Initial draft.                  |
