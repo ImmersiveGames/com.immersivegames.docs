@@ -1,1 +1,1 @@
-# com.immersivegames.documentationtemplates
+# com.immersivegames.docs
