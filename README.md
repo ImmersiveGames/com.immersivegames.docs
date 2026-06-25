@@ -65,3 +65,11 @@ No template, renderer, or tooling implementation should be treated as authoritat
 ## Guidelines
 
 The `guidelines/` directory contains the authoritative framework guidance and specifications. Every document in that directory follows the structure and maintenance rules defined by the Documentation Standards.
+
+## Architecture Decisions
+
+Foundational architecture decisions are recorded as Architecture Decision Records in the `decisions/` directory.
+
+- [ADR-0001 - Authoring First](decisions/ADR-0001-Authoring-First.md) — Establishes authoring and organization as the framework's priority.
+- [ADR-0002 - Markdown Source of Truth](decisions/ADR-0002-Markdown-Source-of-Truth.md) — Establishes Markdown as the authoritative content format.
+- [ADR-0003 - Editorial Hierarchy](decisions/ADR-0003-Editorial-Hierarchy.md) — Establishes the canonical documentation hierarchy.
