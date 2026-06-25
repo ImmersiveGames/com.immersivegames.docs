@@ -17,7 +17,7 @@ The HTML template is only one implementation of this framework.
 
 ---
 
-# Mission
+# Purpose
 
 Provide a reusable documentation ecosystem that allows every project to share the same visual language, navigation experience, and documentation standards while keeping project-specific content completely independent.
 
@@ -181,7 +181,7 @@ Each layer should remain independent.
 
 ---
 
-# Framework Responsibilities
+# Responsibilities
 
 The framework is responsible for:
 
@@ -194,8 +194,6 @@ The framework is responsible for:
 * Theme
 * UI components
 * Cross references
-
-The framework is NOT responsible for project-specific documentation.
 
 ---
 
@@ -222,6 +220,20 @@ Images
 Videos
 
 References
+
+---
+
+# Out of Scope
+
+The framework is not responsible for:
+
+* Defining project-specific knowledge.
+* Replacing source code comments or API metadata.
+* Acting as a general-purpose website builder or content management system.
+* Requiring an online service or server-side platform.
+* Embedding renderer-specific implementation details into the documentation model.
+
+Project-specific content belongs to each Documentation Project. Detailed framework boundaries are defined in [FrameworkArchitecture.md](FrameworkArchitecture.md).
 
 ---
 
@@ -388,3 +400,26 @@ The framework is considered successful when:
 * Multiple projects share the same visual identity.
 * AI agents can generate high-quality documentation consistently.
 * The framework can evolve without breaking existing projects.
+
+---
+
+# Design Decisions
+
+The root architectural decisions for the framework are maintained in [FrameworkArchitecture.md](FrameworkArchitecture.md). This vision document establishes the following guiding decisions:
+
+* Documentation is structured knowledge rather than renderer-specific output.
+* Offline operation is a mandatory framework constraint.
+* Project content remains separate from structure, navigation, presentation, and rendering.
+* Reusable semantic patterns provide consistency across documentation types.
+* HTML is an implementation of the rendering layer, not the framework architecture.
+
+# Related Documents
+
+* [DocumentationStandards.md](DocumentationStandards.md) — Defines the standards governing documents in this directory.
+* [FrameworkArchitecture.md](FrameworkArchitecture.md) — Defines the authoritative root architecture of the framework.
+
+# Revision History
+
+| Version | Date | Author | Description |
+|---------|------|--------|-------------|
+| 1.0.0 | 2026-06-25 | Immersive Games | Initial draft. |
