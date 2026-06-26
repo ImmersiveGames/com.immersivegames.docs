@@ -1,0 +1,5 @@
+interface:
+  display_name: "Immersive Framework Packages"
+  short_description: "Package-based Immersive Framework rules: UPM package boundaries, frozen technical packages, framework core separation, validation."
+  default_prompt: >-
+    Use $immersive-framework-package-general for Immersive Framework package work. For audit/review/diagnosis/naming/Inspector UX, also use $immersive-framework-architecture-audit. For implementation/refactor/file changes, also use $immersive-framework-package-implementation. For com.immersive.framework, framework core, module boundaries, settings, bootstrap, diagnostics or scene lifecycle, also use $immersive-framework-core-architecture. Treat old NewScripts/Base 2.0 as read-only reference unless explicitly asked otherwise.

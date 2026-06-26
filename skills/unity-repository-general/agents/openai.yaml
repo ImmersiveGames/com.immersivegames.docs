@@ -1,0 +1,5 @@
+interface:
+  display_name: "Unity Repository General"
+  short_description: "Regras compactas de desenvolvimento, SOLID, ownership, identidade e seleção automática de skills."
+  default_prompt: >-
+    Use $unity-repository-general sempre. Para auditoria/revisão/diagnóstico, use também $unity-architecture-audit. Para implementação/refatoração/criação/remoção, use também $unity-implementation. Para Base 2.0, Session, pipelines, seams, bridges ou ownership estrutural, use também $base20-session-architecture. Trate Assets/_ImmersiveGames/NewScripts como desenvolvimento, não produção: não preserve arquitetura errada por compatibilidade sem dependência real. Respostas devem ser compactas, objetivas e baseadas em evidência.

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Offline documentation for the Immersive Games Face System Unity package.">
+  <title>Immersive Games Face System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to documentation</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo-area">
+        <img src="immersive-games-logo.png" alt="Immersive Games">
+      </div>
+      <div class="brand-copy">
+        <span class="eyebrow">Unity Package Documentation</span>
+        <h1>Immersive Games Face System</h1>
+        <span class="version-label">Version 1.0.0</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Documentation type" role="tablist">
+    <button class="tab is-active" id="tab-technical" type="button" role="tab"
+      aria-selected="true" aria-controls="technical-doc" data-doc="technical">
+      Technical Documentation
+    </button>
+    <button class="tab" id="tab-guide" type="button" role="tab"
+      aria-selected="false" aria-controls="guide-doc" data-doc="guide" tabindex="-1">
+      User Guide
+    </button>
+    <button class="tab" id="tab-glossary" type="button" role="tab"
+      aria-selected="false" aria-controls="glossary-doc" data-doc="glossary" tabindex="-1">
+      Glossary
+    </button>
+  </nav>
+
+  <div class="documentation-shell">
+    <aside class="sidebar" aria-label="Section index">
+      <div class="sidebar-heading">
+        <span>On this page</span>
+        <button class="sidebar-toggle" type="button" aria-expanded="false" aria-controls="toc-container">
+          Sections
+        </button>
+      </div>
+      <div class="search-box" role="search">
+        <label for="docs-search">Search this document</label>
+        <div class="search-input-wrap">
+          <input id="docs-search" type="search" placeholder="Search sections..." autocomplete="off"
+            aria-describedby="search-status">
+          <span class="search-icon" aria-hidden="true"></span>
+        </div>
+        <p class="search-status" id="search-status" aria-live="polite"></p>
+      </div>
+      <div id="toc-container">
+        <nav class="toc is-active" data-toc="technical" aria-label="Technical documentation sections">
+          <a href="#technical-architecture">Architecture</a>
+          <a href="#technical-library">FaceSpriteLibrary</a>
+          <a href="#technical-state">FaceState</a>
+          <a href="#technical-animation">FaceAnimation</a>
+          <a href="#technical-controller">FaceController</a>
+          <a href="#technical-bindings">Track Bindings</a>
+          <a href="#technical-materials">Material Properties</a>
+          <a href="#technical-validation">Validation</a>
+          <a href="#technical-transparency">Transparency and Render Order</a>
+          <a href="#technical-shaders">Shader Support</a>
+        </nav>
+        <nav class="toc" data-toc="guide" aria-label="User guide sections" hidden>
+          <a href="#guide-introduction">Introduction</a>
+          <a href="#guide-workflow">Workflow</a>
+          <a href="#guide-atlases">Preparing Atlases</a>
+          <a href="#guide-library">Creating a FaceSpriteLibrary</a>
+          <a href="#guide-states">Creating FaceStates</a>
+          <a href="#guide-animations">Creating FaceAnimations</a>
+          <a class="toc-subsection" href="#guide-from-state">FromState</a>
+          <a class="toc-subsection" href="#guide-custom-library">CustomLibrary</a>
+          <a href="#guide-controller">Configuring FaceController</a>
+          <a class="toc-subsection" href="#guide-separate-meshes">Separate Meshes</a>
+          <a class="toc-subsection" href="#guide-shared-renderer">Shared Renderer</a>
+          <a href="#guide-renderers">MeshRenderer and SkinnedMeshRenderer</a>
+          <a href="#guide-runtime-api">Runtime API</a>
+          <a href="#guide-tester">FaceControllerTester</a>
+          <a href="#guide-shader-setup">Shader Setup</a>
+          <a href="#guide-layering">Face Layering and Render Order</a>
+          <a href="#guide-troubleshooting">Troubleshooting</a>
+          <a href="#guide-migration">V1 Migration</a>
+        </nav>
+        <nav class="toc glossary-toc" data-toc="glossary" aria-label="Glossary terms" hidden>
+          <a href="#glossary-animation-track">Animation Track</a>
+          <a href="#glossary-atlas">Atlas</a>
+          <a href="#glossary-atlas-coordinate">Atlas Coordinate</a>
+          <a href="#glossary-built-in">Built-in Render Pipeline</a>
+          <a href="#glossary-custom-library">CustomLibrary</a>
+          <a href="#glossary-eyes-track">Eyes Track</a>
+          <a href="#glossary-face-animation">FaceAnimation</a>
+          <a href="#glossary-face-controller">FaceController</a>
+          <a href="#glossary-face-controller-tester">FaceControllerTester</a>
+          <a href="#glossary-face-part">FacePart</a>
+          <a href="#glossary-face-sprite-library">FaceSpriteLibrary</a>
+          <a href="#glossary-face-state">FaceState</a>
+          <a href="#glossary-face-system">Face System</a>
+          <a href="#glossary-frame-id">Frame ID</a>
+          <a href="#glossary-from-state">FromState</a>
+          <a href="#glossary-grid-size">Grid Size</a>
+          <a href="#glossary-interval">Interval</a>
+          <a href="#glossary-loop">Loop</a>
+          <a href="#glossary-material-property-block">MaterialPropertyBlock</a>
+          <a href="#glossary-mesh-renderer">MeshRenderer</a>
+          <a href="#glossary-mouth-track">Mouth Track</a>
+          <a href="#glossary-offset">Offset</a>
+          <a href="#glossary-playback-mode">Playback Mode</a>
+          <a href="#glossary-random">Random</a>
+          <a href="#glossary-render-queue">Render Queue</a>
+          <a href="#glossary-semantic-frame">Semantic Frame</a>
+          <a href="#glossary-sequential">Sequential</a>
+          <a href="#glossary-skinned-mesh-renderer">SkinnedMeshRenderer</a>
+          <a href="#glossary-sprite-id">Sprite ID</a>
+          <a href="#glossary-template-state">Template State</a>
+          <a href="#glossary-tiling">Tiling</a>
+          <a href="#glossary-urp">URP</a>
+          <a href="#glossary-uv">UV</a>
+        </nav>
+      </div>
+    </aside>
+
+    <main class="content" id="main-content">
+      <article class="document is-active" id="technical-doc" data-document="technical"
+        role="tabpanel" aria-labelledby="tab-technical">
+        <div class="document-title">
+          <span class="document-type">Technical Documentation</span>
+          <h2>Face System Specification</h2>
+          <p>Architecture and runtime behavior for the data-driven, atlas-based facial animation framework.</p>
+        </div>
+
+        <section id="technical-architecture">
+          <h3>Architecture</h3>
+          <p>The Face System is a data-driven, atlas-based facial animation framework. Runtime behavior is organized entirely by user-defined Track IDs.</p>
+          <pre><code>FaceSpriteLibrary
+        |
+FaceState
+        |
+FaceAnimation
+        |
+FaceController
+        |
+Track Binding
+        |
+Renderer + Material Index</code></pre>
+          <p>The runtime must not assume that tracks such as <code>eyes</code> or <code>mouth</code> exist. Projects can define any tracks required by their characters, including <code>eyebrows</code>, <code>tears</code>, <code>accessories</code>, or <code>fx</code>.</p>
+        </section>
+
+        <section id="technical-library">
+          <h3>FaceSpriteLibrary</h3>
+          <p><code>FaceSpriteLibrary</code> contains a list of sprite tracks.</p>
+          <p>Each sprite track contains:</p>
+          <ul>
+            <li>Unique Track ID</li>
+            <li>Atlas texture</li>
+            <li>Grid size</li>
+            <li>Sprite entries</li>
+          </ul>
+          <p>Each sprite entry maps a Sprite ID to an atlas coordinate. Runtime lookups are dictionary-backed and deterministic.</p>
+        </section>
+
+        <section id="technical-state">
+          <h3>FaceState</h3>
+          <p><code>FaceState</code> represents the persistent facial appearance and contains a list of Track States.</p>
+          <p>Each Track State contains:</p>
+          <ul>
+            <li>Track ID</li>
+            <li>Default Frame ID</li>
+            <li>Semantic frame mappings</li>
+          </ul>
+          <p>Each mapping connects a semantic Frame ID to a Sprite ID in the matching library track.</p>
+          <p>The Default Frame ID explicitly identifies the persistent frame. It resolves through the semantic mappings and is independent from list ordering. All mappings remain available to <code>FromState</code> animations.</p>
+          <p>States do not perform timing or playback.</p>
+        </section>
+
+        <section id="technical-animation">
+          <h3>FaceAnimation</h3>
+          <p><code>FaceAnimation</code> contains a dynamic list of Animation Tracks.</p>
+          <p>Each Animation Track contains:</p>
+          <ul>
+            <li>Track ID</li>
+            <li>Enabled state</li>
+            <li>Frame source</li>
+            <li>Timed frames</li>
+          </ul>
+          <p><code>FromState</code> frames resolve semantic Frame IDs through the active <code>FaceState</code>. <code>CustomLibrary</code> frames resolve Sprite IDs through the animation's <code>FaceSpriteLibrary</code>.</p>
+          <p>Animations override only the Track IDs they contain. When an animation ends, the next update naturally restores the active state's base frame.</p>
+          <p>Playback modes:</p>
+          <ul>
+            <li>Sequential</li>
+            <li>Loop</li>
+            <li>Interval</li>
+            <li>Random</li>
+          </ul>
+        </section>
+
+        <section id="technical-controller">
+          <h3>FaceController</h3>
+          <p><code>FaceController</code> owns:</p>
+          <ul>
+            <li>Registered states</li>
+            <li>Registered animations</li>
+            <li>Active state</li>
+            <li>Active animation players</li>
+            <li>Track bindings</li>
+          </ul>
+          <p>Runtime order:</p>
+          <ol>
+            <li>Resolve each state's base track frame.</li>
+            <li>Resolve active animation overrides.</li>
+            <li>Apply the final frame for each Track ID to its binding.</li>
+          </ol>
+          <p>Starting an animation stops existing animation playback only for matching Track IDs. There is no restore stack, animator graph, blend tree, or state graph.</p>
+        </section>
+
+        <section id="technical-bindings">
+          <h3>Track Bindings</h3>
+          <p>A Track Binding contains:</p>
+          <ul>
+            <li>Track ID</li>
+            <li><code>Renderer</code></li>
+            <li>Material Index</li>
+          </ul>
+          <p>Bindings support both <code>MeshRenderer</code> and <code>SkinnedMeshRenderer</code> through Unity's common <code>Renderer</code> API.</p>
+          <p>Atlas properties are applied with:</p>
+          <pre><code class="language-csharp">renderer.SetPropertyBlock(block, materialIndex);</code></pre>
+          <p>This supports:</p>
+          <ul>
+            <li>Separate renderers with material index <code>0</code></li>
+            <li>Multiple tracks on one shared renderer</li>
+            <li>Bone-driven meshes using <code>SkinnedMeshRenderer</code></li>
+          </ul>
+        </section>
+
+        <section id="technical-materials">
+          <h3>Material Properties</h3>
+          <p>Face shaders must expose:</p>
+          <pre><code>_Tiling
+_Offset</code></pre>
+          <p>The controller calculates:</p>
+          <pre><code>Tiling X = 1 / Columns
+Tiling Y = 1 / Rows
+
+Offset X = Column / Columns
+Offset Y = (Rows - 1 - Row) / Rows</code></pre>
+          <p>Material instances must not be created at runtime. Updates use a cached <code>MaterialPropertyBlock</code> per binding.</p>
+        </section>
+
+        <section id="technical-validation">
+          <h3>Validation</h3>
+          <p>Validation reports:</p>
+          <ul>
+            <li>Empty or duplicate Track IDs</li>
+            <li>Missing atlas textures</li>
+            <li>Invalid grid sizes</li>
+            <li>Sprite coordinates outside the grid</li>
+            <li>Empty or duplicate Sprite IDs</li>
+            <li>Missing semantic Frame IDs</li>
+            <li>Empty Default Frame IDs</li>
+            <li>Default Frame IDs missing from their Track State mappings</li>
+            <li>Missing Sprite IDs</li>
+            <li>Missing library tracks</li>
+            <li>Missing renderers</li>
+            <li>Invalid material indices</li>
+            <li>Invalid animation durations</li>
+          </ul>
+          <p>Missing data is not guessed and does not silently fall back to another track.</p>
+        </section>
+
+        <section id="technical-transparency">
+          <h3>Transparency and Render Order</h3>
+          <p>Transparent facial materials may be sorted differently from physical mesh depth. Explicit material Render Queue values can provide stable ordering:</p>
+          <pre><code>Eyes Material  = 3000
+Mouth Material = 3010</code></pre>
+          <p>The correct order depends on the character. Render Queue ordering is often preferable to moving meshes solely to influence transparent sorting.</p>
+        </section>
+
+        <section id="technical-shaders">
+          <h3>Shader Support</h3>
+          <p>Available shader implementations:</p>
+          <ul>
+            <li>URP: <code>Assets/Shader/FaceAtlasShader.shadergraph</code></li>
+            <li>Built-in Render Pipeline: <code>Assets/Shaders/FaceAtlasBuiltIn.shader</code></li>
+          </ul>
+          <p>Built-in projects should use <code>Face/Atlas Built-In</code> instead of converting the project to URP.</p>
+        </section>
+      </article>
+
+      <article class="document" id="guide-doc" data-document="guide"
+        role="tabpanel" aria-labelledby="tab-guide" hidden>
+        <div class="document-title">
+          <span class="document-type">User Guide</span>
+          <h2>Face System User Manual</h2>
+          <p>Asset setup, controller configuration, runtime API, and troubleshooting for Unity projects.</p>
+        </div>
+
+        <section id="guide-introduction">
+          <h3>Introduction</h3>
+          <p>The Face System is a lightweight atlas facial animation framework for Unity. It uses dynamic Track IDs rather than fixed facial parts.</p>
+          <p>Example Track IDs:</p>
+          <pre><code>eyes
+mouth
+eyebrows
+tears
+fx</code></pre>
+          <p>New tracks are created entirely through assets and inspector configuration. No runtime code changes are required.</p>
+        </section>
+
+        <section id="guide-workflow">
+          <h3>Workflow</h3>
+          <pre><code>Atlas textures
+    |
+FaceSpriteLibrary tracks
+    |
+FaceState track states
+    |
+FaceAnimation tracks
+    |
+FaceController bindings
+    |
+Renderer material slots</code></pre>
+        </section>
+
+        <section id="guide-atlases">
+          <h3>Preparing Atlases</h3>
+          <p>Each track uses a regular grid atlas. Every sprite must occupy one cell.</p>
+          <pre><code>Tiling X = 1 / Columns
+Tiling Y = 1 / Rows</code></pre>
+          <p>Keep cells evenly sized and aligned. Separate tracks may use different atlas textures and grid sizes.</p>
+        </section>
+
+        <section id="guide-library">
+          <h3>Creating a FaceSpriteLibrary</h3>
+          <p>Create:</p>
+          <pre><code>Create &gt; Face System &gt; Face Sprite Library</code></pre>
+          <p>Add one entry to <code>Tracks</code> for every facial layer.</p>
+          <p>For each track configure:</p>
+          <ul>
+            <li>Track ID</li>
+            <li>Atlas texture</li>
+            <li>Grid size</li>
+            <li>Sprite IDs and atlas coordinates</li>
+          </ul>
+          <p>Example:</p>
+          <pre><code>Track ID: eyebrows
+Atlas: EyebrowExpressions
+Grid Size: 4 x 2
+
+eyebrow.normal -&gt; (0, 0)
+eyebrow.angry  -&gt; (1, 0)
+eyebrow.sad    -&gt; (2, 0)</code></pre>
+          <p>Track IDs and Sprite IDs are case-sensitive string contracts.</p>
+        </section>
+
+        <section id="guide-states">
+          <h3>Creating FaceStates</h3>
+          <p>Create:</p>
+          <pre><code>Create &gt; Face System &gt; Face State</code></pre>
+          <p>Assign the sprite library, then add Track States.</p>
+          <p>Each Track State contains:</p>
+          <ul>
+            <li>Track ID matching a library track</li>
+            <li>Default Frame ID</li>
+            <li>Semantic Frame ID to Sprite ID mappings</li>
+          </ul>
+          <p>Example:</p>
+          <pre><code>Track ID: eyes
+
+opened -&gt; eye.normal.open
+half   -&gt; eye.normal.half
+closed -&gt; eye.normal.closed</code></pre>
+          <p>Default Frame ID selects the persistent appearance for that track:</p>
+          <pre><code>Default Frame ID: opened</code></pre>
+          <p>It must match one of the semantic Frame IDs in the mapping list. Reordering the mappings does not change the resting appearance.</p>
+        </section>
+
+        <section id="guide-animations">
+          <h3>Creating FaceAnimations</h3>
+          <p>Create:</p>
+          <pre><code>Create &gt; Face System &gt; Face Animation</code></pre>
+          <p>Add only the tracks the animation should override.</p>
+          <p>Each Animation Track contains:</p>
+          <ul>
+            <li>Track ID</li>
+            <li>Enabled toggle</li>
+            <li>Frame Source</li>
+            <li>Timed frame list</li>
+          </ul>
+
+          <h4 id="guide-from-state">FromState</h4>
+          <p><code>FromState</code> uses semantic Frame IDs from the current state.</p>
+          <p>Example blink:</p>
+          <pre><code>Track ID: eyes
+
+half
+closed
+half
+opened</code></pre>
+          <p>Assign a Template State for inspector validation. Runtime resolution always uses the controller's active state.</p>
+
+          <h4 id="guide-custom-library">CustomLibrary</h4>
+          <p><code>CustomLibrary</code> references Sprite IDs directly from the animation's library. Use it for visuals that should ignore the current state, such as special FX or look-around frames.</p>
+        </section>
+
+        <section id="guide-controller">
+          <h3>Configuring FaceController</h3>
+          <p>Add <code>FaceController</code> to the character and configure:</p>
+          <ul>
+            <li>Track Bindings</li>
+            <li>States</li>
+            <li>Animations</li>
+          </ul>
+          <p>Each Track Binding connects:</p>
+          <pre><code>Track ID -&gt; Renderer -&gt; Material Index</code></pre>
+
+          <h4 id="guide-separate-meshes">Separate Meshes</h4>
+          <pre><code>eyes  -&gt; EyesQuad Renderer  -&gt; index 0
+mouth -&gt; MouthQuad Renderer -&gt; index 0</code></pre>
+
+          <h4 id="guide-shared-renderer">Shared Renderer</h4>
+          <p>A single <code>MeshRenderer</code> or <code>SkinnedMeshRenderer</code> can expose several materials:</p>
+          <pre><code>0 Skin
+1 Eyes
+2 Mouth
+3 Eyebrows</code></pre>
+          <p>Bindings:</p>
+          <pre><code>eyes     -&gt; HeadRenderer -&gt; index 1
+mouth    -&gt; HeadRenderer -&gt; index 2
+eyebrows -&gt; HeadRenderer -&gt; index 3</code></pre>
+          <p>Material Index must exist in the renderer's material list.</p>
+        </section>
+
+        <section id="guide-renderers">
+          <h3>MeshRenderer and SkinnedMeshRenderer</h3>
+          <p>Bindings use Unity's common <code>Renderer</code> API and support:</p>
+          <ul>
+            <li><code>MeshRenderer</code> for static meshes</li>
+            <li><code>SkinnedMeshRenderer</code> for rigged or bone-driven meshes</li>
+          </ul>
+          <p>Both use the same indexed <code>MaterialPropertyBlock</code> runtime path.</p>
+        </section>
+
+        <section id="guide-runtime-api">
+          <h3>Runtime API</h3>
+          <p>Set the active state:</p>
+          <pre><code class="language-csharp">faceController.SetState("fs.angry.state");</code></pre>
+          <p>Play an animation:</p>
+          <pre><code class="language-csharp">faceController.PlayAnimation("fa.blink");</code></pre>
+          <p>Stop animation overrides for one dynamic track:</p>
+          <pre><code class="language-csharp">faceController.StopAnimation("eyes");</code></pre>
+          <p>Stop all animations:</p>
+          <pre><code class="language-csharp">faceController.StopAllAnimations();</code></pre>
+        </section>
+
+        <section id="guide-tester">
+          <h3>FaceControllerTester</h3>
+          <p>Add <code>FaceControllerTester</code> beside the controller. In Play Mode its inspector creates buttons for registered states and animations.</p>
+        </section>
+
+        <section id="guide-shader-setup">
+          <h3>Shader Setup</h3>
+          <p>Shader options:</p>
+          <ul>
+            <li>URP: <code>Assets/Shader/FaceAtlasShader.shadergraph</code></li>
+            <li>Built-in Render Pipeline: <code>Assets/Shaders/FaceAtlasBuiltIn.shader</code></li>
+          </ul>
+          <p>Face materials must expose <code>_Tiling</code> and <code>_Offset</code>. The controller updates these properties through <code>MaterialPropertyBlock</code>.</p>
+        </section>
+
+        <section id="guide-layering">
+          <h3>Face Layering and Render Order</h3>
+          <p>Transparent materials can render in an unexpected order when facial surfaces are close together.</p>
+          <p>Symptoms include:</p>
+          <ul>
+            <li>Eyes rendering over the mouth</li>
+            <li>Mouth rendering over the eyes</li>
+            <li>Unstable layering between transparent tracks</li>
+          </ul>
+          <p>Set explicit Render Queue values when needed:</p>
+          <pre><code>Eyes Material  = 3000
+Mouth Material = 3010</code></pre>
+          <p>Higher values render later. Reverse the values when the desired layering is reversed. Exact values depend on the character.</p>
+        </section>
+
+        <section id="guide-troubleshooting">
+          <h3>Troubleshooting</h3>
+          <h4>A Track Does Not Render</h4>
+          <p>Check:</p>
+          <ul>
+            <li>Track ID matches across library, state, animation, and binding</li>
+            <li>Binding has a renderer</li>
+            <li>Material Index exists</li>
+            <li>Atlas grid size is valid</li>
+            <li>Sprite coordinate is inside the grid</li>
+          </ul>
+          <h4>An Animation Does Not Override a Track</h4>
+          <p>Check:</p>
+          <ul>
+            <li>Animation is registered in the controller</li>
+            <li>Animation Track is enabled</li>
+            <li>Track ID matches the state and binding</li>
+            <li><code>FromState</code> Frame ID exists in the active state</li>
+            <li><code>CustomLibrary</code> Sprite ID exists in the selected library</li>
+          </ul>
+          <h4>Wrong Base Frame Appears</h4>
+          <p>Check that Default Frame ID points to the intended semantic mapping. The mapping order does not control the base frame.</p>
+        </section>
+
+        <section id="guide-migration">
+          <h3>V1 Migration</h3>
+          <p>V2 intentionally removes the fixed Eyes/Mouth data model.</p>
+          <p>Migration mapping:</p>
+          <pre><code>eyesAtlas + eyes entries   -&gt; library track "eyes"
+mouthAtlas + mouth entries -&gt; library track "mouth"
+
+FaceState.eyes  -&gt; Track State "eyes"
+FaceState.mouth -&gt; Track State "mouth"
+
+FaceAnimation.eyes  -&gt; Animation Track "eyes"
+FaceAnimation.mouth -&gt; Animation Track "mouth"
+
+eyesPart / mouthPart -&gt; Track Bindings</code></pre>
+          <p><code>FacePart</code> is no longer used. Configure the renderer and material index directly in <code>FaceController</code>.</p>
+          <p>Existing V2 state assets created before explicit defaults are migrated by setting Default Frame ID to their previous first mapping, preserving their visual behavior.</p>
+        </section>
+      </article>
+
+      <article class="document glossary-document" id="glossary-doc" data-document="glossary"
+        role="tabpanel" aria-labelledby="tab-glossary" hidden>
+        <div class="document-title">
+          <span class="document-type">Reference</span>
+          <h2>Face System Glossary</h2>
+          <p>Practical definitions for the assets, identifiers, rendering concepts, and animation terms used throughout the Face System.</p>
+        </div>
+
+        <section class="glossary-entry" id="glossary-animation-track">
+          <h3>Animation Track</h3>
+          <p><span class="glossary-label">Definition</span>A track inside a <code>FaceAnimation</code> that targets one Track ID and contains its enabled state, frame source, and timed frames.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a> · <a href="#guide-animations" data-doc-target="guide">User Guide: Creating FaceAnimations</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-face-animation">FaceAnimation</a> · <a href="#glossary-playback-mode">Playback Mode</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-atlas">
+          <h3>Atlas</h3>
+          <p><span class="glossary-label">Definition</span>A texture divided into a regular grid of cells, where each cell contains one facial sprite.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-library" data-doc-target="technical">Technical Documentation: FaceSpriteLibrary</a> · <a href="#guide-atlases" data-doc-target="guide">User Guide: Preparing Atlases</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-atlas-coordinate">Atlas Coordinate</a> · <a href="#glossary-grid-size">Grid Size</a> · <a href="#glossary-uv">UV</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-atlas-coordinate">
+          <h3>Atlas Coordinate</h3>
+          <p><span class="glossary-label">Definition</span>The column and row that identify a sprite's cell inside an atlas grid.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-library" data-doc-target="technical">Technical Documentation: FaceSpriteLibrary</a> · <a href="#guide-library" data-doc-target="guide">User Guide: Creating a FaceSpriteLibrary</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-atlas">Atlas</a> · <a href="#glossary-offset">Offset</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-built-in">
+          <h3>Built-in Render Pipeline</h3>
+          <p><span class="glossary-label">Definition</span>Unity's classic rendering pipeline. Face System projects using it should use the <code>Face/Atlas Built-In</code> shader.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-shaders" data-doc-target="technical">Technical Documentation: Shader Support</a> · <a href="#guide-shader-setup" data-doc-target="guide">User Guide: Shader Setup</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-urp">URP</a> · <a href="#glossary-tiling">Tiling</a> · <a href="#glossary-offset">Offset</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-custom-library">
+          <h3>CustomLibrary</h3>
+          <p><span class="glossary-label">Definition</span>A frame source that resolves Sprite IDs directly from an animation's library instead of using the active state.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a> · <a href="#guide-custom-library" data-doc-target="guide">User Guide: CustomLibrary</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-from-state">FromState</a> · <a href="#glossary-sprite-id">Sprite ID</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-eyes-track">
+          <h3>Eyes Track</h3>
+          <p><span class="glossary-label">Definition</span>A user-defined track commonly named <code>eyes</code>. It is a convention, not a required or hard-coded facial part.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-architecture" data-doc-target="technical">Technical Documentation: Architecture</a> · <a href="#guide-introduction" data-doc-target="guide">User Guide: Introduction</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-mouth-track">Mouth Track</a> · <a href="#glossary-animation-track">Animation Track</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-face-animation">
+          <h3>FaceAnimation</h3>
+          <p><span class="glossary-label">Definition</span>An asset containing dynamic animation tracks and timed frames that temporarily override matching state tracks.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a> · <a href="#guide-animations" data-doc-target="guide">User Guide: Creating FaceAnimations</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-animation-track">Animation Track</a> · <a href="#glossary-face-state">FaceState</a> · <a href="#glossary-playback-mode">Playback Mode</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-face-controller">
+          <h3>FaceController</h3>
+          <p><span class="glossary-label">Definition</span>The component that owns registered states and animations, resolves final frames, and applies them to renderer bindings.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-controller" data-doc-target="technical">Technical Documentation: FaceController</a> · <a href="#guide-controller" data-doc-target="guide">User Guide: Configuring FaceController</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-face-state">FaceState</a> · <a href="#glossary-face-animation">FaceAnimation</a> · <a href="#glossary-material-property-block">MaterialPropertyBlock</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-face-controller-tester">
+          <h3>FaceControllerTester</h3>
+          <p><span class="glossary-label">Definition</span>A helper component whose Play Mode inspector provides buttons for registered states and animations.</p>
+          <p><span class="glossary-label">Used in</span><a href="#guide-tester" data-doc-target="guide">User Guide: FaceControllerTester</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-face-controller">FaceController</a> · <a href="#glossary-face-animation">FaceAnimation</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-face-part">
+          <h3>FacePart</h3>
+          <p><span class="glossary-label">Definition</span>A legacy V1 concept that is no longer used. V2 configures renderers and material indices directly through Track Bindings.</p>
+          <p><span class="glossary-label">Used in</span><a href="#guide-migration" data-doc-target="guide">User Guide: V1 Migration</a> · <a href="#technical-bindings" data-doc-target="technical">Technical Documentation: Track Bindings</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-face-controller">FaceController</a> · <a href="#glossary-mesh-renderer">MeshRenderer</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-face-sprite-library">
+          <h3>FaceSpriteLibrary</h3>
+          <p><span class="glossary-label">Definition</span>An asset that stores sprite tracks, their atlas textures, grid sizes, and Sprite ID mappings.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-library" data-doc-target="technical">Technical Documentation: FaceSpriteLibrary</a> · <a href="#guide-library" data-doc-target="guide">User Guide: Creating a FaceSpriteLibrary</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-atlas">Atlas</a> · <a href="#glossary-sprite-id">Sprite ID</a> · <a href="#glossary-grid-size">Grid Size</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-face-state">
+          <h3>FaceState</h3>
+          <p><span class="glossary-label">Definition</span>An asset describing persistent facial appearance through Track States, default frames, and semantic mappings.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-state" data-doc-target="technical">Technical Documentation: FaceState</a> · <a href="#guide-states" data-doc-target="guide">User Guide: Creating FaceStates</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-semantic-frame">Semantic Frame</a> · <a href="#glossary-frame-id">Frame ID</a> · <a href="#glossary-from-state">FromState</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-face-system">
+          <h3>Face System</h3>
+          <p><span class="glossary-label">Definition</span>A data-driven, atlas-based facial animation framework for Unity built around user-defined Track IDs.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-architecture" data-doc-target="technical">Technical Documentation: Architecture</a> · <a href="#guide-introduction" data-doc-target="guide">User Guide: Introduction</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-face-sprite-library">FaceSpriteLibrary</a> · <a href="#glossary-face-state">FaceState</a> · <a href="#glossary-face-animation">FaceAnimation</a> · <a href="#glossary-face-controller">FaceController</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-frame-id">
+          <h3>Frame ID</h3>
+          <p><span class="glossary-label">Definition</span>A case-sensitive semantic name such as <code>opened</code> or <code>closed</code> that a state maps to a Sprite ID.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-state" data-doc-target="technical">Technical Documentation: FaceState</a> · <a href="#guide-states" data-doc-target="guide">User Guide: Creating FaceStates</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-semantic-frame">Semantic Frame</a> · <a href="#glossary-sprite-id">Sprite ID</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-from-state">
+          <h3>FromState</h3>
+          <p><span class="glossary-label">Definition</span>A frame source that resolves semantic Frame IDs through the controller's active <code>FaceState</code>.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a> · <a href="#guide-from-state" data-doc-target="guide">User Guide: FromState</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-template-state">Template State</a> · <a href="#glossary-custom-library">CustomLibrary</a> · <a href="#glossary-semantic-frame">Semantic Frame</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-grid-size">
+          <h3>Grid Size</h3>
+          <p><span class="glossary-label">Definition</span>The number of columns and rows used to divide an atlas into equal sprite cells.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-library" data-doc-target="technical">Technical Documentation: FaceSpriteLibrary</a> · <a href="#guide-atlases" data-doc-target="guide">User Guide: Preparing Atlases</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-atlas">Atlas</a> · <a href="#glossary-tiling">Tiling</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-interval">
+          <h3>Interval</h3>
+          <p><span class="glossary-label">Definition</span>A playback mode available to animation tracks for interval-based playback behavior.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-playback-mode">Playback Mode</a> · <a href="#glossary-loop">Loop</a> · <a href="#glossary-random">Random</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-loop">
+          <h3>Loop</h3>
+          <p><span class="glossary-label">Definition</span>A playback mode that repeats an animation's timed frame sequence.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-playback-mode">Playback Mode</a> · <a href="#glossary-sequential">Sequential</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-material-property-block">
+          <h3>MaterialPropertyBlock</h3>
+          <p><span class="glossary-label">Definition</span>A Unity object used by each binding to update atlas properties without creating material instances at runtime.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-materials" data-doc-target="technical">Technical Documentation: Material Properties</a> · <a href="#guide-renderers" data-doc-target="guide">User Guide: Renderer Support</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-tiling">Tiling</a> · <a href="#glossary-offset">Offset</a> · <a href="#glossary-mesh-renderer">MeshRenderer</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-mesh-renderer">
+          <h3>MeshRenderer</h3>
+          <p><span class="glossary-label">Definition</span>Unity's renderer component for static meshes, supported through the common <code>Renderer</code> binding API.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-bindings" data-doc-target="technical">Technical Documentation: Track Bindings</a> · <a href="#guide-renderers" data-doc-target="guide">User Guide: Renderer Support</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-skinned-mesh-renderer">SkinnedMeshRenderer</a> · <a href="#glossary-material-property-block">MaterialPropertyBlock</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-mouth-track">
+          <h3>Mouth Track</h3>
+          <p><span class="glossary-label">Definition</span>A user-defined track commonly named <code>mouth</code>. Like all tracks, it is configured through assets rather than required by runtime code.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-architecture" data-doc-target="technical">Technical Documentation: Architecture</a> · <a href="#guide-introduction" data-doc-target="guide">User Guide: Introduction</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-eyes-track">Eyes Track</a> · <a href="#glossary-animation-track">Animation Track</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-offset">
+          <h3>Offset</h3>
+          <p><span class="glossary-label">Definition</span>The <code>_Offset</code> shader property that moves UV sampling to the selected atlas cell.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-materials" data-doc-target="technical">Technical Documentation: Material Properties</a> · <a href="#guide-shader-setup" data-doc-target="guide">User Guide: Shader Setup</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-tiling">Tiling</a> · <a href="#glossary-uv">UV</a> · <a href="#glossary-atlas-coordinate">Atlas Coordinate</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-playback-mode">
+          <h3>Playback Mode</h3>
+          <p><span class="glossary-label">Definition</span>The rule controlling how an animation track progresses through its timed frames.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-sequential">Sequential</a> · <a href="#glossary-loop">Loop</a> · <a href="#glossary-interval">Interval</a> · <a href="#glossary-random">Random</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-random">
+          <h3>Random</h3>
+          <p><span class="glossary-label">Definition</span>A playback mode that uses random selection behavior for animation playback.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-playback-mode">Playback Mode</a> · <a href="#glossary-interval">Interval</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-render-queue">
+          <h3>Render Queue</h3>
+          <p><span class="glossary-label">Definition</span>A material value that controls transparent draw order; higher values render later.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-transparency" data-doc-target="technical">Technical Documentation: Transparency</a> · <a href="#guide-layering" data-doc-target="guide">User Guide: Face Layering</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-mesh-renderer">MeshRenderer</a> · <a href="#glossary-skinned-mesh-renderer">SkinnedMeshRenderer</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-semantic-frame">
+          <h3>Semantic Frame</h3>
+          <p><span class="glossary-label">Definition</span>A meaning-based frame name, such as <code>opened</code> or <code>closed</code>, that can map to different sprites in different states.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-state" data-doc-target="technical">Technical Documentation: FaceState</a> · <a href="#guide-states" data-doc-target="guide">User Guide: Creating FaceStates</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-frame-id">Frame ID</a> · <a href="#glossary-sprite-id">Sprite ID</a> · <a href="#glossary-from-state">FromState</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-sequential">
+          <h3>Sequential</h3>
+          <p><span class="glossary-label">Definition</span>A playback mode that progresses through timed frames in their configured order.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-playback-mode">Playback Mode</a> · <a href="#glossary-loop">Loop</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-skinned-mesh-renderer">
+          <h3>SkinnedMeshRenderer</h3>
+          <p><span class="glossary-label">Definition</span>Unity's renderer component for rigged or bone-driven meshes, supported through the same binding path as <code>MeshRenderer</code>.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-bindings" data-doc-target="technical">Technical Documentation: Track Bindings</a> · <a href="#guide-renderers" data-doc-target="guide">User Guide: Renderer Support</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-mesh-renderer">MeshRenderer</a> · <a href="#glossary-material-property-block">MaterialPropertyBlock</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-sprite-id">
+          <h3>Sprite ID</h3>
+          <p><span class="glossary-label">Definition</span>A case-sensitive identifier that points to one sprite entry and its atlas coordinate in a library track.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-library" data-doc-target="technical">Technical Documentation: FaceSpriteLibrary</a> · <a href="#guide-library" data-doc-target="guide">User Guide: Creating a FaceSpriteLibrary</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-frame-id">Frame ID</a> · <a href="#glossary-atlas-coordinate">Atlas Coordinate</a> · <a href="#glossary-custom-library">CustomLibrary</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-template-state">
+          <h3>Template State</h3>
+          <p><span class="glossary-label">Definition</span>A state assigned to a <code>FromState</code> animation for inspector validation. Runtime frame resolution still uses the controller's active state.</p>
+          <p><span class="glossary-label">Used in</span><a href="#guide-animations" data-doc-target="guide">User Guide: Creating FaceAnimations</a> · <a href="#technical-animation" data-doc-target="technical">Technical Documentation: FaceAnimation</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-from-state">FromState</a> · <a href="#glossary-face-state">FaceState</a> · <a href="#glossary-semantic-frame">Semantic Frame</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-tiling">
+          <h3>Tiling</h3>
+          <p><span class="glossary-label">Definition</span>The <code>_Tiling</code> shader property that scales UV sampling to the size of one atlas cell.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-materials" data-doc-target="technical">Technical Documentation: Material Properties</a> · <a href="#guide-atlases" data-doc-target="guide">User Guide: Preparing Atlases</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-offset">Offset</a> · <a href="#glossary-grid-size">Grid Size</a> · <a href="#glossary-uv">UV</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-urp">
+          <h3>URP</h3>
+          <p><span class="glossary-label">Definition</span>Unity's Universal Render Pipeline, supported by the Face System's atlas Shader Graph implementation.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-shaders" data-doc-target="technical">Technical Documentation: Shader Support</a> · <a href="#guide-shader-setup" data-doc-target="guide">User Guide: Shader Setup</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-built-in">Built-in Render Pipeline</a> · <a href="#glossary-tiling">Tiling</a> · <a href="#glossary-offset">Offset</a></p>
+        </section>
+
+        <section class="glossary-entry" id="glossary-uv">
+          <h3>UV</h3>
+          <p><span class="glossary-label">Definition</span>Texture coordinates used by a mesh to sample a texture. Tiling and Offset select the required cell within the face atlas.</p>
+          <p><span class="glossary-label">Used in</span><a href="#technical-materials" data-doc-target="technical">Technical Documentation: Material Properties</a> · <a href="#guide-atlases" data-doc-target="guide">User Guide: Preparing Atlases</a></p>
+          <p><span class="glossary-label">Related</span><a href="#glossary-atlas">Atlas</a> · <a href="#glossary-tiling">Tiling</a> · <a href="#glossary-offset">Offset</a></p>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-product">
+      <strong>Immersive Games Face System</strong>
+      <span>Version 1.0.0</span>
+    </div>
+    <div class="footer-meta">
+      <span>Offline Documentation</span>
+      <span>&copy; Immersive Games</span>
+    </div>
+  </footer>
+
+  <script src="docs.js"></script>
+</body>
+</html>
