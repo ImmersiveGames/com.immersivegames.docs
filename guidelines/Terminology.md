@@ -101,15 +101,31 @@ When a new architectural concept requires a stable name, its owning specificatio
 
 **Definition:** The framework subsystem that consumes rendered structure and defines how users move through the resulting documentation output.
 
-**Notes:** It may expose tabs, Page hierarchy, ordering, breadcrumbs, tables of contents, and previous or next relationships. It does not redefine the authored editorial hierarchy.
+**Notes:** It may expose document navigation, ordering, breadcrumbs, tables of contents, rendered content targets, and previous or next relationships. It does not redefine the authored editorial hierarchy.
 
 ### Component Library
 
 **Term:** Component Library
 
-**Definition:** The collection of reusable semantic documentation component definitions and their data contracts.
+**Definition:** The official renderer-independent catalog of reusable semantic documentation Components, their categories, support levels, intended usage, and Renderer Expectations.
 
-**Notes:** Components are defined by purpose and meaning before visual treatment.
+**Notes:** Components are defined by purpose and meaning before visual treatment. The Component Library is not an HTML component library.
+
+### Core Component
+
+**Term:** Core Component
+
+**Definition:** A Component required for any Renderer claiming basic framework compatibility.
+
+**Notes:** Core Components establish the minimum semantic component set that Renderers must understand and preserve.
+
+### Extended Component
+
+**Term:** Extended Component
+
+**Definition:** An optional Component recommended for richer documentation but not required for basic framework compatibility.
+
+**Notes:** A Renderer may support all Extended Components, selected Extended Components, or none of them, provided unsupported Components degrade gracefully.
 
 ### Theme System
 
@@ -207,6 +223,22 @@ When a new architectural concept requires a stable name, its owning specificatio
 
 **Notes:** Examples include warnings, procedures, parameter definitions, API methods, timelines, and feature comparisons.
 
+### Governance Component
+
+**Term:** Governance Component
+
+**Definition:** A Component that records project reasoning, decisions, alternatives, trade-offs, constraints, assumptions, dependencies, risks, objectives, requirements, or open questions.
+
+**Notes:** Governance Components help preserve architectural and project context that might otherwise be repeated or lost.
+
+### Renderer Expectation
+
+**Term:** Renderer Expectation
+
+**Definition:** A semantic behavior or compatibility requirement that a Renderer should preserve when transforming authored documentation into an output format.
+
+**Notes:** Renderer Expectations describe expected behavior without prescribing HTML, CSS, JavaScript, visual styling, or internal Renderer implementation.
+
 ### Theme
 
 **Term:** Theme
@@ -267,11 +299,13 @@ The framework terminology standard defines the vocabulary of the Documentation F
 - [FrameworkArchitecture.md](FrameworkArchitecture.md) — Defines the root architecture and module relationships.
 - [DocumentationStandards.md](DocumentationStandards.md) — Defines the authoring and maintenance rules applied to this document.
 - [ContentSystem.md](ContentSystem.md) — Defines the editorial hierarchy and Markdown authoring model.
+- [ComponentLibrary.md](ComponentLibrary.md) — Defines the official semantic documentation Components and support levels.
 
 # Revision History
 
 | Version | Date       | Author          | Description                |
 |---------|------------|-----------------|----------------------------|
+| 0.2.2   | 2026-06-26 | Immersive Games | Added Component Library support terminology. |
 | 0.2.1   | 2026-06-25 | Immersive Games | Clarified Section terminology for the editorial model. |
 | 0.2.0   | 2026-06-25 | Immersive Games | Added the editorial authoring terminology. |
 | 0.1.0   | 2026-06-25 | Immersive Games | Initial terminology draft. |

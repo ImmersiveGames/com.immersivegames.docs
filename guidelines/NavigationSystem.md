@@ -116,7 +116,7 @@ The Table of Contents allows quick navigation within the currently displayed con
 The Table of Contents:
 
 - Reflects headings in the current content.
-- Is local to the current Page or rendered content.
+- Is local to the current rendered content.
 - Is independent from the sidebar hierarchy.
 
 The sidebar helps users move through the active Document. The Table of Contents helps users move within the currently displayed content. A Renderer may present both, one, or neither depending on output capabilities, but the concepts remain separate.
@@ -142,7 +142,7 @@ Current Location may identify:
 - The active Document.
 - The active Chapter.
 - The active Section or Subsection.
-- The active Page or rendered content unit.
+- The active rendered content unit.
 
 Clear Current Location improves orientation, reduces cognitive load, and helps users understand the relationship between the content they are reading and the broader Documentation Project.
 
@@ -155,7 +155,7 @@ Examples include:
 - Active Document.
 - Expanded Chapters.
 - Current Section.
-- Scroll Position, when supported by the output format.
+- Reading Position, when supported by the output format.
 
 The Navigation System defines the concept of Navigation State. It does not define storage, browser behavior, local files, scripting, or any specific implementation mechanism.
 
@@ -177,9 +177,9 @@ Documentation may reference:
 - Subsections.
 - Glossary terms.
 - Assets.
-- Rendered Pages, when a Renderer exposes Pages.
+- Rendered content units, when a Renderer exposes them.
 
-The Navigation System defines the navigation relationships created by cross references. Reference validation and target resolution belong to the Cross-Reference Module or a future CrossReferenceSystem specification. Rendering is responsible for displaying the references in each output format.
+The Navigation System defines the navigation relationships created by cross references. Reference validation and target resolution belong to the Cross-Reference Module or a possible future CrossReferenceSystem specification. Rendering is responsible for displaying the references in each output format.
 
 ### Quick Navigation
 
@@ -206,7 +206,7 @@ Search results may target:
 - Chapters.
 - Sections.
 - Subsections.
-- Pages exposed by a Renderer.
+- Rendered content units exposed by a Renderer.
 - Glossary terms.
 
 The Navigation System defines the valid navigation destinations for search results. Indexing, query behavior, ranking, and search-result generation belong to the Search System.
@@ -271,7 +271,7 @@ Renderer-specific controls must remain derivative. They must not become the sour
 
 **Rationale:** A Documentation Project may contain multiple independent publications for different audiences, disciplines, or purposes.
 
-**Consequence:** Users can switch between major publications without treating Chapters or Pages as project-level roots.
+**Consequence:** Users can switch between major publications without treating Chapters or rendered content units as project-level roots.
 
 ### Sidebar Navigation Is Scoped to the Active Document
 
@@ -345,6 +345,7 @@ These extensions must preserve the established navigation model and must not mak
 - [DocumentationStandards.md](DocumentationStandards.md) — Defines the authoring and maintenance standards applied to this specification.
 - [Terminology.md](Terminology.md) — Defines the official vocabulary used by this specification.
 - [ContentSystem.md](ContentSystem.md) — Defines the editorial hierarchy consumed by the Navigation System.
+- [ComponentLibrary.md](ComponentLibrary.md) — Defines the reusable semantic documentation components consumed by Renderers.
 - [RenderingSystem.md](RenderingSystem.md) — Planned specification for Renderer contracts and output lifecycle.
 - [SearchSystem.md](SearchSystem.md) — Planned specification for search indexing, query behavior, and result contracts.
 
@@ -352,4 +353,5 @@ These extensions must preserve the established navigation model and must not mak
 
 | Version | Date       | Author          | Description                              |
 |---------|------------|-----------------|------------------------------------------|
+| 0.1.1   | 2026-06-25 | Immersive Games | Refined renderer-independent navigation terminology. |
 | 0.1.0   | 2026-06-25 | Immersive Games | Initial Navigation System specification. |

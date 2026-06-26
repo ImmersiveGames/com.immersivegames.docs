@@ -131,6 +131,8 @@ Maintain a single source of truth.
 
 Use Markdown only.
 
+When using documentation components, prefer official components defined in `ComponentLibrary.md`. Do not invent new component types unless the task explicitly requires proposing a new component.
+
 Official heading mapping:
 
 # Document Title
