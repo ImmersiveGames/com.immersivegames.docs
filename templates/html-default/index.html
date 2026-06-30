@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Immersive Games Documentation Framework</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="docs-skip-link" href="#docs-main">Skip to content</a>
+
+  <div class="docs-topbar">
+    <header class="docs-header">
+      <div class="docs-header__brand">
+        <span class="docs-header__logo-set" aria-hidden="true">
+          <img class="docs-header__logo docs-header__logo--dark" src="assets/images/immersive-games-logo-full-white.png" alt="" width="180" height="65">
+          <img class="docs-header__logo docs-header__logo--light" src="assets/images/immersive-games-logo-full-black.png" alt="" width="180" height="65">
+        </span>
+        <div>
+          <h1>Documentation Framework</h1>
+        </div>
+      </div>
+
+      <div class="docs-header__tools">
+        <label class="docs-search-label" for="docs-search-input">Search documentation</label>
+        <input id="docs-search-input" class="docs-search-input" type="search" placeholder="Search active document..." autocomplete="off">
+        <button class="docs-button docs-button--ghost" type="button" data-action="toggle-search-mode" aria-pressed="false">Global</button>
+        <button class="docs-button docs-button--ghost" type="button" data-action="toggle-theme" aria-label="Toggle dark or light theme">Theme</button>
+        <button class="docs-button docs-button--ghost docs-mobile-only" type="button" data-action="toggle-sidebar" aria-expanded="false" aria-controls="docs-sidebar">Menu</button>
+        <button class="docs-button docs-button--ghost docs-mobile-only" type="button" data-action="toggle-toc" aria-expanded="false" aria-controls="docs-toc">TOC</button>
+      </div>
+    </header>
+
+    <nav class="docs-tabs" role="tablist" aria-label="Document tabs">
+      <button id="docs-tab-overview" class="docs-tab is-active" type="button" role="tab" data-document-target="overview" aria-selected="true" aria-controls="docs-panel-overview">Overview</button>
+      <button id="docs-tab-engineering" class="docs-tab" type="button" role="tab" data-document-target="engineering" aria-selected="false" aria-controls="docs-panel-engineering">Engineering</button>
+      <button id="docs-tab-gdd" class="docs-tab" type="button" role="tab" data-document-target="gdd" aria-selected="false" aria-controls="docs-panel-gdd">GDD</button>
+      <button id="docs-tab-glossary" class="docs-tab" type="button" role="tab" data-document-target="glossary" aria-selected="false" aria-controls="docs-panel-glossary">Glossary</button>
+    </nav>
+  </div>
+
+  <div class="docs-search-status" id="docs-search-status" role="status" aria-live="polite">Search is ready.</div>
+
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar" aria-label="Document navigation">
+      <div class="docs-sidebar__header">
+        <span>Document Navigation</span>
+      </div>
+      <nav class="docs-sidebar__nav" data-sidebar-nav></nav>
+    </aside>
+
+    <main class="docs-main" id="docs-main" tabindex="-1">
+      <section class="docs-search-panel docs-content" data-search-panel hidden aria-labelledby="docs-search-panel-title">
+        <div class="docs-search-panel__header">
+          <p class="docs-kicker">Search Results</p>
+          <h2 id="docs-search-panel-title">Search results</h2>
+          <p data-search-summary>Type in the header search field to search the active document.</p>
+        </div>
+
+        <div class="docs-search-results" data-search-results></div>
+
+        <div class="docs-empty-state" data-search-empty hidden>
+          <h2>No results found.</h2>
+          <p>Try a different term or clear the search.</p>
+        </div>
+      </section>
+
+      <section id="docs-panel-overview" class="docs-document is-active" role="tabpanel" aria-labelledby="docs-tab-overview" data-document="overview" data-document-title="Overview">
+        <article class="docs-content">
+          <header class="docs-page-header">
+            <p class="docs-kicker">Overview</p>
+            <h2 id="overview-introduction">Introduction</h2>
+            <p>The Immersive Games Documentation Framework defines a structured, offline-first approach for authoring and rendering project documentation.</p>
+          </header>
+
+          <section class="docs-section" id="overview-documentation-flow" data-title="Documentation Flow">
+            <h3>Documentation Flow</h3>
+            <p>The framework starts with authored Markdown and produces readable offline output through a Renderer.</p>
+            <ol>
+              <li>Authors and AI agents write structured Markdown.</li>
+              <li>The Renderer consumes framework contracts.</li>
+              <li>The Theme System styles semantic output.</li>
+              <li>Users read a portable offline documentation package.</li>
+            </ol>
+
+            <div class="docs-callout docs-callout-note">
+              <p class="docs-callout__title">Note</p>
+              <p>HTML is the first output target, not the framework itself.</p>
+            </div>
+
+            <div class="docs-block docs-block-decision">
+              <h4>Decision</h4>
+              <p><strong>Decision:</strong> Markdown remains the source of truth.</p>
+              <p><strong>Reason:</strong> Markdown is easy to edit, review, version, and render.</p>
+              <p><strong>Status:</strong> Approved</p>
+            </div>
+          </section>
+
+          <section class="docs-section" id="overview-offline-package" data-title="Offline Package">
+            <h3>Offline Package</h3>
+            <p>The default template works locally without a server, CDN, remote fonts, or external JavaScript.</p>
+            <ul>
+              <li>All stylesheets are local.</li>
+              <li>All scripts are local.</li>
+              <li>Required assets use relative paths.</li>
+            </ul>
+
+            <figure class="docs-figure">
+              <svg class="docs-diagram" viewBox="0 0 960 420" role="img" aria-labelledby="offline-package-title offline-package-desc">
+                <title id="offline-package-title">Offline package diagram</title>
+                <desc id="offline-package-desc">A simple diagram showing Markdown transformed into a local offline HTML package.</desc>
+                <rect class="docs-diagram__background" width="960" height="420" rx="28"></rect>
+                <g class="docs-diagram__node">
+                  <rect x="70" y="110" width="210" height="150" rx="18"></rect>
+                  <rect x="375" y="110" width="210" height="150" rx="18"></rect>
+                  <rect x="680" y="110" width="210" height="150" rx="18"></rect>
+                </g>
+                <g class="docs-diagram__label" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="700">
+                  <text x="120" y="185">Markdown</text>
+                  <text x="430" y="185">Renderer</text>
+                  <text x="720" y="185">Offline HTML</text>
+                </g>
+                <g class="docs-diagram__arrow" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                  <path d="M300 185h50"></path>
+                  <path d="m340 170 18 15-18 15"></path>
+                  <path d="M605 185h50"></path>
+                  <path d="m645 170 18 15-18 15"></path>
+                </g>
+                <text class="docs-diagram__caption" x="70" y="330" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22">All required assets, styles, and scripts are local.</text>
+              </svg>
+              <figcaption>Example theme-aware diagram using local template markup.</figcaption>
+            </figure>
+          </section>
+
+          <section class="docs-section" id="overview-components" data-title="Component Examples">
+            <h3>Component Examples</h3>
+            <p>This section shows the main component families supported by the template.</p>
+
+            <div class="docs-callout-grid">
+              <div class="docs-callout docs-callout-info"><p class="docs-callout__title">Info</p><p>Use information callouts for helpful context.</p></div>
+              <div class="docs-callout docs-callout-tip"><p class="docs-callout__title">Tip</p><p>Use tips for workflow recommendations.</p></div>
+              <div class="docs-callout docs-callout-warning"><p class="docs-callout__title">Warning</p><p>Use warnings for risky changes.</p></div>
+              <div class="docs-callout docs-callout-important"><p class="docs-callout__title">Important</p><p>Use important callouts for required information.</p></div>
+              <div class="docs-callout docs-callout-success"><p class="docs-callout__title">Success</p><p>Use success callouts for expected outcomes.</p></div>
+              <div class="docs-callout docs-callout-example"><p class="docs-callout__title">Example</p><p>Use examples to make concepts concrete.</p></div>
+              <div class="docs-callout docs-callout-best-practice"><p class="docs-callout__title">Best Practice</p><p>Use best practices for durable guidance.</p></div>
+            </div>
+          </section>
+        </article>
+      </section>
+
+      <section id="docs-panel-engineering" class="docs-document" role="tabpanel" aria-labelledby="docs-tab-engineering" data-document="engineering" data-document-title="Engineering" hidden>
+        <article class="docs-content">
+          <header class="docs-page-header">
+            <p class="docs-kicker">Engineering</p>
+            <h2 id="engineering-architecture">Architecture</h2>
+            <p>Engineering documentation captures system structure, runtime behavior, API surfaces, and asset handling expectations.</p>
+          </header>
+
+          <section class="docs-section" id="engineering-systems" data-title="Systems">
+            <h3>Systems</h3>
+            <p>Systems documentation should explain responsibilities, boundaries, and data flow without coupling the source content to visual layout.</p>
+            <blockquote>
+              <p>Documentation represents knowledge first. Presentation is derivative.</p>
+            </blockquote>
+          </section>
+
+          <section class="docs-section" id="engineering-api-example" data-title="API Example">
+            <h3>API Example</h3>
+            <p>Inline code such as <code>FaceController.PlayAnimation</code> should remain distinct but unobtrusive.</p>
+            <pre class="docs-code"><code>public sealed class FaceController
+{
+    public void PlayAnimation(string animationId)
+    {
+        // Trigger local animation playback.
+    }
+}</code></pre>
+
+            <div class="docs-block docs-block-api">
+              <h4>Method</h4>
+              <table class="docs-table">
+                <thead><tr><th>Field</th><th>Value</th></tr></thead>
+                <tbody>
+                  <tr><td>Name</td><td><code>PlayAnimation</code></td></tr>
+                  <tr><td>Parameter</td><td><code>animationId: string</code></td></tr>
+                  <tr><td>Returns</td><td><code>void</code></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="docs-section" id="engineering-asset-handling" data-title="Asset Handling">
+            <h3>Asset Handling</h3>
+            <p>Required documentation assets should be local and referenced through relative paths.</p>
+            <div class="docs-block docs-block-risk">
+              <h4>Risk</h4>
+              <p><strong>Risk:</strong> A missing screenshot breaks reader context.</p>
+              <p><strong>Impact:</strong> Medium</p>
+              <p><strong>Mitigation:</strong> Validate asset references before publishing.</p>
+            </div>
+          </section>
+        </article>
+      </section>
+
+      <section id="docs-panel-gdd" class="docs-document" role="tabpanel" aria-labelledby="docs-tab-gdd" data-document="gdd" data-document-title="GDD" hidden>
+        <article class="docs-content">
+          <header class="docs-page-header">
+            <p class="docs-kicker">Game Design Document</p>
+            <h2 id="gdd-game-vision">Game Vision</h2>
+            <p>The GDD describes game direction, player experience, mechanics, and design decisions.</p>
+          </header>
+
+          <section class="docs-section" id="gdd-core-loop" data-title="Core Loop">
+            <h3>Core Loop</h3>
+            <p>The core loop describes the repeated player activity that supports progression.</p>
+            <div class="docs-block docs-block-flow">
+              <h4>Flow</h4>
+              <ol class="docs-flow-list">
+                <li>Explore the environment.</li>
+                <li>Collect resources.</li>
+                <li>Upgrade abilities.</li>
+                <li>Face harder challenges.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="docs-section" id="gdd-mechanics" data-title="Mechanics">
+            <h3>Mechanics</h3>
+            <p>Mechanics should be clear, testable, and connected to the intended player experience.</p>
+            <table class="docs-table">
+              <thead><tr><th>Mechanic</th><th>Purpose</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Dash</td><td>Mobility and expression</td><td><span class="docs-badge docs-badge-success">Approved</span></td></tr>
+                <tr><td>Parry</td><td>Skill mastery</td><td><span class="docs-badge docs-badge-warning">Review</span></td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="docs-section" id="gdd-decisions" data-title="Decisions">
+            <h3>Decisions</h3>
+            <div class="docs-block docs-block-open-question">
+              <h4>Open Question</h4>
+              <p><strong>Question:</strong> Should the first prototype include crafting?</p>
+              <p><strong>Status:</strong> Open</p>
+            </div>
+          </section>
+        </article>
+      </section>
+
+      <section id="docs-panel-glossary" class="docs-document" role="tabpanel" aria-labelledby="docs-tab-glossary" data-document="glossary" data-document-title="Glossary" hidden>
+        <article class="docs-content">
+          <header class="docs-page-header">
+            <p class="docs-kicker">Glossary</p>
+            <h2 id="glossary-documentation-project">Documentation Project</h2>
+            <p>Glossary terms define project vocabulary using Markdown headings and standard links.</p>
+          </header>
+
+          <div class="docs-glossary-tools">
+            <label for="docs-glossary-filter">Filter glossary terms</label>
+            <input id="docs-glossary-filter" class="docs-search-input" type="search" placeholder="Filter terms...">
+          </div>
+
+          <section class="docs-section docs-glossary-term" id="glossary-document" data-title="Document" data-term="document">
+            <h3>Document</h3>
+            <p><strong>Definition:</strong> The highest editorial unit inside a Documentation Project.</p>
+            <p><strong>Related Terms:</strong> <a href="#glossary-component">Component</a>, <a href="#glossary-renderer">Renderer</a></p>
+          </section>
+
+          <section class="docs-section docs-glossary-term" id="glossary-component" data-title="Component" data-term="component">
+            <h3>Component</h3>
+            <p><strong>Definition:</strong> A reusable semantic documentation structure with a defined purpose.</p>
+            <p><strong>Aliases:</strong> Documentation component, semantic component</p>
+          </section>
+
+          <section class="docs-section docs-glossary-term" id="glossary-renderer" data-title="Renderer" data-term="renderer">
+            <h3>Renderer</h3>
+            <p><strong>Definition:</strong> An implementation that transforms a valid Documentation Project into an output format.</p>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <aside class="docs-toc" id="docs-toc" aria-label="Local table of contents">
+      <div class="docs-toc__header">
+        <span>On this page</span>
+      </div>
+      <nav data-toc-nav></nav>
+      <button class="docs-back-to-top" type="button" data-action="back-to-top">↑ Back to Top</button>
+    </aside>
+  </div>
+
+  <footer class="docs-footer">
+    <p>Immersive Games Documentation Framework · Version 0.1.0 · Generated with <code>com.immersivegames.docs</code></p>
+    <nav aria-label="Footer links">
+      <a href="#overview-introduction">Overview</a>
+      <a href="#engineering-architecture">Engineering</a>
+      <a href="#gdd-game-vision">GDD</a>
+      <a href="#glossary-documentation-project">Glossary</a>
+    </nav>
+  </footer>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/glossary.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
