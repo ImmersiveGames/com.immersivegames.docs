@@ -9,7 +9,9 @@
 
 ## Purpose
 
-The Component Library defines the official semantic documentation components of the Immersive Games Documentation Framework.
+The Component Library defines the official semantic documentation Components of the Immersive Games Documentation Framework.
+
+It is the official reference for semantic documentation Components, Component categories, support levels, approved Markdown usage patterns, and expected Renderer interpretation.
 
 It is not an HTML component library. It is a renderer-independent semantic component catalog that defines what documentation Components an authoring agent may use in Markdown and what a Renderer should understand when generating output.
 
@@ -21,6 +23,8 @@ Documentation agents write Components in Markdown as part of the authored source
 
 Components must be reusable across Game Design Documents, technical documentation, API references, user manuals, project documentation, and other Documentation Project types. A Component should describe an authoring intent that remains useful even when rendered as HTML, PDF, EPUB, wiki content, or another output.
 
+The Component Library may define Markdown syntax for authoring Components. It must not define visual styling, HTML structure, CSS, JavaScript, or layout.
+
 ## Responsibilities
 
 The Component Library is responsible for:
@@ -28,7 +32,7 @@ The Component Library is responsible for:
 - Defining official Component categories.
 - Defining official Component names.
 - Defining when each Component should be used.
-- Defining expected Markdown usage at a conceptual level.
+- Defining approved Markdown usage patterns.
 - Defining expected Renderer behavior without prescribing HTML, CSS, or JavaScript.
 - Preventing agents from inventing random Component types.
 
@@ -69,9 +73,10 @@ Every Component should be documented with:
 
 - **Name:** The official Component name.
 - **Category:** The Component category that owns the Component.
+- **Support Level:** Whether the Component is Core or Extended.
 - **Purpose:** The meaning or authoring intent represented by the Component.
 - **When to Use:** The situations where the Component is appropriate.
-- **Markdown Usage:** The conceptual Markdown usage expected from authors or AI agents.
+- **Markdown Usage:** The mandatory approved Markdown pattern expected from authors or AI agents.
 - **Expected Rendering:** The semantic behavior a Renderer should preserve.
 - **Notes:** Additional constraints, cautions, or relationship details.
 - **Examples:** Representative authoring examples.
@@ -241,25 +246,248 @@ The initial Extended Component set is:
 - Assumption.
 - Open Question.
 
-## Markdown Usage
+## Markdown Usage Conventions
 
-This specification does not define final Markdown syntax for every Component.
+The Component Library defines three official authoring patterns:
 
-Markdown usage may rely on standard Markdown for Basic Components and agreed semantic notation for Extended Components. The exact syntax for non-standard Components may be specified later by the Rendering System or by a dedicated authoring convention document.
+1. Standard Markdown.
+2. Callout Syntax.
+3. Structured Block Syntax.
 
-Authors and AI agents must not invent final Markdown extension syntax in this document's absence. When a Component cannot be represented by existing conventions, contributors should document the intended semantic meaning and defer final syntax to the appropriate specification.
+These conventions must remain readable in raw Markdown and must not require authors to write raw HTML.
+
+### 1. Standard Markdown
+
+Basic Components must use Standard Markdown whenever possible.
+
+Use Standard Markdown for:
+
+- Heading.
+- Paragraph.
+- List.
+- Ordered List.
+- Checklist.
+- Table.
+- Quote.
+- Code Block.
+- Inline Code.
+- Horizontal Rule.
+- Link.
+- Image.
+
+Example:
+
+````md
+# Document Title
+
+## Chapter
+
+### Section
+
+Regular paragraph.
+
+- Item
+- Item
+
+| Field  | Value    |
+|--------|----------|
+| Status | Approved |
+
+```csharp
+faceController.PlayAnimation("blink");
+```
+````
+
+Standard Markdown must be preferred whenever it can express the content clearly.
+
+### 2. Callout Syntax
+
+Information Components must use blockquote-style callouts.
+
+Syntax:
+
+```md
+> [!TYPE]
+> Content goes here.
+```
+
+Optional title syntax:
+
+```md
+> [!TYPE] Optional Title
+> Content goes here.
+```
+
+Supported callout types:
+
+- `NOTE`
+- `INFO`
+- `TIP`
+- `WARNING`
+- `IMPORTANT`
+- `SUCCESS`
+- `EXAMPLE`
+- `BEST_PRACTICE`
+
+Examples:
+
+```md
+> [!WARNING]
+> Changing this ID may break existing animation references.
+```
+
+```md
+> [!TIP] Workflow Recommendation
+> Create a reusable template state before authoring shared animations.
+```
+
+Callouts must remain readable as raw Markdown. Renderers may style callouts visually. Authors must not use raw HTML to force callout appearance.
+
+### 3. Structured Block Syntax
+
+Extended or structured Components must use fenced semantic blocks.
+
+Syntax:
+
+```md
+:::component-name
+Content goes here.
+:::
+```
+
+Component names must use `lowercase-kebab-case`.
+
+Examples:
+
+```md
+:::decision
+**Decision:** Use Markdown as the source of truth.
+
+**Reason:** Markdown is easy to edit, review, version, and render.
+
+**Status:** Approved
+:::
+```
+
+```md
+:::risk
+**Risk:** Documentation may become inconsistent if terminology changes.
+
+**Impact:** Medium
+
+**Mitigation:** Update Terminology.md before introducing new concepts.
+:::
+```
+
+```md
+:::open-question
+**Question:** Should the renderer support PDF export in v1?
+
+**Status:** Open
+:::
+```
+
+Use Structured Block Syntax for Components such as:
+
+- API.
+- Method.
+- Property.
+- Parameter.
+- Timeline.
+- Flow.
+- Process.
+- Pipeline.
+- Decision.
+- Alternative.
+- Trade-off.
+- Constraint.
+- Assumption.
+- Dependency.
+- Risk.
+- Open Question.
+- Requirement.
+- Objective.
+
+Structured Blocks are used when a Component needs fields, Metadata, or multi-part content. Renderers may transform Structured Blocks into richer visual layouts. Unsupported Structured Blocks must degrade gracefully into readable content.
+
+Agents must not invent new Structured Block names unless explicitly proposing a new Component.
+
+## Component Naming Rules
+
+Callout types must use uppercase snake case inside `[!TYPE]`.
+
+Structured Block names must use lowercase kebab case.
+
+Component names in prose should use Title Case.
+
+Aliases must not be created unless they are officially documented.
+
+Contributors and AI agents must not invent synonyms for existing Components.
+
+Correct:
+
+```md
+> [!BEST_PRACTICE]
+```
+
+```md
+:::open-question
+:::
+```
+
+Incorrect:
+
+```md
+> [!BestPractice]
+```
+
+```md
+:::openQuestion
+:::
+```
+
+```md
+:::question-block
+:::
+```
+
+## Links and References
+
+Use standard Markdown links for internal and external references.
+
+Do not introduce wiki-style links such as `[[Term]]` in v1.
+
+Glossary references should also use standard Markdown links.
+
+Cross-document references should remain readable in raw Markdown.
+
+Examples:
+
+```md
+See [Content System](ContentSystem.md).
+```
+
+```md
+See [FaceState](Glossary.md#facestate).
+```
 
 ## Renderer Expectations
 
+Renderers must understand Standard Markdown.
+
 Renderers must support all Core Components.
+
+Renderers should support official Callout Syntax.
 
 Renderers may progressively support Extended Components.
 
-If a Renderer does not support an Extended Component, it should gracefully degrade to readable Markdown or a simple Content Block.
+Renderers should support Structured Block Syntax when implementing Extended Components.
+
+If a Renderer does not support an Extended Component, it should gracefully degrade to readable content or a simple Content Block.
 
 Renderers should preserve the semantic meaning of each Component.
 
-Renderers should not require authors to write HTML, CSS, JavaScript, or renderer-specific markup.
+Renderers should not require authors to write raw HTML, CSS, JavaScript, or renderer-specific markup.
 
 ## Design Decisions
 
@@ -295,13 +523,13 @@ Renderers should not require authors to write HTML, CSS, JavaScript, or renderer
 
 **Consequence:** Project reasoning can be captured in structured documentation instead of being repeated, lost, or scattered across informal discussions.
 
-### Markdown Syntax Is Not Finalized Here
+### Markdown Syntax Is Centralized Here
 
-**Decision:** This specification does not finalize custom Markdown extension syntax.
+**Decision:** The Component Library defines the official Markdown usage conventions for Components.
 
-**Rationale:** Syntax decisions affect authoring conventions, parser behavior, Renderer compatibility, and validation rules.
+**Rationale:** Component authoring needs one predictable source of truth so human authors and AI agents do not invent competing notation.
 
-**Consequence:** The Component Library defines semantic intent first. Final syntax belongs to a Rendering System specification or a dedicated authoring convention document.
+**Consequence:** Standard Markdown, Callout Syntax, Structured Block Syntax, naming rules, and link conventions are centralized in this specification while Renderer implementation remains outside its scope.
 
 ## Out of Scope
 
@@ -314,7 +542,7 @@ The Component Library does not define:
 - Theme styling.
 - Renderer implementation.
 - Parser implementation.
-- Final syntax for custom Markdown extensions.
+- Visual layout.
 
 ## Future Extensions
 
@@ -346,4 +574,5 @@ Future extensions must preserve semantic meaning, renderer independence, and Mar
 
 | Version | Date       | Author          | Description                              |
 |---------|------------|-----------------|------------------------------------------|
+| 0.2.0   | 2026-06-26 | Immersive Games | Added official Markdown component authoring conventions. |
 | 0.1.0   | 2026-06-26 | Immersive Games | Initial Component Library specification. |

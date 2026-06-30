@@ -133,6 +133,20 @@ Use Markdown only.
 
 When using documentation components, prefer official components defined in `ComponentLibrary.md`. Do not invent new component types unless the task explicitly requires proposing a new component.
 
+Use Standard Markdown for Basic Components.
+
+Use Callout Syntax for Information Components.
+
+Use Structured Block Syntax for Extended or structured Components.
+
+Use lowercase kebab case for Structured Block names.
+
+Use uppercase snake case for callout types.
+
+Do not invent new Component syntax.
+
+Do not write raw HTML for presentation.
+
 Official heading mapping:
 
 # Document Title
@@ -276,3 +290,11 @@ It does not redefine the framework architecture.
 The framework specifications remain the single source of truth.
 
 Whenever this skill conflicts with an official guideline document, the official guideline document takes precedence.
+
+---
+
+# Revision History
+
+| Version | Date       | Author          | Description                                |
+|---------|------------|-----------------|--------------------------------------------|
+| 0.1.0   | 2026-06-26 | Immersive Games | Added official Component authoring conventions. |

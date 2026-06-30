@@ -263,6 +263,54 @@ When a new architectural concept requires a stable name, its owning specificatio
 
 **Notes:** The Rendering System consumes Markdown structure and semantics to produce HTML, PDF, or future formats. Generated output does not replace the Markdown source.
 
+### Markdown Usage
+
+**Term:** Markdown Usage
+
+**Definition:** The approved way a Component or documentation structure is authored in Markdown.
+
+**Notes:** Markdown Usage for Components is defined by the Component Library so authors and AI agents use consistent notation.
+
+### Standard Markdown
+
+**Term:** Standard Markdown
+
+**Definition:** The common Markdown syntax used for basic authored structures such as headings, paragraphs, lists, tables, code blocks, links, and images.
+
+**Notes:** Standard Markdown should be preferred whenever it can express the content clearly.
+
+### Callout Syntax
+
+**Term:** Callout Syntax
+
+**Definition:** The blockquote-style Markdown convention used to author Information Components through uppercase callout types such as `[!NOTE]` or `[!WARNING]`.
+
+**Notes:** Callout Syntax remains readable as raw Markdown and must not require raw HTML.
+
+### Structured Block Syntax
+
+**Term:** Structured Block Syntax
+
+**Definition:** The fenced semantic Markdown convention used to author Extended or structured Components with lowercase kebab-case Component names.
+
+**Notes:** Structured Block Syntax is used when a Component needs fields, Metadata, or multi-part content.
+
+### Structured Block
+
+**Term:** Structured Block
+
+**Definition:** A fenced semantic Markdown block that represents an Extended or structured Component.
+
+**Notes:** Unsupported Structured Blocks should degrade gracefully into readable content.
+
+### Component Naming Rule
+
+**Term:** Component Naming Rule
+
+**Definition:** A naming convention that defines how Component names, callout types, and Structured Block names must be written.
+
+**Notes:** Component Naming Rules prevent unofficial aliases, inconsistent casing, and invented synonyms.
+
 ### Related Documents
 
 **Term:** Related Documents
@@ -305,6 +353,7 @@ The framework terminology standard defines the vocabulary of the Documentation F
 
 | Version | Date       | Author          | Description                |
 |---------|------------|-----------------|----------------------------|
+| 0.2.3   | 2026-06-26 | Immersive Games | Added Markdown component authoring terminology. |
 | 0.2.2   | 2026-06-26 | Immersive Games | Added Component Library support terminology. |
 | 0.2.1   | 2026-06-25 | Immersive Games | Clarified Section terminology for the editorial model. |
 | 0.2.0   | 2026-06-25 | Immersive Games | Added the editorial authoring terminology. |
