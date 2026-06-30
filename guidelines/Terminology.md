@@ -167,6 +167,62 @@ When a new architectural concept requires a stable name, its owning specificatio
 
 **Notes:** It must not require an online service or server-side search provider.
 
+### Search
+
+**Term:** Search
+
+**Definition:** The user-facing discovery capability that allows users to find documentation content by entering a query.
+
+**Notes:** Search must remain offline and must navigate through the Navigation System.
+
+### Active Document Search
+
+**Term:** Active Document Search
+
+**Definition:** The default Search mode that searches only the currently active Document.
+
+**Notes:** Active Document Search follows the Face System baseline behavior and provides focused results within the current documentation context.
+
+### Global Search
+
+**Term:** Global Search
+
+**Definition:** The extended Search mode that searches all Documents in a Documentation Project.
+
+**Notes:** Global Search supports larger multi-document Documentation Projects and should identify the source Document and navigation path for each result.
+
+### Search Result
+
+**Term:** Search Result
+
+**Definition:** A navigable record returned by Search that identifies matching documentation content and its target location.
+
+**Notes:** A Search Result may include title, source Document, navigation path, matching content type, snippet, and target anchor.
+
+### Search Index
+
+**Term:** Search Index
+
+**Definition:** A local offline data structure generated or consumed by a Renderer to support Search.
+
+**Notes:** The Search System does not require a specific Search Index format in the initial specification.
+
+### Empty State
+
+**Term:** Empty State
+
+**Definition:** A user-facing message or state shown when a query returns no Search Results.
+
+**Notes:** Empty States should explain that no results were found and preserve access to normal navigation.
+
+### Searchable Content
+
+**Term:** Searchable Content
+
+**Definition:** Documentation content that should be available to Search.
+
+**Notes:** Searchable Content may include titles, headings, paragraphs, lists, tables, Component fields, captions, Glossary terms, and Glossary definitions.
+
 ### Glossary System
 
 **Term:** Glossary System
@@ -175,6 +231,70 @@ When a new architectural concept requires a stable name, its owning specificatio
 
 **Notes:** Framework-wide architectural vocabulary belongs in this terminology standard. Subject-specific vocabulary belongs to each Documentation Project.
 
+### Glossary
+
+**Term:** Glossary
+
+**Definition:** A collection of project-specific terms and definitions for a Documentation Project.
+
+**Notes:** A Glossary supports consistent project vocabulary and does not replace this framework terminology standard.
+
+### Glossary Document
+
+**Term:** Glossary Document
+
+**Definition:** A Markdown Document that contains official terms for a Documentation Project.
+
+**Notes:** A Glossary Document may be rendered as a dedicated Document tab and participate in Search.
+
+### Glossary Term
+
+**Term:** Glossary Term
+
+**Definition:** An official project-specific term recorded in a Glossary Document.
+
+**Notes:** A Glossary Term should use a Markdown heading so it remains readable, searchable, and linkable.
+
+### Term Definition
+
+**Term:** Term Definition
+
+**Definition:** The required explanation that defines the meaning of a Glossary Term.
+
+**Notes:** A Term Definition should be clear enough to reduce ambiguity for humans and AI agents.
+
+### Term Category
+
+**Term:** Term Category
+
+**Definition:** A project-specific grouping used to organize Glossary Terms by domain, system, discipline, or subject.
+
+**Notes:** Categories help readers discover related terms without changing the official term name.
+
+### Alias
+
+**Term:** Alias
+
+**Definition:** An alternative name or synonym that may help users find a Glossary Term.
+
+**Notes:** Aliases support Search and onboarding but do not replace the official term.
+
+### Related Term
+
+**Term:** Related Term
+
+**Definition:** A Glossary Term connected to another Glossary Term by conceptual relationship.
+
+**Notes:** Related Terms help readers move between connected concepts and may become links when rendered.
+
+### Term Linking
+
+**Term:** Term Linking
+
+**Definition:** The practice of referencing Glossary Terms through standard Markdown links.
+
+**Notes:** Term Linking must remain readable in raw Markdown and should not use wiki-style links in v1.
+
 ### Asset System
 
 **Term:** Asset System
@@ -182,6 +302,78 @@ When a new architectural concept requires a stable name, its owning specificatio
 **Definition:** The framework subsystem that registers, describes, validates, references, and packages documentation-owned assets.
 
 **Notes:** Assets may include images, diagrams, icons, screenshots, local media, and downloadable files.
+
+### Asset
+
+**Term:** Asset
+
+**Definition:** A local file used by documentation content or output.
+
+**Notes:** Assets may include images, screenshots, diagrams, icons, videos, downloads, and reference files.
+
+### Shared Asset
+
+**Term:** Shared Asset
+
+**Definition:** An Asset reused across more than one Document in a Documentation Project.
+
+**Notes:** Shared Assets should live under `assets/shared/`.
+
+### Document-Specific Asset
+
+**Term:** Document-Specific Asset
+
+**Definition:** An Asset owned by or primarily supporting one Document.
+
+**Notes:** Document-Specific Assets should live under `assets/documents/[document-id]/`.
+
+### Asset Reference
+
+**Term:** Asset Reference
+
+**Definition:** A Markdown reference from documentation content to an Asset.
+
+**Notes:** Asset References should use standard Markdown and relative paths in v1.
+
+### Download Asset
+
+**Term:** Download Asset
+
+**Definition:** An Asset intended for users to download from documentation.
+
+**Notes:** Download Assets may include ZIP files, PDFs, `.unitypackage` files, JSON samples, CSV files, or TXT files.
+
+### Reference Asset
+
+**Term:** Reference Asset
+
+**Definition:** A supporting local file referenced by documentation but not part of the main reading flow.
+
+**Notes:** Reference Assets may include samples, exported references, local PDFs, JSON files, CSV files, or notes.
+
+### Asset Validation
+
+**Term:** Asset Validation
+
+**Definition:** The process of checking Asset References and asset files for missing files, broken paths, unsupported types, or portability problems.
+
+**Notes:** Asset Validation should report clear warnings and should not silently guess replacements.
+
+### Relative Path
+
+**Term:** Relative Path
+
+**Definition:** A path expressed relative to the current documentation source or project structure rather than as an absolute machine-specific location.
+
+**Notes:** Relative Paths preserve portability across repositories, output folders, and local machines.
+
+### Offline Asset
+
+**Term:** Offline Asset
+
+**Definition:** An Asset packaged or available locally so documentation remains usable without network access.
+
+**Notes:** Required documentation assets must be Offline Assets.
 
 ### Page
 
@@ -246,6 +438,54 @@ When a new architectural concept requires a stable name, its owning specificatio
 **Definition:** A named set of semantic design tokens and presentation policies that controls the visual identity of rendered documentation.
 
 **Notes:** Changing a Theme must not change content meaning or information hierarchy.
+
+### Theme Mode
+
+**Term:** Theme Mode
+
+**Definition:** A supported visual mode of a Theme, such as Dark Theme or Light Theme.
+
+**Notes:** Theme Modes allow the same rendered structure to be presented with different visual conditions while preserving content meaning.
+
+### Dark Theme
+
+**Term:** Dark Theme
+
+**Definition:** A Theme Mode that uses dark backgrounds, dark surfaces, restrained accents, and soft light text for rendered documentation.
+
+**Notes:** Dark Theme is the primary visual reference for the initial Theme System direction.
+
+### Light Theme
+
+**Term:** Light Theme
+
+**Definition:** A Theme Mode that uses light backgrounds, light surfaces, restrained accents, and dark text for rendered documentation.
+
+**Notes:** Light Theme must remain supported by the Theme System direction even if its implementation comes later.
+
+### Theme Token
+
+**Term:** Theme Token
+
+**Definition:** A named visual value or semantic visual role used by a Theme to control presentation consistently.
+
+**Notes:** Theme Tokens may represent colors, typography, spacing, borders, shadows, z-index, or responsive breakpoints.
+
+### Typography
+
+**Term:** Typography
+
+**Definition:** The visual system for text presentation, including font families, font sizes, heading scale, line height, paragraph rhythm, code text, table text, and link styling.
+
+**Notes:** Typography should prioritize readability and offline support.
+
+### Visual Direction
+
+**Term:** Visual Direction
+
+**Definition:** The high-level visual intent that guides the appearance, mood, readability, and presentation style of rendered documentation.
+
+**Notes:** Visual Direction guides Theme design without defining implementation details.
 
 ### Metadata
 
@@ -348,11 +588,19 @@ The framework terminology standard defines the vocabulary of the Documentation F
 - [DocumentationStandards.md](DocumentationStandards.md) — Defines the authoring and maintenance rules applied to this document.
 - [ContentSystem.md](ContentSystem.md) — Defines the editorial hierarchy and Markdown authoring model.
 - [ComponentLibrary.md](ComponentLibrary.md) — Defines the official semantic documentation Components and support levels.
+- [ThemeSystem.md](ThemeSystem.md) — Defines visual identity, Theme Modes, and Visual Direction.
+- [SearchSystem.md](SearchSystem.md) — Defines offline Search behavior, Search Results, and Searchable Content.
+- [GlossarySystem.md](GlossarySystem.md) — Defines project Glossaries, Glossary Terms, and Term Linking.
+- [AssetSystem.md](AssetSystem.md) — Defines local Assets, Asset References, and Asset Validation.
 
 # Revision History
 
 | Version | Date       | Author          | Description                |
 |---------|------------|-----------------|----------------------------|
+| 0.2.7   | 2026-06-30 | Immersive Games | Added Asset System terminology. |
+| 0.2.6   | 2026-06-30 | Immersive Games | Added Glossary System terminology. |
+| 0.2.5   | 2026-06-30 | Immersive Games | Added Search System terminology. |
+| 0.2.4   | 2026-06-30 | Immersive Games | Added Theme System visual terminology. |
 | 0.2.3   | 2026-06-26 | Immersive Games | Added Markdown component authoring terminology. |
 | 0.2.2   | 2026-06-26 | Immersive Games | Added Component Library support terminology. |
 | 0.2.1   | 2026-06-25 | Immersive Games | Clarified Section terminology for the editorial model. |

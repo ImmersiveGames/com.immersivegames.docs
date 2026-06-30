@@ -685,9 +685,10 @@ These extensions must preserve the source-of-truth Markdown workflow.
 - [ContentSystem.md](ContentSystem.md) - Defines the editorial hierarchy consumed by the Renderer.
 - [NavigationSystem.md](NavigationSystem.md) - Defines the navigation concepts represented by the Renderer.
 - [ComponentLibrary.md](ComponentLibrary.md) - Defines the Components and Markdown usage conventions supported by the Renderer.
-- [ThemeSystem.md](ThemeSystem.md) - Planned specification for visual identity, CSS tokens, typography, spacing, and Component styling.
-- [SearchSystem.md](SearchSystem.md) - Planned specification for offline search indexing and query behavior.
-- [GlossarySystem.md](GlossarySystem.md) - Planned specification for glossary terms, definitions, and glossary output.
+- [AssetSystem.md](AssetSystem.md) - Defines local asset organization, references, validation, and packaging expectations.
+- [ThemeSystem.md](ThemeSystem.md) - Defines visual identity, Theme Modes, typography direction, and Component styling responsibilities.
+- [SearchSystem.md](SearchSystem.md) - Defines offline search behavior, Search Results, and Search Index expectations.
+- [GlossarySystem.md](GlossarySystem.md) - Defines Glossary Terms, definitions, and glossary output expectations.
 
 # Revision History
 
