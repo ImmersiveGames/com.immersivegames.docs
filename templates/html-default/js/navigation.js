@@ -2,7 +2,6 @@
   const documents = Array.from(document.querySelectorAll("[data-document]"));
   const tabs = Array.from(document.querySelectorAll("[data-document-target]"));
   const sidebarNav = document.querySelector("[data-sidebar-nav]");
-  const tocNav = document.querySelector("[data-toc-nav]");
   const main = document.querySelector("#docs-main");
 
   function getActiveDocument() {
@@ -10,13 +9,12 @@
   }
 
   function buildNavigation(documentPanel) {
-    if (!documentPanel || !sidebarNav || !tocNav) return;
+    if (!documentPanel || !sidebarNav) return;
 
     const sections = Array.from(documentPanel.querySelectorAll("h2[id], .docs-section[id]"));
     const documentTitle = documentPanel.dataset.documentTitle || "Document";
 
     sidebarNav.innerHTML = "";
-    tocNav.innerHTML = "";
 
     const group = document.createElement("div");
     group.className = "docs-nav-group";
@@ -35,9 +33,6 @@
       link.dataset.navTarget = id;
       group.appendChild(link);
 
-      const tocLink = link.cloneNode(true);
-      tocLink.dataset.tocTarget = id;
-      tocNav.appendChild(tocLink);
     });
 
     sidebarNav.appendChild(group);
@@ -74,8 +69,8 @@
   }
 
   function setActiveAnchor(id) {
-    document.querySelectorAll("[data-nav-target], [data-toc-target]").forEach((link) => {
-      const active = link.dataset.navTarget === id || link.dataset.tocTarget === id;
+    document.querySelectorAll("[data-nav-target]").forEach((link) => {
+      const active = link.dataset.navTarget === id;
       link.classList.toggle("is-active", active);
     });
   }

@@ -25,8 +25,7 @@
   --docs-layout-tabs-height: 3.25rem;
   --docs-layout-topbar-height: calc(var(--docs-layout-header-height) + var(--docs-layout-tabs-height));
   --docs-layout-sidebar-width: 18rem;
-  --docs-layout-toc-width: 17rem;
-  --docs-layout-content-max: 960px;
+  --docs-layout-content-max: 1120px;
 
   --docs-breakpoint-sm: 40rem;
   --docs-breakpoint-md: 56rem;

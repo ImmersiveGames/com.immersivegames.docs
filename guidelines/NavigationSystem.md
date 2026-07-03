@@ -346,12 +346,13 @@ These extensions must preserve the established navigation model and must not mak
 - [Terminology.md](Terminology.md) — Defines the official vocabulary used by this specification.
 - [ContentSystem.md](ContentSystem.md) — Defines the editorial hierarchy consumed by the Navigation System.
 - [ComponentLibrary.md](ComponentLibrary.md) — Defines the reusable semantic documentation components consumed by Renderers.
-- [RenderingSystem.md](RenderingSystem.md) — Planned specification for Renderer contracts and output lifecycle.
-- [SearchSystem.md](SearchSystem.md) — Planned specification for search indexing, query behavior, and result contracts.
+- [RenderingSystem.md](RenderingSystem.md) — Defines Renderer contracts and output lifecycle.
+- [SearchSystem.md](SearchSystem.md) — Defines Search indexing, query behavior, and result contracts.
 
 # Revision History
 
 | Version | Date       | Author          | Description                              |
 |---------|------------|-----------------|------------------------------------------|
+| 0.1.2   | 2026-07-02 | Immersive Games | Updated Related Documents to reflect current Rendering and Search System specifications. |
 | 0.1.1   | 2026-06-25 | Immersive Games | Refined renderer-independent navigation terminology. |
 | 0.1.0   | 2026-06-25 | Immersive Games | Initial Navigation System specification. |

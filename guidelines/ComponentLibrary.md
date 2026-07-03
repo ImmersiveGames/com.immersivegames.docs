@@ -568,13 +568,14 @@ Future extensions must preserve semantic meaning, renderer independence, and Mar
 - [ContentSystem.md](ContentSystem.md) — Defines the editorial hierarchy where Components participate in authored content.
 - [NavigationSystem.md](NavigationSystem.md) — Defines navigation concepts and relationships that may be supported by Navigation Components.
 - [AssetSystem.md](AssetSystem.md) — Defines where asset files live and how asset-related Components reference them.
-- [RenderingSystem.md](RenderingSystem.md) — Planned specification for Renderer contracts and output lifecycle.
-- [ThemeSystem.md](ThemeSystem.md) — Planned specification for semantic design tokens and presentation policies.
+- [RenderingSystem.md](RenderingSystem.md) — Defines Renderer contracts, output lifecycle, and Component rendering expectations.
+- [ThemeSystem.md](ThemeSystem.md) — Defines semantic Theme Tokens, visual direction, and Component presentation policies.
 
 # Revision History
 
 | Version | Date       | Author          | Description                              |
 |---------|------------|-----------------|------------------------------------------|
+| 0.2.2   | 2026-07-02 | Immersive Games | Updated Related Documents to reflect current Rendering and Theme System specifications. |
 | 0.2.1   | 2026-06-30 | Immersive Games | Added Asset System reference. |
 | 0.2.0   | 2026-06-26 | Immersive Games | Added official Markdown component authoring conventions. |
 | 0.1.0   | 2026-06-26 | Immersive Games | Initial Component Library specification. |

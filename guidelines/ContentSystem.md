@@ -292,13 +292,14 @@ These extensions must preserve the established editorial hierarchy and keep Mark
 - [FrameworkArchitecture.md](FrameworkArchitecture.md) — Defines the root architecture and subsystem relationships.
 - [DocumentationStandards.md](DocumentationStandards.md) — Defines the standards and governance rules applied to this specification.
 - [Terminology.md](Terminology.md) — Defines the official vocabulary used by this specification.
-- [ComponentLibrary.md](ComponentLibrary.md) — Planned specification for official semantic Components.
-- [NavigationSystem.md](NavigationSystem.md) — Planned specification for navigation derived from rendered structure.
-- [RenderingSystem.md](RenderingSystem.md) — Planned specification for consuming the editorial model and producing outputs.
+- [ComponentLibrary.md](ComponentLibrary.md) — Defines official semantic Components used within authored content.
+- [NavigationSystem.md](NavigationSystem.md) — Defines navigation derived from rendered editorial structure.
+- [RenderingSystem.md](RenderingSystem.md) — Defines how Renderers consume the editorial model and produce outputs.
 
 # Revision History
 
 | Version | Date       | Author          | Description                          |
 |---------|------------|-----------------|--------------------------------------|
+| 0.1.2   | 2026-07-02 | Immersive Games | Updated Related Documents to reflect current subsystem specifications. |
 | 0.1.1   | 2026-06-25 | Immersive Games | Validated consistency with the authoring-first architecture. |
 | 0.1.0   | 2026-06-25 | Immersive Games | Initial Content System specification. |

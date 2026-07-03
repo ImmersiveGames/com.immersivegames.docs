@@ -9,7 +9,7 @@
   background: var(--docs-color-surface);
   border: var(--docs-border-width) solid var(--docs-color-border);
   border-radius: var(--docs-radius-lg);
-  margin: var(--docs-spacing-lg) 0;
+  margin: var(--docs-spacing-xl) 0;
   padding: var(--docs-spacing-lg);
 }
 
@@ -33,12 +33,19 @@
 
 .docs-callout-grid {
   display: grid;
-  gap: var(--docs-spacing-md);
+  gap: var(--docs-spacing-lg);
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 }
 
 .docs-block {
   box-shadow: var(--docs-shadow-sm);
+}
+
+.docs-block + .docs-block,
+.docs-callout + .docs-callout,
+.docs-table + .docs-block,
+.docs-block + .docs-table {
+  margin-top: var(--docs-spacing-xl);
 }
 
 .docs-block h4 {
@@ -57,7 +64,8 @@
   border-radius: var(--docs-radius-lg);
   color: var(--docs-color-code-text);
   font-size: 0.92rem;
-  padding: var(--docs-spacing-lg);
+  padding: calc(var(--docs-spacing-lg) + 2rem) var(--docs-spacing-lg) var(--docs-spacing-lg);
+  position: relative;
 }
 
 .docs-code code {
@@ -69,9 +77,29 @@
   padding: 0;
 }
 
+.docs-code-copy {
+  background: var(--docs-color-surface-raised);
+  border: var(--docs-border-width) solid var(--docs-color-border);
+  border-radius: var(--docs-radius-pill);
+  color: var(--docs-color-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  min-height: 2rem;
+  padding: var(--docs-spacing-2xs) var(--docs-spacing-sm);
+  position: absolute;
+  right: var(--docs-spacing-sm);
+  top: var(--docs-spacing-sm);
+}
+
+.docs-code-copy:hover {
+  border-color: var(--docs-color-accent);
+  color: var(--docs-color-accent-strong);
+}
+
 .docs-table {
   border-collapse: collapse;
-  margin: var(--docs-spacing-lg) 0;
+  margin: var(--docs-spacing-xl) 0;
   overflow: hidden;
   width: 100%;
 }
@@ -178,13 +206,18 @@
 }
 
 .docs-search-result small,
+.docs-search-result__section,
 .docs-search-result__path {
   color: var(--docs-color-text-muted);
   display: block;
 }
 
+.docs-search-result__section,
 .docs-search-result__path {
   font-size: 0.85rem;
+}
+
+.docs-search-result__path {
   margin-bottom: var(--docs-spacing-sm);
 }
 

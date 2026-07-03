@@ -30,7 +30,6 @@
         <button class="docs-button docs-button--ghost" type="button" data-action="toggle-search-mode" aria-pressed="false">Global</button>
         <button class="docs-button docs-button--ghost" type="button" data-action="toggle-theme" aria-label="Toggle dark or light theme">Theme</button>
         <button class="docs-button docs-button--ghost docs-mobile-only" type="button" data-action="toggle-sidebar" aria-expanded="false" aria-controls="docs-sidebar">Menu</button>
-        <button class="docs-button docs-button--ghost docs-mobile-only" type="button" data-action="toggle-toc" aria-expanded="false" aria-controls="docs-toc">TOC</button>
       </div>
     </header>
 
@@ -50,6 +49,9 @@
         <span>Document Navigation</span>
       </div>
       <nav class="docs-sidebar__nav" data-sidebar-nav></nav>
+      <div class="docs-sidebar__footer">
+        <button class="docs-back-to-top" type="button" data-action="back-to-top">&uarr; Back to Top</button>
+      </div>
     </aside>
 
     <main class="docs-main" id="docs-main" tabindex="-1">
@@ -283,17 +285,10 @@
       </section>
     </main>
 
-    <aside class="docs-toc" id="docs-toc" aria-label="Local table of contents">
-      <div class="docs-toc__header">
-        <span>On this page</span>
-      </div>
-      <nav data-toc-nav></nav>
-      <button class="docs-back-to-top" type="button" data-action="back-to-top">↑ Back to Top</button>
-    </aside>
   </div>
 
   <footer class="docs-footer">
-    <p>Immersive Games Documentation Framework · Version 0.1.0 · Generated with <code>com.immersivegames.docs</code></p>
+    <p>Immersive Games Documentation Framework &middot; Version 0.1.0 &middot; Generated with <code>com.immersivegames.docs</code></p>
     <nav aria-label="Footer links">
       <a href="#overview-introduction">Overview</a>
       <a href="#engineering-architecture">Engineering</a>

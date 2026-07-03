@@ -669,8 +669,8 @@ The following documents should refine this root specification in order:
 13. `HtmlRenderer.md`  
     Defines the architecture of the first renderer, including offline packaging and browser-specific concerns.
 
-14. `AIGuidelines.md`  
-    Defines how AI agents interpret, create, update, validate, and review documentation within the framework.
+14. Documentation Framework Skill
+    Defines how AI agents operationally interpret, create, update, render, validate, and review documentation within the framework.
 
 Each document must identify the contracts it owns, the modules it may depend on, and the concerns that remain outside its scope.
 
@@ -701,18 +701,19 @@ Changes to these constraints require an explicit architectural review and an upd
 - [DocumentationFramework.md](DocumentationFramework.md) — Defines the framework vision, principles, and intended documentation experience.
 - [Terminology.md](Terminology.md) — Defines the official vocabulary used by the framework architecture.
 - [ContentSystem.md](ContentSystem.md) — Defines the editorial hierarchy, Markdown authoring model, and Content Block composition rules.
-- [NavigationSystem.md](NavigationSystem.md) — Planned specification for navigation structures and relationships.
-- [ComponentLibrary.md](ComponentLibrary.md) — Planned specification for semantic documentation components.
-- [ThemeSystem.md](ThemeSystem.md) — Planned specification for themes and semantic design tokens.
-- [RenderingSystem.md](RenderingSystem.md) — Planned specification for renderer contracts and output lifecycle.
-- [SearchSystem.md](SearchSystem.md) — Planned specification for offline indexing and search contracts.
-- [GlossarySystem.md](GlossarySystem.md) — Planned specification for terminology and glossary relationships.
-- [AIGuidelines.md](AIGuidelines.md) — Planned guidance for AI agents contributing to documentation.
+- [NavigationSystem.md](NavigationSystem.md) — Defines navigation structures and relationships.
+- [ComponentLibrary.md](ComponentLibrary.md) — Defines semantic documentation Components.
+- [ThemeSystem.md](ThemeSystem.md) — Defines themes, Theme Tokens, and visual direction.
+- [RenderingSystem.md](RenderingSystem.md) — Defines Renderer contracts and output lifecycle.
+- [SearchSystem.md](SearchSystem.md) — Defines offline Search behavior, Search Results, and Search Index expectations.
+- [GlossarySystem.md](GlossarySystem.md) — Defines Glossary Terms, glossary documents, and glossary relationships.
+- [AssetSystem.md](AssetSystem.md) — Defines local Asset organization, references, validation, and packaging expectations.
 
 # Revision History
 
 | Version | Date       | Author          | Description                     |
 |---------|------------|-----------------|---------------------------------|
+| 0.2.2   | 2026-07-02 | Immersive Games | Updated subsystem references and AI operational guidance entry point. |
 | 0.2.1   | 2026-06-25 | Immersive Games | Removed residual Page-centered wording and aligned the architecture flow. |
 | 0.2.0   | 2026-06-25 | Immersive Games | Established the authoring, rendering, and presentation architecture. |
 | 0.1.2   | 2026-06-25 | Immersive Games | Added the terminology reference. |

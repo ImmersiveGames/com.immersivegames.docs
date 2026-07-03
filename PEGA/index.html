@@ -1,0 +1,1267 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GDD - Polícia e ladrão [PEGA]</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pega.css">
+</head>
+<body>
+  <a class="docs-skip-link" href="#docs-main">Pular para o conteúdo</a>
+
+  <div class="docs-topbar">
+    <header class="docs-header">
+      <div class="docs-header__brand">
+        <span class="docs-header__logo-set" aria-hidden="true">
+          <img class="docs-header__logo docs-header__logo--dark" src="assets/images/immersive-games-logo-full-white.png" alt="" width="180" height="65">
+          <img class="docs-header__logo docs-header__logo--light" src="assets/images/immersive-games-logo-full-black.png" alt="" width="180" height="65">
+        </span>
+        <div>
+          <h1>PEGA</h1>
+        </div>
+      </div>
+
+      <div class="docs-header__tools">
+        <label class="docs-search-label" for="docs-search-input">Buscar documentação</label>
+        <input id="docs-search-input" class="docs-search-input" type="search" placeholder="Buscar no documento ativo..." autocomplete="off">
+        <button class="docs-button docs-button--ghost" type="button" data-action="toggle-search-mode" aria-pressed="false">Global</button>
+        <button class="docs-button docs-button--ghost" type="button" data-action="toggle-theme" aria-label="Alternar tema claro ou escuro">Tema</button>
+        <button class="docs-button docs-button--ghost docs-mobile-only" type="button" data-action="toggle-sidebar" aria-expanded="false" aria-controls="docs-sidebar">Menu</button>
+      </div>
+    </header>
+
+    <nav class="docs-tabs" role="tablist" aria-label="Document tabs">
+      <button id="docs-tab-gdd" class="docs-tab is-active" type="button" role="tab" data-document-target="gdd" aria-selected="true" aria-controls="docs-panel-gdd">Game Design Document</button>
+    </nav>
+  </div>
+
+  <div class="docs-search-status" id="docs-search-status" role="status" aria-live="polite">Busca pronta.</div>
+
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar" aria-label="Navegação do documento">
+      <div class="docs-sidebar__header">
+        <span>Navegação</span>
+      </div>
+      <nav class="docs-sidebar__nav" data-sidebar-nav></nav>
+      <div class="docs-sidebar__footer">
+        <button class="docs-back-to-top" type="button" data-action="back-to-top">&uarr; Voltar ao topo</button>
+      </div>
+    </aside>
+
+    <main class="docs-main" id="docs-main" tabindex="-1">
+      <section class="docs-search-panel docs-content" data-search-panel hidden aria-labelledby="docs-search-panel-title">
+        <div class="docs-search-panel__header">
+          <p class="docs-kicker">Resultados de Busca</p>
+          <h2 id="docs-search-panel-title">Resultados de busca</h2>
+          <p data-search-summary>Digite no campo de busca para pesquisar no documento ativo.</p>
+        </div>
+        <div class="docs-search-results" data-search-results></div>
+        <div class="docs-empty-state" data-search-empty hidden>
+          <h2>Nenhum resultado encontrado.</h2>
+          <p>Tente outro termo ou limpe a busca.</p>
+        </div>
+      </section>
+
+      <section id="docs-panel-gdd" class="docs-document is-active" role="tabpanel" aria-labelledby="docs-tab-gdd" data-document="gdd" data-document-title="Game Design Document">
+        <article class="docs-content">
+          <header id="gdd-title" class="docs-page-header docs-gdd-hero">
+            <p class="docs-kicker">Game Design Document</p>
+            <h2>GDD - Polícia e ladrão [PEGA]</h2>
+            <p>Game Design Document renderizado como um pacote HTML offline a partir do documento Word original de PEGA.</p>
+            <div class="docs-gdd-meta" aria-label="Document metadata">
+              <span class="docs-badge">Português brasileiro</span>
+              <span class="docs-badge">Fonte DOCX</span>
+              <span class="docs-badge">Offline HTML</span>
+              <span class="docs-badge">37 imagens extraídas</span>
+            </div>
+          </header>
+
+          <section class="docs-section" id="gdd-overview" data-title="Visão Geral">
+            <h3>Visão Geral</h3>
+            <div class="docs-callout docs-callout-info">
+              <p class="docs-callout__title">Fonte principal</p>
+              <p>Este HTML foi gerado a partir de <code>Exemplos/GDD PEGA.docx</code>. A versão Markdown normalizada está em <code>source/gdd.md</code>.</p>
+            </div>
+          </section>
+
+          <p>[Logo do Jogo]</p>
+<p>Rick Ronda, um jovem aspirante a integrar a P.G.A de Larápolis não consegue passar nos rigorosos testes da agência. Diante desse revés, ele decide tomar as rédeas de seu próprio destino e funda a sua agência de segurança. No entanto, as coisas não se apresentam de maneira simples, pois a cidade está infestada de gangues determinadas a enriquecer facilmente. Elas estão dispostas a arriscar suas vidas ao se infiltrar e roubar qualquer estabelecimento em Larápolis. Agora, cabe ao nosso cadete empreendedor perseguir e deter essas gangues antes que consigam escapar com os valiosos prêmios.</p>
+<p>O jogo é direcionado ao público masculino, especificamente para indivíduos a partir de 12 anos de idade. Trata-se de um emocionante jogo de ação projetado para a plataforma PC. O jogo oferece a possibilidade multiplayer local de um ou dois jogadores simultaneamente. A experiência do jogo estará disponível em inglês e português brasileiro. Prevê-se o aguardado lançamento para o ano de 2024, prometendo envolver os jogadores em desafios emocionantes na cidade de Larápolis.</p>
+<p>Desafios de lançamento para Steam, Epic Games e Microsoft GamePass.</p>
+<section class="docs-section" id="historia-e-gameplay" data-title="História e gameplay"><h3>História e gameplay</h3>
+<p>Rick Ronda e Petra Patrol são um jovens ansiosos para ingressar na Polícia e Guarda Avançada de Larápolis (conhecida como P.G.A. Larápolis). No entanto, sua inexperiência no setor impediu a admissão na instituição PGA. Sem alternativas, decidem fundar sua própria empresa de segurança: a Proteção e Estratégia na Guarda de Ativos em Larápolis, também conhecida como P.E.G.A. Larápolis. Rapidamente, eles conquistaram um pequeno contrato no armazém da cidade.</p>
+<p>O setor de segurança em Larápolis está em pleno crescimento, impulsionado pela necessidade cada vez mais premente de proteção devido ao mundo do crime que aflige os comerciantes locais. Nas primeiras semanas de trabalho, eles enfrentam sua primeira missão desafiadora: proteger um baú de barras de ouro no armazém, alvo das gangues locais. Sua missão é evitar que ladrões invadam o local, desencadeando uma intensa perseguição.</p>
+<p>Navegando pelos corredores labirínticos, eles têm a responsabilidade de acionar as travas de segurança para evitar a fuga dos criminosos. Os ladrões são astutos, utilizando diversas artimanhas para escapar, como se esconder atrás de caixas, derrubar partes do ambiente para obstruir Rick e Petra e, em situações desesperadoras, sabotar as defesas do prédio.</p>
+<p>Equipado com seu cassetete e seu quepe da sorte, o casal utiliza armas e dispositivos espalhados pelo armazém para capturar os ladrões, incluindo carrinhos motorizados e armas de choque. Conforme ele protege os bens de seus clientes, novos contratos surgem, tornando a tarefa de proteger locais cada vez maiores e desafiadoras.</p>
+</section>
+<section class="docs-section" id="fluxo-de-jogo" data-title="Fluxo de jogo"><h3>Fluxo de jogo</h3>
+</section>
+<section class="docs-section" id="menu-inicial" data-title="Menu inicial"><h4>Menu inicial</h4>
+<ul>
+<li>Opção de Novo jogo</li>
+<ul>
+<li>Single e multiplayer (co-op)</li>
+<li>Seleção de personagem</li>
+<li>Endless (*desbloqueável)</li>
+<li>Endless Multiplayer (competitivo - desbloqueável)</li>
+</ul>
+<li>Opções Gameplay</li>
+<ul>
+<li>Controles</li>
+<li>Dificuldade</li>
+</ul>
+<li>Opções Gráficos e Áudio</li>
+<ul>
+<li>Volume</li>
+<li>Resolução</li>
+<li>Qualidade Gráfica</li>
+</ul>
+<li>Save/Load game</li>
+<ul>
+<li>Imagem, informação ( hora, fase e condecoração).</li>
+</ul>
+<li>Saída</li>
+</ul>
+</section>
+<section class="docs-section" id="hub" data-title="HUB"><h4>HUB</h4>
+<ul>
+<li>Cidade de larápolis com pontos fixos (esconder pontos mais avançados com nuvens) 1-2-3-2-1-Boss.</li>
+<li>Opções para retornar ao menu.</li>
+</ul>
+</section>
+<section class="docs-section" id="gameplay" data-title="GamePlay"><h4>GamePlay</h4>
+<ul>
+<li>Apresentação do cenário</li>
+<ul>
+<li>Mostra os pontos de entradas/saídas possíveis.</li>
+<li>Mostra os pontos de interesse (armadilha, local de power up, novidade do cenário)</li>
+<li>Mostra os itens de alto valor (<em>Roubáveis</em>).</li>
+<li>Ponto inicial do jogador.</li>
+</ul>
+<li>Exploração do jogador</li>
+<ul>
+<li>O jogador tem x segundos para explorar o mapa até a chegada do larápio.</li>
+<li>O larápio entra e é pego pela câmera de segurança (Screen splash tip), indicando quantos ladrões invadiram.</li>
+<li>HUD mostra o mini mapa, N# de larápios capturados/N# larápios, N# Itens recuperados e o tempo restante para a polícia chegar, PowerUp ativos.</li>
+</ul>
+<li>Perseguição do jogador</li>
+<ul>
+<li>Pega Power ups</li>
+<li>Atinge o larápio e o incapacita por x tempo.</li>
+<ul>
+<li>Se o larápio estiver com o item ele não fica incapacitado e deixa o item cair.</li>
+</ul>
+<li>O jogador pode levar o larápio para uma sala de contenção ou levar o item (Apenas um por vez).</li>
+<li>Se o jogador levar o item, os larápios podem mudar de status e tentar perseguir o jogador, ou escolher um novo item (provavelmente pela distância).</li>
+<ul>
+<li>O jogador atingido pelos larápios quando em posse do item, o larápio fica com o item e foge e o segurança fica inativo por x segundos.</li>
+</ul>
+<li>O item ou o ladrão na sala de contenção não voltam para o jogo. (talvez).</li>
+</ul>
+<li>Fim de fase</li>
+<ul>
+<li>A fase termina quando todos os larápios são levados para contenção.</li>
+<li>O tempo acaba e a polícia chega para levar os larápios presos.</li>
+<ul>
+<li>Se sobrarem larápios soltos antes do tempo eles fogem e geram prejuízos.</li>
+<ul>
+<li>Itens menores diminuem a classificação.</li>
+<li>Itens mais caros diminuem ainda mais a pontuação.</li>
+</ul>
+</ul>
+<li>Todos os itens de valor são  retirados do prédio com sucesso.</li>
+</ul>
+<li>Tela de Classificação</li>
+<ul>
+<li>Número/tipo de larápios capturados</li>
+<li>Itens recuperados</li>
+<li>Itens perdidos</li>
+<li>Tempo restante</li>
+<li>Classificação (Estrelas - 0-3 dependendo da medida)</li>
+</ul>
+<li>Habilita novos locais</li>
+<li>Com X Classificações dá o direito de enfrentar o boss.</li>
+<li>Final do jogo</li>
+<ul>
+<li>Ganha a chave da cidade com direito a festa, balão e estátua do jogador na praça.</li>
+<li>Os larápios presos comemorando na cadeia lotada.</li>
+<li>Chefão promete retornar.</li>
+</ul>
+<li>Créditos finais.</li>
+</ul>
+</section>
+<section class="docs-section" id="controles" data-title="Controles"><h3>Controles</h3>
+<p>Nesta seção, são delineadas todas as ações disponíveis para os personagens, incluindo aqueles controlados pelos jogadores por meio de um periférico de botões. Os botões são referenciados de acordo com o padrão Microsoft, onde o botão sul é designado como A e funciona como o botão de confirmação.</p>
+<p>É importante notar que os valores mencionados nas descrições são considerados referências iniciais e estão sujeitos a alterações durante o desenvolvimento do jogo, visando proporcionar uma experiência aprimorada ao usuário.</p>
+</section>
+<section class="docs-section" id="mover" data-title="Mover"><h4>Mover</h4>
+<p>Os personagens têm a capacidade de se movimentar em todas as direções enquanto estiverem no solo. O movimento é definido pela sua atual, que determina a e pode ser ajustado durante o jogo. Observe que a movimentação será obstruída por quaisquer objetos no jogo, exceto .</p>
+<p>O jogador pode controlar essa ação Movimentação usando o <strong>Eixo Esquerdo</strong> ou <strong>D-Pad</strong>.</p>
+</section>
+<section class="docs-section" id="impulso" data-title="Impulso"><h4>Impulso</h4>
+<p>Os personagens têm a opção de usar um impulso para obter um aumento temporário de em 1.5x. É necessário que o jogador tenha pelo menos 1 ponto de Vigor no momento da execução da ação e tenha um tempo de resfriamento para reutilizar a ação. A ação permanece ativa até que o jogador execute qualquer outra ação que não seja movimentar-se para frente ou pular, momento em que a ação de <strong>Impulso </strong>retorna ao padrão.</p>
+<p>Fórmula do resfriamento: Bases de tempo (2) - (/)</p>
+<p>O jogador pode acionar essa ação usando o <strong>botão Oeste (X)</strong>.</p>
+</section>
+<section class="docs-section" id="saltar" data-title="Saltar"><h4>Saltar</h4>
+<p>Os personagens têm a capacidade de saltar em todas as direções, permitindo-lhes alcançar áreas elevadas até 1.3 vezes a altura do próprio personagem, sem, no entanto, possibilitar a mudança de andar.</p>
+<p>A altura do salto pode variar com base na do personagem, que adiciona seu valor multiplicado por 0.1 à altura base. Por exemplo, personagens com 3 de força têm um bônus de 0.3, saltando, assim, 1.6 vezes a sua altura.</p>
+<p>Para determinar a inicial necessária para que o personagem atinja uma altura  e uma distância  em um salto, podemos seguir os seguintes passos:</p>
+<ul>
+<li>Altura do salto :
+Usaremos a equação do MRUV para a componente vertical do movimento:</li>
+<li>Distância do salto usaremos a  equação do movimento uniforme</li>
+</ul>
+<p>Onde:</p>
+<p>= é a posição vertical no tempo ,  = é a posição inicial,  = é a velocidade inicial (ou momentum inicial) e , = é a aceleração devida à gravidade</p>
+<p>Movendo o personagem consegue saltar uma distância de 2x sua largura, pelo eixo central acrescentando o <em>momentum</em>.</p>
+<p>O jogador pode usar esta ação usando o botão:<strong> (Botão Sul - A)</strong></p>
+</section>
+<section class="docs-section" id="interagir" data-title="Interagir"><h4>Interagir</h4>
+<p>Os personagens têm a capacidade de interagir com outros personagens e objetos usando o botão dedicado de interação. O tipo de interação é determinado pelo objeto diretamente à frente do personagem, que entra em sua área de ação. Se mais de um objeto interativo estiver colidindo com o personagem, a prioridade é dada ao objeto mais próximo, indicado por uma linha ou efeito ao seu redor.</p>
+<p>Cada interação tem um tempo de cadência (espera de uma ação para outra) de 1 segundo.</p>
+</section>
+<section class="docs-section" id="interagir-com-inimigo" data-title="Interagir com Inimigo"><h5>Interagir com Inimigo</h5>
+<p>Quando o jogador está em colisão com um objeto do tipo “inimigo”, uma ação diferente ocorre de acordo com o tipo e status do inimigo.</p>
+</section>
+<section class="docs-section" id="interagir-com-objeto" data-title="Interagir com Objeto"><h5>Interagir com Objeto</h5>
+<p>Quando o jogador está em colisão com um objeto do tipo “seguravel”, uma ação diferente ocorre de acordo com o status do inimigo. Cada ação possui um limite de tempo de espera entre um ataque e outro de 1 segundo.</p>
+<p>Caso nenhum objeto de interação esteja na área do personagem, a interação será interpretada como um ataque, sendo o alcance e o efeito definido pelo objeto atualmente em posse do personagem, se o personagem está outro personagem a interação será interpretada como soltar o objeto.</p>
+<p>O jogador pode acionar essa ação usando o <strong>botão Leste (B).</strong></p>
+</section>
+<section class="docs-section" id="pausar" data-title="Pausar"><h4>Pausar</h4>
+<p><strong>	</strong>Os jogadores têm a opção de interromper o fluxo do jogo, colocando-o em estado de pausa, permitindo o acesso a um menu externo. Nenhuma outra ação é permitida neste estado, exceto interagir com o menu. Ao sair desse estado, o jogo retorna à posição em que foi pausado anteriormente.</p>
+<p>O jogador pode acionar essa ação usando o botão <strong>Pause </strong>(Start) para entrar e sair do estado de pausa.</p>
+</section>
+<section class="docs-section" id="camera" data-title="Câmera"><h3>Câmera</h3>
+<p>A câmera tem posição fixa e segue o personagem de uma distância determinada, movendo junto com o personagem numa perspectiva top-down.</p>
+<p>Em jogo multiplayer local, a tela é dividida horizontalmente.</p>
+<p>Referência de Câmera:</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-02.png" alt="GDD image 2" loading="lazy"><figcaption>GDD image 2</figcaption></figure>
+</section>
+<section class="docs-section" id="principais-conceitos-do-gameplay-e-caracteristicas-especificas-da-plataforma" data-title="Principais conceitos do gameplay e características específicas da plataforma"><h3>Principais conceitos do gameplay e características específicas da plataforma</h3>
+<p><strong>Perseguição</strong></p>
+<p>Localizar as ameaças (larápios).</p>
+<p>Impedir que eles alcancem os objetivos.</p>
+<p>Recuperar itens roubados.</p>
+<p>Multi níveis, escadas e acesso a outros andares dificultam ou facilitam a perseguição.</p>
+<p>Busca por melhores “power-ups, e “armadilhas” de cenário.</p>
+<p>Guia de direção com pontos de interesse (localização e distância do larápio) Guia estilo Fortnite e Xenoblade (HUD)</p>
+<p><strong>Gerenciamento de Prisões</strong></p>
+<p>Quando o larápio é pego, ele fica imovel por um tempo, se deixado para trás ele pode voltar a ativa, ou ser levado para uma “Cela” e ficar inativo.</p>
+<p>Recuperar os itens roubados muda o gameplay, se o jogador estiver em posse de um item de valor, os ladrões vão tentar tomar o item dele, até que o guarde em um lugar seguro (Cofre).</p>
+<p><strong>Larápios</strong></p>
+<p>Os ladrões pertencem a grupos que conferem habilidades distintas, dificultando sua captura, facilitando sua invasão ou facilitando sua fuga.</p>
+<p>Alguns tipos de ladrões podem acionar as armadilhas de cenário.</p>
+<p>* Outros podem gerenciar suas próprias armadilhas.</p>
+<p><strong>Cenário</strong></p>
+<p>No cenário terá alguns Power Ups que melhoram as suas habilidades (velocidade, ataque, mobilidade, captura etc..)</p>
+<p>No cenário algumas áreas possuem efeitos (armadilhas/segurança) como criar obstáculos, alarmes e câmeras, etc.</p>
+<p>O cenário também gerencia suas peculiaridades temáticas, além do seu design único (labirinto).</p>
+<p>Power Up surgem aleatoriamente (em áreas específicas) e são uso único.</p>
+<p>As armadilhas e recursos do cenários são colocados em locais pré determinados, e podem ser acionados ou desligados a qualquer momento. (alguns são de uso único)</p>
+<p><strong>Multiplayer</strong></p>
+<p>Tela dividida, os jogadores não tem fogo amigo, porém podem colidir, e as armadilhas de cenário ainda afetam mesmo ativadas por eles.</p>
+<p><strong>Classificação</strong></p>
+<p>Conferem “pontos”</p>
+<p>Concluir a fase em menos tempo</p>
+<p>Capturar a maior quantidade de larápios</p>
+<p>Recuperar/Manter Itens roubados</p>
+</section>
+<section class="docs-section" id="mundo-do-jogo" data-title="Mundo do jogo"><h3>Mundo do jogo</h3>
+<p>A cidade de Larápolis é um ambiente fictício imerso no domínio do crime, apresentando uma atmosfera cartunesca que define seu cenário único. O ciclo de dia e noite é fixo, com cada fase determinando se ocorrerá durante o dia ou à noite, embora a representação visual da cidade permaneça sempre durante o dia.</p>
+<p>No coração dessa cidade fictícia, encontramos os Larapolitanos, NPCs que desempenham papéis secundários nos cenários conforme necessário. Esses personagens contribuem para a vida cotidiana da cidade e adicionam camadas visuais ao mundo do jogo.</p>
+<p>Dentro desse cenário, diversas gangues, cada uma com sua estética cartunesca distintiva, praticam seus crimes pela cidade. Seus membros se destacam por suas roupas peculiares e métodos de atividade criminosa, adicionando um toque de excentricidade ao submundo de Larápolis.</p>
+<p>A presença da polícia oficial no jogo é limitada, agindo apenas para levar os bandidos capturados pelo jogador até a prisão da cidade. Este enfoque destaca a responsabilidade do jogador na manutenção da ordem e na captura dos criminosos.</p>
+<p>Ao avançar no jogo, o(a) prefeito(a) se destaca como uma figura importante, aparecendo no final da jornada para entregar simbolicamente a chave da cidade ao jogador, reconhecendo seu papel crucial na restauração da ordem em Larápolis.</p>
+<p>A cidade tem as seguintes construções:</p>
+<div class="docs-table-wrap"><table class="docs-table"><thead><tr><th>Local</th><th>Dificuldade</th><th>Reputação</th><th>Referências</th></tr></thead><tbody><tr><td>Armazém</td><td></td><td></td><td>Um centro de distribuição com característica de galpão, caixas/caixotes, malotes, prédio administrativo, doca de carregamento, pátio de veículos. Escada vertical e andaimes, empilhadeiras</td></tr><tr><td>Shopping/Mercado*</td><td></td><td></td><td>lojas de departamento, corredores de lojas e produtos, ilhas, pilhas de latas quiosques, manequins, gôndolas, elevadores e escadas rolantes, carrinho de compras, cinema</td></tr><tr><td>Centro Empresarial</td><td></td><td></td><td>Salas de escritorio, baias, vasos, mezaninos, computadores, máquinas de bebida e salgado, mesas, cadeiras, dutos e portas, escrivaninhas, mangueira de incêndio, extintor e almoxarifado (vassouras, pano, balde, placas) NPCs trabalhando</td></tr><tr><td>Museu/Galeria</td><td></td><td></td><td>Galerias, estátuas esculpidas, estátuas de ossos, estátuas de cera, quadros, vasos, arte moderna/abstrata, artefatos antigos, vitrines de jóias, cortinas, faixas, organizador de filas</td></tr><tr><td>Club/Night Club</td><td></td><td></td><td>piscinas, bares, mesas, discoteca, palco, mesas, cadeiras, Npc garçons e pessoas dançando, espreguiçadeira, guarda-sol, quadra de tênis, passarela, cantores, dançarinas, banda. cercas vivas (como escada)</td></tr><tr><td>Hotel / Cassino</td><td></td><td></td><td>quartos, gôndolas, maleiros, elevador, escada comum, recepção, cozinha, restaurante, bar, salões, mesas verdes de jogo, auditório, mini golf. fonte de água, candelabros, luminárias, tapeçaria, placas luminosa, caça níqueis, roletas, capela, equilibristas, mágicos, foyer, academia</td></tr><tr><td>Banco / Casa da Moeda</td><td></td><td></td><td>caixas, cadeias, organizador de fila, cofre, impressoras (pequenas e grandes), malote, empilhadeiras, foyer, luminárias de corda, grade, escritórios, gaveteiros/cofre, pilhas de dinheiro, ATM</td></tr><tr><td>Aeroporto</td><td></td><td></td><td>aviões, pista de pouso, torre, carros de transporte, escadas de acesso, salão de embarque, detector de metal, pista rolante de mala, achados e perdidos, cofres, celas, escadas rolante, elevador, Jetway, sala de espera</td></tr><tr><td>Fazenda</td><td></td><td></td><td>Casa, celeiro, animais, curral, plantação, silo, tratores, colheitadeiras, lagos, jardim, cercas, viveiros, caminhão, granja, pasto,</td></tr><tr><td>Porto/Navio</td><td></td><td></td><td>navios, pier, cordas, guindastes, containers, armazéns, boias, coletes. Interno do navio: Piscinas, quartos, bares, cinema, proa, popa, laterais do barco, bote salva vidas, sala de máquinas</td></tr><tr><td>Presídio</td><td></td><td></td><td>Celas, andaimes, cercas, torres, grades, refeitório, muro, escritórios, solitárias, pátio, quadra, arames farpados, capela, sala diretor, visita, sala dos telefones, horta, marcenaria, mercearia, farmácia, enfermaria</td></tr><tr><td>Centro de eventos (DLC)</td><td></td><td></td><td>colunas, quiosques, estandes, estantes de livros ou jogos, praça de alimentação, auditório, palco de show, Faixas, bexigas, placas, sala de negócios, banheiro</td></tr><tr><td>Parque de diversão/Zoo (DLC)</td><td></td><td></td><td>roda gigante, animais, quiosques, bexigas, carrossel, montanha russa, praça de alimentação, administração, casa dos espelhos, bilheteria, catraca, carrinho elétrico, viveiros, terrário, aquário, casa do terror, Npcs, teleférico</td></tr><tr><td>Estação espacial (DLC)</td><td></td><td></td><td>ET, satélite, sala de descompressão, roupa de astronauta, space walking, sala de controle, compactador de lixo, sala de pod, sala cápsulas, área científica e área médica,área de doca, sala de máquinas</td></tr></tbody></table></div>
+</section>
+<section class="docs-section" id="armazem" data-title="Armazém"><h4>Armazém</h4>
+<p>Um centro de distribuição com característica de galpão, caixas, malotes, prédio administrativo, doca de carregamento, pátio de veículos.</p>
+<p>Armadilhas (comuns)</p>
+<p>Armadilhas (específica do cenário)</p>
+<p>Pontos de cofre</p>
+<p>Ponto de cela</p>
+<p>Pontos de power up</p>
+<p>Objetos “<em>roubaveis</em><em>”</em> (inventário do cenário)</p>
+<p>Número de andares</p>
+<p>Entradas do larápio</p>
+<p>Quantidade de larapio</p>
+<p>Nível de Dificuldade: #n</p>
+<p>Nível de Reputação: #n</p>
+</section>
+<section class="docs-section" id="inimigos-e-chefoes" data-title="Inimigos e Chefões"><h3>Inimigos e Chefões</h3>
+<p>Os &quot;Larápios&quot; são grupos de criminosos em Larápolis, cada um com suas características distintas e habilidades únicas. Estas gangues, especializadas em furtos, emergem como o principal obstáculo para os jogadores durante sua jornada na cidade.</p>
+<p>Cada gangue de &quot;Larápios&quot; possui uma identidade própria, refletida em suas táticas, modus operandi e vestimenta cartunesca. Suas habilidades específicas desafiarão os jogadores, exigindo estratégias variadas para superar esses obstáculos ao longo do jogo.</p>
+<p>A expertise dessas gangues em furtos torna-as uma presença constante e ameaçadora, representando o desafio primordial que os jogadores enfrentarão ao tentar manter a ordem na cidade de Larápolis. A captura e neutralização dessas gangues se tornam objetivos fundamentais para a restauração da segurança na metrópole.</p>
+</section>
+<section class="docs-section" id="os-trapalhoes-do-crime" data-title="Os Trapalhões do Crime:"><h4>Os Trapalhões do Crime:</h4>
+<p>Este excêntrico grupo criminoso, conhecido como &quot;Os Trapalhões do Crime&quot;, é uma mistura de caótica comédia e crimes engenhosos em Larápolis. Composto por quatro tipos distintos de bandidos, esse grupo cria um pandemônio hilariante na cidade.</p>
+<p><strong>Cores</strong>:</p>
+<p>Cinza Listrado: Neutralidade, discrição.</p>
+<p>Vermelho Básico: Energia, paixão.</p>
+<p><strong>Descrição Geral:</strong></p>
+<p>Uma gangue de ladrões desajeitados que sempre acabam se metendo em confusão. Eles são como os personagens de desenhos animados, constantemente cometendo erros bobos, mas de alguma forma conseguem realizar os roubos.</p>
+</section>
+<section class="docs-section" id="ladroes-listrados-striped-thieves" data-title="Ladrões Listrados (Striped Thieves)"><h5>Ladrões Listrados (Striped Thieves)</h5>
+<p>Esses membros, vestidos com trajes listrados, são os ladrões comuns do grupo. Suas ações são caricatas, inspiradas nos personagens clássicos dos quadrinhos. Apesar de suas habilidades simples, eles adicionam um toque de humor às situações de crime.</p>
+</section>
+<section class="docs-section" id="ladroes-molhados-soaked-thieves" data-title="Ladrões Molhados (Soaked Thieves)"><h5>Ladrões Molhados (Soaked Thieves)</h5>
+<p>Os Ladrões Molhados são um pouco mais inteligentes, utilizando artimanhas inspiradas em clássicos cinematográficos. Suas estratégias envolvem situações mais elaboradas, desafiando os jogadores a superarem obstáculos engenhosos.</p>
+</section>
+<section class="docs-section" id="capangas-atrapalhados-bumbling-goons" data-title="Capangas Atrapalhados (Bumbling Goons)"><h5>Capangas Atrapalhados (Bumbling Goons)</h5>
+<p>Esses capangas, com sua referência nos Minions, formam um grupo cômico e desastrado. Enquanto seguem as ordens do chefe, suas ações muitas vezes se transformam em momentos engraçados, adicionando um elemento lúdico às atividades criminosas.</p>
+</section>
+<section class="docs-section" id="marombas-ameacadores-threatening-brutes" data-title="Marombas Ameaçadores (Threatening Brutes)"><h5>Marombas Ameaçadores (Threatening Brutes)</h5>
+<p>No comando, os Marombas são fisicamente imponentes, inspirados em figuras como Brutus do Popeye. Liderando com força bruta, eles representam a ameaça central do grupo, exigindo dos jogadores estratégias mais complexas para superar seus desafios.</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-03.png" alt="GDD image 3" loading="lazy"><figcaption>GDD image 3</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-04.png" alt="GDD image 4" loading="lazy"><figcaption>GDD image 4</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-05.png" alt="GDD image 5" loading="lazy"><figcaption>GDD image 5</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-06.png" alt="GDD image 6" loading="lazy"><figcaption>GDD image 6</figcaption></figure>
+</section>
+<section class="docs-section" id="concepts" data-title="Concepts"><h5>Concepts</h5>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-07.png" alt="GDD image 7" loading="lazy"><figcaption>GDD image 7</figcaption></figure>
+</section>
+<section class="docs-section" id="os-incriveis-larapios" data-title="Os Incríveis Larápios"><h4>Os Incríveis Larápios</h4>
+<p>Este peculiar grupo criminoso, &quot;Os Incríveis Lárapios&quot;, adota a vida circense como sua temática. Por trás da aparência festiva, esconde-se uma gangue de bandidos engenhosos que utilizam a confusão de sua aparência e métodos como parte integrante de suas estratégias criminosas.</p>
+<p><strong>Cores</strong>:</p>
+<p>Vermelho Carnaval: Energia, ação.</p>
+<p>Amarelo Dourado: Alegria, destaque.</p>
+</section>
+<section class="docs-section" id="trupe-trapatapa" data-title="Trupe Trapatapa"><h5>Trupe Trapatapa</h5>
+<p>Os membros da Trupe Trapatapa são palhaços ultrajantes que usam narizes vermelhos, sapatos enormes e cabelos coloridos. Suas ações, embora criminosas, são executadas de maneira pastelão, com esquetes cômicos que precedem seus golpes. Podem, por exemplo, soltar confetes antes de um roubo.</p>
+</section>
+<section class="docs-section" id="os-malabaristas-da-malandragem" data-title="Os Malabaristas da Malandragem"><h5>Os Malabaristas da Malandragem</h5>
+<p>Descrição: Vestidos com roupas listradas e cartolas, os Giradores Equilibristas são malabaristas especializados em ilusões e enganos. Eles usam bolas de malabares como distratores, lançando-as no ar enquanto cometem suas travessuras.</p>
+</section>
+<section class="docs-section" id="os-mimiquetes" data-title="Os Mimiquetes"><h5>Os Mimiquetes</h5>
+<p>Os Mimiquetes são mestres em disfarces e movimentos teatrais. Eles se camuflam entre os objetos, realizando pequenas peças de comédia antes de realizar suas ações criminosas. Utilizam gestos exagerados e expressões faciais para confundir e entreter enquanto roubam.</p>
+</section>
+<section class="docs-section" id="o-enigmatico-mascarado" data-title="O Enigmático Mascarado"><h5>O Enigmático Mascarado</h5>
+<p>Diferente dos outros, o líder, O Enigmático Mascarado, não se disfarça, mas esconde sua identidade por trás de cabeças de pelúcia. Pode ser visto liderando seus comparsas com uma cabeça de urso em um momento, e na cena seguinte, usando uma cabeça de Mickey para manter todos perplexos. Suas aparições são sempre imprevisíveis, proporcionando um toque peculiar e misterioso ao grupo.</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-08.png" alt="GDD image 8" loading="lazy"><figcaption>GDD image 8</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-09.png" alt="GDD image 9" loading="lazy"><figcaption>GDD image 9</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-10.png" alt="GDD image 10" loading="lazy"><figcaption>GDD image 10</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-11.png" alt="GDD image 11" loading="lazy"><figcaption>GDD image 11</figcaption></figure>
+</section>
+<section class="docs-section" id="concepts-2" data-title="Concepts"><h5>Concepts</h5>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-12.png" alt="GDD image 12" loading="lazy"><figcaption>GDD image 12</figcaption></figure>
+</section>
+<section class="docs-section" id="os-sem-leis" data-title="Os Sem Leis"><h4>Os Sem Leis</h4>
+<p>O grupo temível conhecido como &quot;os Sem Leis&quot; representa uma ameaça mais organizada e perigosa em Larápolis. Diferentemente dos Trapalhões do Crime, esses criminosos são bem treinados e seguem uma hierarquia rigorosa. Composto por quatro tipos distintos de ladrões, os Sem Leis instilam medo e desafio nos corações da cidade.</p>
+<p><strong>Descrição Geral:</strong></p>
+<p>Os Sem Leis são uma facção criminosa altamente organizada, com membros especializados e habilidades coordenadas. Seu design e táticas refletem uma abordagem mais profissional e ameaçadora em comparação com as gangues mais caóticas de Larápolis.</p>
+<p><strong>Cores</strong>:</p>
+<p>Marrom Terracota: Terra, rusticidade.</p>
+<p>Verde Floresta: Liberdade, natureza.</p>
+</section>
+<section class="docs-section" id="os-cachaceiros" data-title="Os Cachaceiros"><h5>Os Cachaceiros</h5>
+<p>Este bando prefere tocaias e emboscadas, misturando a astúcia dos bêbados com a tenacidade dos cangaceiros. São habilidosos em ataques sorrateiros e emboscadas, tornando-os uma ameaça imprevisível para os jogadores.</p>
+</section>
+<section class="docs-section" id="foras-da-lei" data-title="Foras da Lei"><h5>Foras da Lei</h5>
+<p>Com um estilo que lembra os cowboys do velho oeste, esses criminosos atacam a distância com destreza. Inspirados pelos bandidos dos filmes de faroeste, eles são especialistas em emboscadas e ataques planejados.</p>
+</section>
+<section class="docs-section" id="anarquistas" data-title="Anarquistas"><h5>Anarquistas</h5>
+<p>Este grupo adota uma abordagem mais caótica, refletindo as gangues de ruas e o estilo punk. Com um design mais futurista inspirado no cyberpunk, os Anarquistas preferem a ação direta e a confusão, criando um desafio dinâmico para os jogadores.</p>
+</section>
+<section class="docs-section" id="nomades-do-deserto" data-title="Nômades do Deserto"><h5>Nômades do Deserto</h5>
+<p>Liderando o bando, os Nômades do Deserto são andarilhos rápidos e habilidosos. Inspirados pelos andarilhos e bandidos dos contos orientais, vestem-se com trajes de deserto e usam lâminas com destreza, tornando-os oponentes formidáveis em combate. A referência é feita ao folclore de &quot;Ali Babá e os 40 Ladrões&quot;.</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-13.png" alt="GDD image 13" loading="lazy"><figcaption>GDD image 13</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-14.png" alt="GDD image 14" loading="lazy"><figcaption>GDD image 14</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-15.png" alt="GDD image 15" loading="lazy"><figcaption>GDD image 15</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-16.png" alt="GDD image 16" loading="lazy"><figcaption>GDD image 16</figcaption></figure>
+</section>
+<section class="docs-section" id="concepts-3" data-title="Concepts"><h5>Concepts</h5>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-17.png" alt="GDD image 17" loading="lazy"><figcaption>GDD image 17</figcaption></figure>
+</section>
+<section class="docs-section" id="os-cyber-piratas" data-title="Os Cyber Piratas"><h4>Os Cyber Piratas</h4>
+<p>Este grupo único de criminosos, conhecido como &quot;Os Cyber Piratas&quot;, mescla o charme clássico dos piratas com a moderna astúcia hacker. Essa trupe tecnológica e marítima realiza seus crimes com uma abordagem inovadora e futurista.</p>
+<p><strong>Cores:</strong></p>
+<p>Azul Oceano: Profundidade, estabilidade.</p>
+<p>Verde Neon: Inovação, ousadia.</p>
+</section>
+<section class="docs-section" id="drone-caravela" data-title="Drone Caravela"><h5>Drone Caravela</h5>
+<p>Uma pequena caravela voadora, o Drone Caravela é equipado com tecnologia avançada de hacking. Seu design é uma homenagem às velhas caravelas dos piratas, mas suas habilidades são totalmente modernas, roubando informações e invadindo sistemas com agilidade.</p>
+</section>
+<section class="docs-section" id="drone-pirata-assistente" data-title="Drone Pirata Assistente"><h5>Drone Pirata Assistente</h5>
+<p>Este drone tem a aparência de um peão de xadrez, mas veste-se como um assistente de pirata. Ele é especializado em invadir redes e sistemas, utilizando suas habilidades de hacking para criar distrações e abrir caminho para a trupe.</p>
+</section>
+<section class="docs-section" id="papagaio-pirata" data-title="Papagaio Pirata"><h5>Papagaio Pirata</h5>
+<p>Um papagaio com uma reviravolta tecnológica, esse membro da trupe veste-se como um humano pirata robusto. Sua cabeça é a de um papagaio, enquanto o corpo é modelado como o de um pirata tradicional. Este papagaio é capaz de interagir com sistemas de segurança, proporcionando acesso e informações valiosas.</p>
+</section>
+<section class="docs-section" id="capitao-hacker-cpt-hook" data-title="Capitão Hacker (Cpt. Hook):"><h5>Capitão Hacker (Cpt. Hook):</h5>
+<p>O líder carismático e habilidoso da trupe é o Capitão Hacker. Inspirado no icônico Capitão Gancho, ele adapta seu visual para o mundo cibernético. Com um gancho cibernético substituindo sua mão original, ele lidera os Cyber Piratas com maestria, navegando pelos mares digitais em busca de informações valiosas e riquezas virtuais.</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-18.png" alt="GDD image 18" loading="lazy"><figcaption>GDD image 18</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-19.png" alt="GDD image 19" loading="lazy"><figcaption>GDD image 19</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-20.png" alt="GDD image 20" loading="lazy"><figcaption>GDD image 20</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-21.png" alt="GDD image 21" loading="lazy"><figcaption>GDD image 21</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-22.png" alt="GDD image 22" loading="lazy"><figcaption>GDD image 22</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-23.png" alt="GDD image 23" loading="lazy"><figcaption>GDD image 23</figcaption></figure>
+</section>
+<section class="docs-section" id="concepts-4" data-title="Concepts"><h5>Concepts</h5>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-24.png" alt="GDD image 24" loading="lazy"><figcaption>GDD image 24</figcaption></figure>
+</section>
+<section class="docs-section" id="os-fantasmas-da-noite" data-title="Os Fantasmas da Noite"><h4>Os Fantasmas da Noite</h4>
+<p>Nas profundezas da noite, surge um grupo sinistro conhecido como &quot;Os Fantasmas da Noite&quot;, composto por criaturas lendárias que se uniram em um pacto sombrio para aterrorizar a cidade de Larápolis. Cada membro deste grupo aterrorizante emprega suas habilidades sobrenaturais de maneiras nefastas, transformando a tranquilidade da noite em um reinado de caos.</p>
+<p><strong>Cores</strong>:</p>
+<p>Roxo Profundo: Mistério, espiritualidade.</p>
+<p>Azul Noturno: Calma, serenidade.</p>
+</section>
+<section class="docs-section" id="o-fantasma-noturno" data-title="O Fantasma Noturno"><h5>O Fantasma Noturno</h5>
+<p>Deslizando entre as sombras noturnas de Larápolis, o Fantasma Noturno é uma figura espectral envolta em um lençol etéreo. Seu corpo incorpóreo exibe um brilho sob a luz da lua, e um rosto sem traços distintos flutua misteriosamente sob o tecido translúcido. Escolhendo o lençol como uma vestimenta que oculta uma presença sobrenatural, o Fantasma Enigmático cria uma imagem que semeia confusão e medo, deixando um rastro de arrepios e lendas urbanas por onde passa.</p>
+</section>
+<section class="docs-section" id="o-lobisomem-dentinho" data-title="O Lobisomem Dentinho"><h5>O Lobisomem Dentinho</h5>
+<p>Sob o brilho pálido da lua cheia, o Lobisomem Dentinho assume sua forma bestial, tornando-se uma força imparável na busca por seus objetivos criminosos. Suas emboscadas noturnas são como um pesadelo, deixando a cidade em suspense constante.</p>
+</section>
+<section class="docs-section" id="os-vampiros-palidos" data-title="Os Vampiros Pálidos:"><h5>Os Vampiros Pálidos:</h5>
+<p>Deslizando pelas sombras sociais, os Vampiros Pálidos usam sua sedução hipnótica para infiltrar-se em eventos exclusivos. Subjugam suas presas, sugando-lhes a energia vital enquanto se ocultam sob o manto da noite, deixando um rastro de confusão e fraqueza.</p>
+</section>
+<section class="docs-section" id="a-mumia-maldita" data-title="A Mumia Maldita:"><h5>A Mumia Maldita:</h5>
+<p>A Mumia Maldita e líder astuciosa, emprega seus poderes místicos para desorientar e subjugar. Desativar sistemas de segurança com um gesto, controla mentes influentes e deixa sua marca de desespero por onde passa. Seus planos são arquitetados nos pergaminhos do passado, guiando sua trupe para aterrorizar Larápolis.</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-25.png" alt="GDD image 25" loading="lazy"><figcaption>GDD image 25</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-26.png" alt="GDD image 26" loading="lazy"><figcaption>GDD image 26</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-27.png" alt="GDD image 27" loading="lazy"><figcaption>GDD image 27</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-28.png" alt="GDD image 28" loading="lazy"><figcaption>GDD image 28</figcaption></figure>
+</section>
+<section class="docs-section" id="concepts-5" data-title="Concepts"><h5>Concepts</h5>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-29.png" alt="GDD image 29" loading="lazy"><figcaption>GDD image 29</figcaption></figure>
+</section>
+<section class="docs-section" id="a-triade-da-realeza-opulenta" data-title="A Tríade da Realeza Opulenta"><h4>A Tríade da Realeza Opulenta</h4>
+<p>Esta tríade de criminosos, conhecida como &quot;A Tríade da Realeza Opulenta&quot;, é única não apenas por seus métodos refinados, mas também por seu código de ética e estilo inigualável. Cada membro incorpora uma faceta única da elegância enquanto cometem seus crimes.</p>
+<p>Cada membro da Tríade segue seu próprio código de ética, tornando-os uma força a ser reconhecida, não apenas pela sofisticação de seus métodos, mas também pela intrincada dança entre o crime e o estilo.</p>
+<p><strong>Cores</strong>:</p>
+<p>Preto Noturno: Elegância, sofisticação.</p>
+<p>Dourado Rico: Luxo, exclusividade.</p>
+</section>
+<section class="docs-section" id="os-cla-de-lotus-ninja" data-title="Os Clã de Lótus Ninja"><h5>Os Clã de Lótus Ninja</h5>
+<p>Vestidos em trajes de seda negra e máscaras intrincadas, o Clã de Lótus Ninja são mestres da furtividade. Utilizam suas habilidades ninja para realizar roubos precisos, desaparecendo nas sombras antes que alguém perceba sua presença.</p>
+</section>
+<section class="docs-section" id="os-larapios-mascarados" data-title="Os Larápios Mascarados"><h5>Os Larápios Mascarados</h5>
+<p>Inspirados pelos lendários ladrões como Lupin, esses criminosos são vestidos com trajes sofisticados e máscaras intrigantes. Suas ações são sempre envoltas em mistério, deixando para trás pistas enigmáticas que desafiam até mesmo os investigadores mais astutos.</p>
+</section>
+<section class="docs-section" id="os-cavalheiros" data-title="Os Cavalheiros"><h5>Os Cavalheiros</h5>
+<p>Liderando a tríade estão os Rei da Máfia: Os Cavaleiros, que canaliza a elegância do crime à moda antiga. Seu traje impecável, combinado com sua postura imponente, inspira respeito. Ele comanda a trupe com uma mistura de charme e astúcia, orquestrando golpes elaborados com precisão.</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-30.png" alt="GDD image 30" loading="lazy"><figcaption>GDD image 30</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-31.png" alt="GDD image 31" loading="lazy"><figcaption>GDD image 31</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-32.png" alt="GDD image 32" loading="lazy"><figcaption>GDD image 32</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-33.png" alt="GDD image 33" loading="lazy"><figcaption>GDD image 33</figcaption></figure>
+</section>
+<section class="docs-section" id="concepts-6" data-title="Concepts"><h5>Concepts</h5>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-34.png" alt="GDD image 34" loading="lazy"><figcaption>GDD image 34</figcaption></figure>
+</section>
+<section class="docs-section" id="os-larapios-das-galaxias" data-title="Os Larápios das Galáxias"><h4>Os Larápios das Galáxias</h4>
+<p>De regiões além da atmosfera terrestre emergem &quot;Os Larápios das Galáxias&quot;, uma horda alienígena sedenta por recursos valiosos que escolhe Larápolis como seu campo de saque. Cada integrante dessa raça cósmica traz consigo habilidades distintas e uma propensão incontrolável para o crime interestelar.</p>
+<p><strong>Cores</strong>:</p>
+<p>Azul Ciano: Representa confiança, tecnologia avançada.</p>
+<p>Prata: Simboliza modernidade e futurismo.</p>
+</section>
+<section class="docs-section" id="veloxlins" data-title="Veloxlins"><h5>Veloxlins</h5>
+<p>Seres pequenos, ágeis e incômodos como uma praga, esses Ets Menores invadem locais valiosos, desaparecendo nas sombras antes que a cidade perceba sua presença.</p>
+</section>
+<section class="docs-section" id="cognitrons" data-title="Cognitrons"><h5>Cognitrons</h5>
+<p>Alienígenas maiores e dotados de conhecimento científico, esses extraterrestres utilizam tecnologia avançada para neutralizar sistemas de segurança e realizar roubos complexos, deixando para trás pistas enigmáticas de sua presença.</p>
+</section>
+<section class="docs-section" id="furiosoids" data-title="Furiosoids"><h5>Furiosoids</h5>
+<p>Uma gangue de xenomorfos irracionais e criminosos, criaturas alienígenas que invadem a cidade com brutalidade e imprevisibilidade, deixando um rastro caótico por onde passam.</p>
+</section>
+<section class="docs-section" id="cryospectra" data-title="CryoSpectra"><h5>CryoSpectra</h5>
+<p>À frente da invasão está o aberrante CryoSpectra, uma criatura formada por metal e gelo. Sua estrutura alienígena única confere-lhe a capacidade de metamorfose e camuflagem, tornando-o um líder implacável que deixa um rastro gélido de destruição por onde passa.</p>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-35.png" alt="GDD image 35" loading="lazy"><figcaption>GDD image 35</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-36.png" alt="GDD image 36" loading="lazy"><figcaption>GDD image 36</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-37.png" alt="GDD image 37" loading="lazy"><figcaption>GDD image 37</figcaption></figure>
+<figure class="docs-figure docs-gdd-figure"><img src="assets/documents/gdd/gdd-image-38.png" alt="GDD image 38" loading="lazy"><figcaption>GDD image 38</figcaption></figure>
+</section>
+<section class="docs-section" id="mecanicas-e-power-ups" data-title="Mecânicas e power ups"><h3>Mecânicas e power ups</h3>
+</section>
+<section class="docs-section" id="1-escolha-de-personagem" data-title="1) Escolha de personagem"><h4>1) Escolha de personagem</h4>
+<p>Duas opções do mesmo padrão, duas skins.</p>
+</section>
+<section class="docs-section" id="2-atributos" data-title="2) Atributos"><h4>2) Atributos</h4>
+<p>Os atributos, representados por números, são essenciais para determinar as habilidades de cada personagem. Embora esses valores não sejam explicitamente revelados, eles desempenham um papel crucial na definição das ações dos personagens, influenciando diretamente ou indiretamente a jogabilidade. O jogador pode aprimorar esses atributos através de melhorias conhecidas como “”.</p>
+<p>Os atributos são categorizados em dois grupos: e . Os atributos principais formam a base do personagem e têm a função de gerar e alterar os atributos secundários. Estes últimos, por sua vez, são responsáveis pelos cálculos que definem diretamente as habilidades dos personagens.</p>
+<p>Tabela de Referência:</p>
+</section>
+<section class="docs-section" id="21-base-dos-grupos" data-title="2.1) Base dos Grupos"><h5>2.1) Base dos Grupos</h5>
+<p>Os grupos de adversários possuem um valor base de atributos que é aplicado a todos os seus membros, estabelecendo assim um nível de dificuldade geral que varia de 0 a 3. Este valor base é somado aos atributos principais para gerar ou modificar os atributos secundários.</p>
+<p>Além disso, os integrantes do grupo têm uma classificação denominada “Patentes”. As Patentes servem para estabelecer a hierarquia dentro de cada grupo, criando variações nos atributos que diferenciam os adversários entre si. Essas variações determinam a dificuldade e a capacidade de cada adversário, tornando cada confronto único e desafiador.</p>
+</section>
+<section class="docs-section" id="22-atributos-principais" data-title="2.2) Atributos Principais"><h5>2.2) Atributos Principais</h5>
+<p>Cada grupo possui um valor mínimo de atributo inicial, que é atribuído ao membro mais fraco do grupo (patente 1). Os demais membros recebem variações em seus atributos, mas nunca inferiores ao membro mais fraco. Portanto, o membro mais fraco representa o valor mínimo de cada atributo para o grupo.</p>
+</section>
+<section class="docs-section" id="221-forca" data-title="2.2.1) Força"><h6>2.2.1) Força</h6>
+<p>A força representa a capacidade física dos personagens. Embora não influencie diretamente a jogabilidade, o jogador pode aprimorá-la através de . Este atributo afeta diretamente as habilidades secundárias:  e .</p>
+<p>Cor: Vermelho: #FF0000</p>
+</section>
+<section class="docs-section" id="222-agilidade" data-title="2.2.2) Agilidade"><h6>2.2.2) Agilidade</h6>
+<p>A agilidade reflete a velocidade dos personagens e influencia diretamente a jogabilidade em termos de mobilidade do personagem, como sua velocidade de movimento. O jogador pode aprimorar este atributo através de . Este atributo afeta diretamente a habilidade secundária: .</p>
+<p>Cor: #00CED1 (Verde-água)</p>
+</section>
+<section class="docs-section" id="223-presenca" data-title="2.2.3) Presença"><h6>2.2.3) Presença</h6>
+<p>Este atributo, exclusivo dos inimigos, influencia suas reações e uso de habilidades. Representa a presença de espírito ou coragem do personagem, influenciando diretamente a jogabilidade no  do inimigo.O jogador pode aprimorar este atributo através de . Este atributo afeta diretamente a habilidade secundária:</p>
+<p>Cor: #800080 (Roxo)</p>
+</section>
+<section class="docs-section" id="2231-teste-de-presenca" data-title="2.2.3.1) Teste de Presença"><h6>2.2.3.1) Teste de Presença</h6>
+<p>O teste de presença é realizado pelo inimigo para decidir se tem coragem de realizar ações ofensivas contra o jogador. O teste é realizado pelo seguinte algoritmo: subtrai-se a presença do jogador da presença do inimigo. Se o resultado for positivo, o inimigo “<strong>pode</strong>” realizar uma ação ofensiva; caso contrário, não pode realizar ações ofensivas.</p>
+</section>
+<section class="docs-section" id="224-defesa" data-title="2.2.4) Defesa"><h6>2.2.4) Defesa</h6>
+<p>A defesa representa a capacidade de um personagem resistir aos ataques de outros personagens. Este atributo influencia diretamente a jogabilidade, reduzindo o dano recebido. O jogador pode aprimorar este atributo através de . Este atributo afeta diretamente a habilidade secundária: .</p>
+<p>Cor: #000080 (Azul-marinho)</p>
+</section>
+<section class="docs-section" id="225-proficiencia" data-title="2.2.5) Proficiência"><h6>2.2.5) Proficiência</h6>
+<p>A proficiência representa a capacidade de um personagem interagir com objetos mais complexos do cenário, como portas trancadas e cofres. Este atributo influencia diretamente a jogabilidade, afetando o tempo que o personagem leva para operar esses mecanismos. O jogador pode aprimorar este atributo através de . Este atributo afeta diretamente a habilidade secundária:.</p>
+<p>Cor: #C0C0C0 (Prata)</p>
+</section>
+<section class="docs-section" id="23-atributos-secundarios" data-title="2.3) Atributos Secundários"><h5>2.3) Atributos Secundários</h5>
+<p>Os atributos secundários são diretamente influenciados pelos atributos principais e suas bases, exercendo um impacto direto na jogabilidade de acordo com suas respectivas funções.</p>
+</section>
+<section class="docs-section" id="231-velocidade" data-title="2.3.1) Velocidade"><h6>2.3.1) Velocidade</h6>
+<p>A velocidade representa a mobilidade do personagem no jogo, sendo que quanto maior o valor, mais rápido o personagem. O jogador pode aprimorar este atributo através de . O cálculo é feito da seguinte forma: <em>+ Velocidade base (10).</em></p>
+<p>Cor: #FFFF00 (Amarelo)</p>
+</section>
+<section class="docs-section" id="232-dano-corpo-a-corpo" data-title="2.3.2) Dano Corpo a Corpo"><h6>2.3.2) Dano Corpo a Corpo</h6>
+<p>O dano corpo a corpo representa o dano que o personagem pode infligir ao do oponente através de ataques de contato. O jogador pode aprimorar este atributo através de . O cálculo é feito da seguinte forma: <em>+ </em>.</p>
+<p>Cor: #8B4513 (Vermelho-escuro)</p>
+</section>
+<section class="docs-section" id="233-dano-a-distancia" data-title="2.3.3) Dano à Distância"><h6>2.3.3) Dano à Distância</h6>
+<p>O dano à distância representa o dano que o personagem pode infligir ao do oponente através de ataques à distância. O jogador pode aprimorar este atributo através de . O cálculo é feito da seguinte forma: <em>+ </em>.</p>
+<p>Cor: #00008B (Azul-escuro)</p>
+</section>
+<section class="docs-section" id="234-vigor" data-title="2.3.4) Vigor"><h6>2.3.4) Vigor</h6>
+<p>O vigor representa a resistência do personagem aos ataques dos oponentes. O personagem fica incapacitado quando o vigor é reduzido a zero. O jogador pode aprimorar este atributo através de . O cálculo é feito da seguinte forma: <em>+ </em><em>+ </em><em>.
+	</em>Cor: #FFA500 (Laranja)</p>
+</section>
+<section class="docs-section" id="2341-recuperacao-da-vigor" data-title="2.3.4.1) Recuperação da Vigor"><h6>2.3.4.1) Recuperação da Vigor</h6>
+<p>O jogador pode recuperar coletando . Quando o personagem fica , ele precisa de um tempo para se recuperar. Este tempo é calculado da seguinte forma: <em>Base de tempo máximo (5) - (</em><em> / </em><em>)</em>.</p>
+<p>Cor: #FFA500 (Laranja)</p>
+</section>
+<section class="docs-section" id="234-especial-sp" data-title="2.3.4) Especial (SP)"><h6>2.3.4) Especial (SP)</h6>
+<p>O Especial (SP) representa o número de pontos que os inimigos podem utilizar para realizar ações especiais. Funciona como um limitador para que o inimigo não possa utilizar suas habilidades especiais de forma irrestrita. Este atributo não é recuperável. O cálculo é feito da seguinte forma: <em>+ </em><em>+ </em>.</p>
+<p>Cor: #FFD700 (Dourado)</p>
+</section>
+<section class="docs-section" id="236-inventario" data-title="2.3.6) Inventário"><h6>2.3.6) Inventário</h6>
+<p>O Inventário representa a capacidade máxima de itens que o inimigo pode carregar simultaneamente. O cálculo é feito da seguinte forma: <em>+ </em><em>.</em></p>
+</section>
+<section class="docs-section" id="237-classe-de-dificuldade" data-title="2.3.7) Classe de Dificuldade"><h6>2.3.7) Classe de Dificuldade</h6>
+<p>A classe de dificuldade representa o poder de cada inimigo e os pontos ganhos ao derrotá-los. Este valor será usado para quantificar a eficiência do jogador na captura dos inimigos durante a partida. O cálculo é feito da seguinte forma: soma de todos os  e</p>
+</section>
+<section class="docs-section" id="3-estados" data-title="3) Estados"><h4>3) Estados</h4>
+<p>Os estados representam os comportamentos ativos e únicos de cada personagem. Eles não são acumulativos, ou seja, um personagem só pode estar em um estado ou em outro, conferindo efeitos e condições específicas ao personagem.</p>
+</section>
+<section class="docs-section" id="31-estados-gerais" data-title="3.1) Estados Gerais:"><h5>3.1) Estados Gerais:</h5>
+</section>
+<section class="docs-section" id="311-ativo---padrao" data-title="3.1.1) Ativo - Padrão"><h6>3.1.1) Ativo - Padrão</h6>
+<p>No estado <strong>ativo</strong>, o personagem está apto a realizar todas as ações disponíveis, incluindo a transição para outros estados.</p>
+<p>Como entrar: O personagem entra no estado padrão se não estiver em nenhum outro estado.</p>
+<p>Como sair: O personagem sai do estado padrão ao receber outro .</p>
+</section>
+<section class="docs-section" id="312-segurando" data-title="3.1.2) Segurando"><h6>3.1.2) Segurando</h6>
+<p>No estado <strong>segurando</strong>, o personagem está em posse de algum objeto ou outro personagem. Ele pode se , , se beneficiar de power-ups e com outros objetos carregáveis. No entanto, ao interagir com um novo objeto carregável, ele troca o objeto que está segurando pelo novo e derruba o anterior. Se o objeto for interativo, ele executa a interação e também derruba o objeto que está segurando.</p>
+<p>Como entrar: O personagem entra neste estado ao o usando a ação “” com a propriedade para ser .</p>
+<p>Como sair: O personagem sai deste estado ao tornar o objeto segurado inativo (vazio), seja arremessando-o ou esgotando seu número de uso, e entra no estado . Ele também pode sair deste estado ao com um novo objeto segurável, trocando de objeto e entrando em um novo estado <strong>segurando </strong>com o novo objeto.</p>
+</section>
+<section class="docs-section" id="313-carregado" data-title="3.1.3) Carregado"><h6>3.1.3) Carregado</h6>
+<p>No estado <strong>carregado</strong>, o personagem está sob posse de outro personagem e só pode entrar neste estado se estiver anteriormente nos estados ou . Neste estado, o personagem não pode recuperar seu e sua recuperação fica pausada até que saia deste estado.</p>
+<p>Como entrar: O personagem deve estar no estado ou e ser interagido com outro personagem pela ação “”.</p>
+<p>Como sair: O personagem deve ser descarregado pelo personagem que está carregando, seja trocando por outro item, ou colocado no chão usando a ação de “”, se não houver nenhum outro objeto para interação. O personagem retorna a sua última condição antes de estar “carregado”: ou</p>
+</section>
+<section class="docs-section" id="313-caido" data-title="3.1.3) Caído"><h6>3.1.3) Caído</h6>
+<p>No estado <strong>caído</strong>, o personagem está impossibilitado de se , e . Neste estado, o personagem deve se recuperar usando a ação “<em>Segurar o Botão</em>” para voltar ao estado .</p>
+<p>Um personagem <strong>caído </strong>tem seu “zerado” e inicia seu processo de  por um periodo diferente de tempo indicado pelo item que aplicou o efeito, (este tempo não pode ultrapassar o tempo de recupearação do estado ).</p>
+<p>Como entrar: O personagem deve ser alvo de uma ação que o torne partindo de outro objeto. O personagem não pode ser afetado se estiver nas condições: e .</p>
+<p>Como sair: O personagem deve usar a ação “<em>Segurar o Botão</em>” para sair desta condição.</p>
+<p>A ação “Segurar o Botão” consiste em segurar o botão de “” por um prazo determinado de tempo e retornar a condição . Interromper esta ação faz com que o tempo seja reiniciado. O cálculo é: Base de tempo máximo (2) - ( / ).</p>
+</section>
+<section class="docs-section" id="314-incapacitado" data-title="3.1.4) Incapacitado"><h6>3.1.4) Incapacitado</h6>
+<p>No estado <strong>Incapacitado</strong>, o personagem está impossibilitado de realizar qualquer outra ação que não seja aguardar o carregamento dos seus pontos de . Os jogadores devem realizar a ação “<em>Segurar o Botão</em>” para acelerar a transição para o estado .</p>
+<p>Como entrar: O personagem deve perder todo o seu pelos danos causados pelo ataque de outro jogador. O personagem não pode ser afetado se estiver nas condições: e .</p>
+<p>Como sair: O personagem deve usar a ação “<em>Segurar o Botão</em>” para sair desta condição e retornar a condição . A ação “<em>Segurar o Botão</em>” consiste em segurar o botão de “” por um prazo determinado de tempo. Interromper esta ação faz com que o tempo seja reiniciado. O cálculo é: Base de tempo máximo (5) - ( / ).</p>
+</section>
+<section class="docs-section" id="315-imune" data-title="3.1.5) Imune"><h6>3.1.5) Imune</h6>
+<p>No estado <strong>Imune</strong>, o personagem está impossibilitado de realizar outra ação de de  e não pode ser um alvo válido de outros atacantes. Este estado é temporário e dura um número de segundos igual ao valor de sua .</p>
+<p>Como entrar: O personagem deve ser por de um  e sofrer uma redução de , sem entrar no estado de .</p>
+<p>Como sair: O estado sai automaticamente após o término de sua duração ( dura um número de segundos igual ao valor de sua ), retornando o personagem ao estado .</p>
+</section>
+<section class="docs-section" id="32-estados-dos-inimigos" data-title="3.2) Estados dos inimigos"><h5>3.2) Estados dos inimigos</h5>
+<p>Os inimigos podem estar em todos os , porém existem estados específicos para sua inteligência artificial.</p>
+<p>Os inimigos podem transitar entre diferentes estados de acordo com seu sistema de &quot;Goals&quot;. Se uma condição favorável surgir (como um esconderijo próximo durante uma fuga), o inimigo pode mudar para um estado mais vantajoso. Por exemplo:</p>
+<p>Um inimigo em estado de &quot;Fugindo&quot; pode entrar em &quot;Escondido&quot; caso perceba que o jogador o perdeu de vista e exista um local de esconderijo por perto.</p>
+<p>Um inimigo que estava &quot;Furtando&quot; pode decidir &quot;Perseguir&quot; o jogador caso ele tenha um item desejado e esteja dentro de sua área de percepção.</p>
+<p>Isso significa que, apesar de todos os inimigos terem os mesmos estados disponíveis, as transições entre eles serão diferentes dependendo do peso de decisão de cada um, adicionando variedade à IA do jogo.</p>
+<p>Os inimigos utilizam um sistema baseado em &quot;Goals&quot;, no qual cada um possui uma tarefa principal (exemplo: roubar um item) e outras opções secundárias (como se esconder, atrapalhar o jogador ou atacar). Cada um desses objetivos tem um &quot;peso&quot; que influencia a tomada de decisão do inimigo, de acordo com o nível de dificuldade do jogo. Inimigos diferentes priorizam tarefas diferentes: alguns podem focar em fugir rapidamente com o item, enquanto outros tentam distrair ou atacar o jogador.</p>
+<p>O sistema de sensores dos inimigos é padronizado, mas os pesos aplicados a cada decisão variam de acordo com o tipo de inimigo. Isso cria variações na jogabilidade, tornando as interações menos previsíveis e aumentando a necessidade de adaptação por parte do jogador.</p>
+</section>
+<section class="docs-section" id="321-perseguindo" data-title="3.2.1) Perseguindo"><h6>3.2.1) Perseguindo</h6>
+<p>Os inimigos optam por perseguir o jogador como parte do estado inicial, este estado só pode acontecer se o jogador está em posse de algum  pelo inimigo.</p>
+<p>De acordo com o estado inicial e a patente do inimigo este estado tem pesos de escolha diferentes, podendo ter maior/menor chance de ser escolhido entre outros.</p>
+<p>Como entrar: O jogador ao recolher um item de valor os inimigos são avisados.</p>
+<p>Ele pode entrar neste estado com  um ;</p>
+<p>Ele pode entrar neste estado se estiver</p>
+<p>Como sair: O inimigo sai deste estado assim que recuperar o item e o jogador não possui mais nenhum item em seu .</p>
+<p>Ou quando o inimigo sofre  ele vai fazer um  e encerrar este estado, mudando para um outro.</p>
+</section>
+<section class="docs-section" id="322-fugindo" data-title="3.2.2) Fugindo"><h6>3.2.2) Fugindo</h6>
+<p>Os inimigos optam por fugir do jogador como parte do estado inicial, este estado só pode acontecer se o inimigo for atacado ou estiver em posse de um  pelo inimigo. Neste estado o inimigo vai tentar encontrar uma saída do cenário para concluir seu objetivo.</p>
+<p>Neste estado é possível entrar em outros 2 estados especiais: e</p>
+<p>De acordo com o estado inicial e a patente do inimigo este estado tem pesos de escolha diferentes, podendo ter maior/menor chance de ser escolhido entre outros.</p>
+<p>Como entrar:</p>
+<p>O inimigo rouba um  e <strong>vai </strong>fugir com ele;</p>
+<p>Sempre que envolver um  ele <strong>pode </strong>escolher esta ação;</p>
+<p>Quando percebe a  ele <strong>pode </strong>escolher esta ação.</p>
+<p>Como sair:</p>
+<p>Sempre que envolver um  e ele escolher outra ação;</p>
+<p>Quando perceber a  e ele escolher outra ação.</p>
+<p>Entrando em um estado complementar como e/ou</p>
+</section>
+<section class="docs-section" id="323-agressivo" data-title="3.2.3) Agressivo"><h6>3.2.3) Agressivo</h6>
+<p>Os inimigos optam por agredir o jogador como parte do estado inicial, este estado só pode acontecer se o inimigo for atacado ou estiver próximo do jogador. Neste estado o inimigo vai tentar causar dano ou ativar armadilhas contra o jogador.</p>
+<p>De acordo com o estado inicial e a patente do inimigo este estado tem pesos de escolha diferentes, podendo ter maior/menor chance de ser escolhido entre outros.</p>
+<p>Como entrar:</p>
+<p>O inimigo sofre pelo jogador e <strong>pode </strong>revidar;</p>
+<p>Sempre que envolver um  ele <strong>pode </strong>escolher esta ação;</p>
+<p>Quando percebe a  ele <strong>pode </strong>escolher esta ação.</p>
+<p>Como sair:</p>
+<p>Sempre que envolver um  e ele escolher outra ação;</p>
+<p>Quando <strong>não </strong>percebe a  escolhe outra ação.</p>
+</section>
+<section class="docs-section" id="324-furtando" data-title="3.2.4) Furtando"><h6>3.2.4) Furtando</h6>
+<p>Os inimigos optam por furtar um  como parte do estado inicial, este estado acontece na entrada do inimigo no cenário ou possuir mais de um . Neste estado o inimigo vai tentar encontrar e furtar os itens do cenário, e podem entrar em dois estados especiais  e</p>
+<p>De acordo com o estado inicial e a patente do inimigo este estado tem pesos de escolha diferentes, podendo ter maior/menor chance de ser escolhido entre outros se possuir itens de desejo disponíveis no cenário.</p>
+<p>Como entrar:</p>
+<p>Automaticamente ao entrar no cenário;</p>
+<p>Sempre que envolver um  ele <strong>pode </strong>escolher esta ação se houver um itens de desejo disponíveis;</p>
+<p>Como sair:</p>
+<p>Sempre que não houver mais itens de desejo disponíveis;</p>
+<p>Sempre que envolver um  e ele escolher outra ação;</p>
+<p>Quando percebe a  escolhe outra ação.</p>
+</section>
+<section class="docs-section" id="325-escapando" data-title="3.2.5) Escapando"><h6>3.2.5) Escapando</h6>
+<p>Os inimigos optam por escapar do cenário como parte de seu estado final, este estado só pode acontecer se o inimigo estiver em posse de um item desejável e/ou inventário cheio e ou atingir o tempo crítico para completar o assalto. Neste estado o inimigo vai tentar sair do cenário o mais rápido e eficiente possível.</p>
+<p>Como entrar:</p>
+<p>O inimigo está em posse de seu ;</p>
+<p>O inimigo está com seu cheio;</p>
+<p>O  do assalto foi alcançado;</p>
+<p>Como sair:</p>
+<p>Perder a posse do item desejado força um ;</p>
+<p>Perder os itens do inventário força um</p>
+<p>Porém se estiver dentro do tempo crítico a escolha preferencial (60%) será sempre manter o estado de escapando.</p>
+</section>
+<section class="docs-section" id="33-estados-complementares" data-title="3.3) Estados Complementares"><h5>3.3) Estados Complementares</h5>
+<p>Estes estados só podem ser escolhidos apenas se o inimigo estiver em um estado específico, sendo eles complementares.</p>
+</section>
+<section class="docs-section" id="331-escondido" data-title="3.3.1) Escondido"><h6>3.3.1) Escondido</h6>
+<p>Os inimigos optam por se esconder se estiverem em um dos dois estados: ou , se possuírem habilidade para tal. Neste estado o inimigo não é visível pelo jogador e não pode ser alvo dele ou de armadilhas até que saia deste estado complementar.</p>
+<p>De acordo com o estado furtando, fugindo e a patente do inimigo este estado tem pesos de escolha diferentes, podendo ter maior/menor chance de ser escolhido entre outros.</p>
+<p>Como entrar:</p>
+<p>O inimigo <strong>deve </strong>possuir uma habilidade para tal, e interagir com um objeto que permita se esconder.</p>
+<p>Ele <strong>pode </strong>escolher este estado de acordo com</p>
+<p>Se Estiver no estado ou no estado ;</p>
+<p>Como sair:</p>
+<p>O jogador interage com o objeto que esconde o inimigo;</p>
+<p>Ele pode sair do estado se ele estiver ;</p>
+<p>Se possuir a habilidade para tal, atacando o jogador do esconderijo;</p>
+</section>
+<section class="docs-section" id="332-disfarcado" data-title="3.3.2) Disfarçado"><h6>3.3.2) Disfarçado</h6>
+<p>Os inimigos optam por se disfarçar se estiverem em um dos dois estados: ou  e possuírem habilidade para tal. Neste estado o inimigo é visível pelo jogador porém não possui as características de um inimigo padrão e pode ser alvo dele ou de armadilhas até que saia deste estado complementar.</p>
+<p>De acordo com o estado furtando, fugindo e a patente do inimigo este estado tem pesos de escolha diferentes, podendo ter maior/menor chance de ser escolhido entre outros.</p>
+<p>Como entrar:</p>
+<p>O inimigo <strong>deve </strong>possuir a habilidade para tal, e ele torna-se um objeto interativo (seja ele NPC ou objeto de cenário)</p>
+<p>Ele <strong>pode </strong>escolher este estado de acordo com</p>
+<p>Ele deve estar em um dos estados: ou ;</p>
+<p>Como sair:</p>
+<p>O jogador interage com o objeto que o inimigo se disfarça (interagindo ou atacando);</p>
+<p>Ele <strong>pode </strong>sair do estado se ele estiver ;</p>
+<p>Atacando o jogador do esconderijo, <strong>se </strong>tiver habilidade para tal;</p>
+</section>
+<section class="docs-section" id="333-ocultado" data-title="3.3.3) Ocultado"><h6>3.3.3) Ocultado</h6>
+<p>O personagem no estado “ocultado” esconde sua presença nas interfaces de detecção como as câmeras do  e o . não sendo rastreados por ele. Ele ganha a característica “<em>Oculto</em>” durante este estado.</p>
+</section>
+<section class="docs-section" id="4-personagens" data-title="4) Personagens"><h4>4) Personagens</h4>
+<p>A descrição das mecânicas específicas dos personagens.</p>
+</section>
+<section class="docs-section" id="41-atacando" data-title="4.1) Atacando"><h5>4.1) Atacando</h5>
+<p>Para efetuar um ataque algumas condições devem ser atendidas:</p>
+<ul>
+<li>Realizar a ação com um alvo colidindo com o objeto do atacante.</li>
+<li>O alvo <strong>não </strong>pode estar nos seguintes estados:</li>
+<ul>
+<li>;</li>
+<li>;</li>
+<li>;</li>
+<li>;</li>
+<li>Imune</li>
+</ul>
+<li>O alvo deve ter valor de  e não pode estar em ;</li>
+</ul>
+<p>Atendendo estes critérios o <strong>ataque </strong>é realizado com sucesso.</p>
+</section>
+<section class="docs-section" id="411-atingindo-um-alvo" data-title="4.1.1) Atingindo um alvo"><h6>4.1.1) Atingindo um alvo</h6>
+<p>Se o atacante realizou um com sucesso, o alvo é <strong>atingido </strong>e recebe um <strong>dano </strong>que corresponde a fórmula:</p>
+<p>se ( - ) &lt;= 0</p>
+<p>dano = 1</p>
+<p>caso contrário</p>
+<p>dano = -</p>
+<p>O Inimigo ao receber o dano deve reagir aos seguintes critérios:</p>
+<ul>
+<li>Se no do inimigo possuir ao menos 1 item:</li>
+<ul>
+<li>O inimigo derruba todos os itens que estão no seu inventário.</li>
+<li>O inimigo realiza um <em>.</em></li>
+<ul>
+<li><em>Falhando o inimigo entra no estado: </em></li>
+<li><em>Passando ele escolhe uma ação de comportamento do tipo: </em></li>
+</ul>
+</ul>
+<li>Se o inventário do inimigo <strong>não </strong>possuir itens, o inimigo subtrai o valor do dano de seu total de .</li>
+<ul>
+<li>Se o valor resultante for menor ou igual a 0 o inimigo entra no estado .</li>
+<li>Se o valor resultante for maior que zero o inimigo faz um teste de presença.</li>
+<ul>
+<li><em>Falhando o inimigo entra no estado: </em></li>
+<li><em>Passando ele escolhe uma ação de comportamento do tipo: </em>.</li>
+</ul>
+</ul>
+</ul>
+</section>
+<section class="docs-section" id="42-segurando" data-title="4.2) Segurando"><h5>4.2) Segurando</h5>
+<p>O jogador pode interagir com objetos específicos (com  indicação “<em>segurável</em>” da cena ao utilizar a ação de , o objeto em questão passa a ser  pelo personagem. Estes objetos só podem ficar na posse do personagem 1 item por vez.</p>
+</section>
+<section class="docs-section" id="43-inventariando" data-title="4.3) Inventariando"><h5>4.3) Inventariando</h5>
+<p>O jogador pode interagir com objetos específicos (com  indicação “<em>Itens</em>”) da cena ao utilizar a ação de , o objeto em questão passa a ser contabilizado pelo do personagem. Estes objetos são <em><strong>ilimitados </strong></em>para o jogador e são contabilizados na interface .</p>
+</section>
+<section class="docs-section" id="44-ativando-objetos-de-cenario" data-title="4.4) Ativando Objetos de Cenário"><h5>4.4) Ativando Objetos de Cenário</h5>
+<p>O jogador pode com  (com a indicação “<em>interativo</em>”) que ativam suas próprias funções de ação. Não é possível interagir nestes objetos enquanto o jogador estiver no estado , ou .</p>
+</section>
+<section class="docs-section" id="45-recebendo-powerup" data-title="4.5) Recebendo PowerUp"><h5>4.5) Recebendo PowerUp</h5>
+<p>O jogador interage com os power ups colidindo com objetos, os  ativam suas funções ao serem coletados e podem ser cumulativos ou não.</p>
+</section>
+<section class="docs-section" id="5-interacoes-de-cenario-e-armadilhas" data-title="5) Interações de cenário e armadilhas"><h4>5) Interações de cenário e armadilhas</h4>
+<p>Os personagens podem interagir com objetos no cenários para causar as mais diversas situações, cada uma com suas ativações e reações.</p>
+</section>
+<section class="docs-section" id="51-restricao-de-movimento" data-title="5.1) Restrição de movimento"><h5>5.1) Restrição de movimento</h5>
+<p>Estas armadilhas visam reduzir o movimento dos personagens ou impedir o seu avanço, seja definitivo ou por tempo limitado.</p>
+</section>
+<section class="docs-section" id="511-objeto-para-derrubar" data-title="5.1.1) Objeto para Derrubar."><h6>5.1.1) Objeto para Derrubar.</h6>
+<p>Interagindo com o item, o objeto cai no chão e afeta a sua área. O personagem que colidir com a área do objeto entra no estado . O tempo de duração da  é calculado da seguinte fórmula: Tempo base (1) - (/).</p>
+<p>Referências: vasos, cadeira, rastelo.</p>
+</section>
+<section class="docs-section" id="512-objeto-para-derrubar-em-area" data-title="5.1.2) Objeto para Derrubar em área."><h6>5.1.2) Objeto para Derrubar em área.</h6>
+<p>Interagindo com o item, o objeto cai no chão afetando uma área na direção oposta do personagem, o tamanho do objeto define o tamanho da área que o efeito ocupa. O personagem que colidir com a área do efeito, entra no estado , o tempo de duração da  é calculado da seguinte fórmula: Tempo base (2) - (/)</p>
+</section>
+<section class="docs-section" id="referencia-balde-dagua-armario-de-livros-corda-alcapao" data-title="Referência: balde d&#x27;água, armário de livros, corda, alçapão"><h6>Referência: balde d&#x27;água, armário de livros, corda, alçapão</h6>
+</section>
+<section class="docs-section" id="513-interacao-de-mobilidade" data-title="5.1.3) Interação de Mobilidade"><h6>5.1.3) Interação de Mobilidade</h6>
+<p>com o item o personagem consegue uma mobilidade melhor seja movendo de um ponto a outro ou podendo usar o objeto como transporte.</p>
+<p>Ao o personagem consegue atingir um outro ponto do cenário em um determinado tempo (ou instantaneamente) sem o controle do jogador;</p>
+<p>Referências:  Escadas, elevador (x segundos), andaime (Y segundos), dutos (z segundos) alçapão;</p>
+</section>
+<section class="docs-section" id="514-portas" data-title="5.1.4) Portas"><h6>5.1.4) Portas</h6>
+<p>Estes itens visam diminuir a mobilidade dos personagens através de barreiras de acesso como portas. Estes objetos específicos (que possuem a indicação de “<em>trancas</em>”) podem ser fechados ou abertos de acordo com habilidade específica do personagem.</p>
+</section>
+<section class="docs-section" id="5141-tranca-simples" data-title="5.1.4.1) Tranca Simples"><h6>5.1.4.1) Tranca Simples</h6>
+<p>São objetos que bloqueiam um espaço de outro, e possuem o tempo de normal, todos os personagens podem interagir com ela, e ela tem o mesmo tempo de interação para todos.</p>
+</section>
+<section class="docs-section" id="5142-tranca-melhorada" data-title="5.1.4.2) Tranca Melhorada"><h6>5.1.4.2) Tranca Melhorada</h6>
+<p>São objetos que bloqueiam um espaço de outro, porém elas possuem um tempo de interação específico de acordo com sua complexidade. Os jogadores possuem um tempo maior que a tranca simples para interagir, e os inimigos devem possuir a habilidade de  e levam um tempo maior para sobrepor estes obstáculos.</p>
+</section>
+<section class="docs-section" id="5143-trancas-digitais" data-title="5.1.4.3) Trancas Digitais"><h6>5.1.4.3) Trancas Digitais</h6>
+<p>São objetos que bloqueiam um espaço de outro, porém elas possuem um tempo de interação específico de acordo com sua complexidade. Os jogadores possuem um tempo maior que a  e a  para interagir, e os inimigos devem possuir a habilidade de  e levam um tempo maior para sobrepor estes obstáculos.</p>
+</section>
+<section class="docs-section" id="515-superficies" data-title="5.1.5) Superfícies"><h6>5.1.5) Superfícies</h6>
+<p>São objetos que circundam e formam o cenário existem alguns tipos de paredes:</p>
+<ul>
+<li>Paredes Externas</li>
+<li>Paredes Internas</li>
+</ul>
+</section>
+<section class="docs-section" id="52-restricao-de-visibilidade" data-title="5.2) Restrição de Visibilidade"><h5>5.2) Restrição de Visibilidade</h5>
+<p>5.2.1) Restringir visão local</p>
+<p>O objeto impede a visualização dos outros objetos em cena em uma determinada distância em torno do objeto.</p>
+<p>Referência: Bomba de fumaça do ninja;</p>
+<p>5.2.2) Restringir visão de área</p>
+<p>O objeto impede a visualização dos outros objetos em cena em uma área expandida além do próprio objeto.</p>
+<p>Referência: Apagar luz, fumaça em todo o ambiente.</p>
+</section>
+<section class="docs-section" id="53-distribuidor-de-power-ups" data-title="5.3) Distribuidor de Power ups"><h5>5.3) Distribuidor de Power ups</h5>
+</section>
+<section class="docs-section" id="531-distribuidor-com-item-especifico" data-title="5.3.1) Distribuidor com item específico;"><h6>5.3.1) Distribuidor com item específico;</h6>
+<p>Um objeto que gere um tipo específico de , que são gerados de tempo em tempo, mas são sempre os mesmos itens.</p>
+<p>Referência: Mesa de café com donuts, ponto de  no mapa</p>
+</section>
+<section class="docs-section" id="532-distribuidor-com-item-aleatorio" data-title="5.3.2) Distribuidor com item aleatório"><h6>5.3.2) Distribuidor com item aleatório</h6>
+<p>Um objeto que gere  (um ou mais) aleatórios, que são gerados de tempo em tempo, a qualidade dos <strong>power ups</strong> são definidos de acordo com seu distribuidor;</p>
+<p>Referência: Caixa de “quebre aqui”, almoxarifado;</p>
+</section>
+<section class="docs-section" id="54-objetos-esconderijos" data-title="5.4) Objetos esconderijos"><h5>5.4) Objetos esconderijos</h5>
+<p>Estes objetos são de interação normal (geralmente de ) mas se possuírem uma identificação “<em>esconderijo</em>”, personagens que possuírem a habilidade de se , podem entrar no estado interagindo com eles.</p>
+</section>
+<section class="docs-section" id="55-objetos-de-salas" data-title="5.5) Objetos de Salas"><h5>5.5) Objetos de Salas</h5>
+<p>Estes objetos são áreas de cenário com propósitos específicos para o gameplay, elas possuem ações e verificações distintas de acordo com sua utilidade dentro do jogo.</p>
+</section>
+<section class="docs-section" id="551-salas-de-descarga" data-title="5.5.1) Salas de Descarga"><h6>5.5.1) Salas de Descarga</h6>
+<p>Salas de descargas são salas específicas para que o jogador guarde objetos para determinar seu .</p>
+</section>
+<section class="docs-section" id="5511-prisao" data-title="5.5.1.1) Prisão"><h6>5.5.1.1) Prisão</h6>
+<p>Local onde o jogador coloca os inimigos capturados;</p>
+<p>O jogador interage com a sala para descarregar os inimigos, que só podem ser colocados dentro desta sala se estiverem no estado “”.</p>
+<p>Os inimigos permanecem presos na sala até o término da fase, quando os policiais vêm buscá-los em definitivo.</p>
+</section>
+<section class="docs-section" id="5512-cofre" data-title="5.5.1.2) Cofre"><h6>5.5.1.2) Cofre</h6>
+<p>Local onde o jogador coloca os  roubados e recuperados. Estes itens na sala não podem mais ser furtados pelos inimigos e estão aptos para serem medidos pela .</p>
+</section>
+<section class="docs-section" id="552-sala-de-itens-de-desejo" data-title="5.5.2) Sala de Itens de desejo"><h6>5.5.2) Sala de Itens de desejo</h6>
+<p>Local onde se inicia os  dos inimigos, elas podem conter ou não armadilhas específicas para determinado cenário, ativadas no local ou via .</p>
+</section>
+<section class="docs-section" id="5521-armadilhas-de-cenario" data-title="5.5.2.1) Armadilhas de Cenário"><h6>5.5.2.1) Armadilhas de Cenário</h6>
+<p>São armadilhas que só podem ser ativadas junto a  e/ou de . Estas armadilhas afetam todos os personagens dentro da área da sala, retardando os inimigos a roubar o item.</p>
+<p>O efeito prático é que os inimigos ficam em estado por um número de tempo específico enviado pela sala;</p>
+<p>Esta ação é ativada usando um botão de ação, seja no  ou em um . A armadilha é de uso único.</p>
+<p>Referências: Alarme laser, armadilha de gás, armadilha de água;</p>
+</section>
+<section class="docs-section" id="553-sala-de-controle" data-title="5.5.3) Sala de Controle"><h6>5.5.3) Sala de Controle</h6>
+<p>Local onde o jogador pode verificar a presença dos larápios e ativar armadilhas específicas nas salas de itens de valor.</p>
+</section>
+<section class="docs-section" id="5531-verificando-a-presenca-dos-larapios" data-title="5.5.3.1) Verificando a presença dos larápios"><h6>5.5.3.1) Verificando a presença dos larápios</h6>
+<p>O Jogador pode acessar as câmeras de segurança através da hud de .</p>
+</section>
+<section class="docs-section" id="5532-ativando-armadilhas-da-sala-de-itens-de-desejo" data-title="5.5.3.2) Ativando armadilhas da sala de itens de desejo"><h6>5.5.3.2) Ativando armadilhas da sala de itens de desejo</h6>
+<p>O jogador pode ativar as  interagindo com o  específica da sala de itens de desejo, esta interação é indicada na câmera com um botão de ação, ativando a armadilha.</p>
+</section>
+<section class="docs-section" id="6-power-up" data-title="6) Power up"><h4>6) Power up</h4>
+<p>Os power ups são objetos que aplicam melhoria temporária ao jogador, estas melhorias são divididas em duas categorias, os itens de  e os itens de</p>
+<p>Os itens são representação de itens e/ou vestimentas para policiais/segurança, conferindo melhorias nos seus   e /ou habilidades e efeitos especiais.</p>
+<p>Os power-ups do jogo são exclusivos para cada nível. Isso significa que o jogador não carrega power-ups de uma fase para outra, garantindo um balanceamento entre desafios e vantagens em cada cenário. No entanto, melhorias permanentes de atributos podem ser adquiridas ao longo do jogo.</p>
+<p>Power-ups possuem tempo de duração limitado e podem se acumular, desde que o limite do power-up específico não tenha sido atingido. Caso o jogador perca um power-up durante a fase, ele pode &quot;respawnar&quot; em pontos predefinidos para garantir o seu uso dentro daquele cenário. Essa abordagem permite criar desafios específicos para cada fase, sem permitir que power-ups de fases mais fáceis tornem fases mais avançadas menos desafiadoras.</p>
+</section>
+<section class="docs-section" id="61-efeitos-passivos" data-title="6.1) Efeitos Passivos"><h5>6.1) Efeitos Passivos</h5>
+<p>Esta categoria de melhorias são aplicadas diretamente no jogador, sem que ele possa controlar seus efeitos, geralmente aumentando um .</p>
+<p>Elas são representadas pelo ícone de quepe de polícia, cada uma em um formato e cores diferentes indicando sua utilização.</p>
+<p>As melhorias tem um limite de aumento de cinco etapas, cada etapa aumenta um ponto no atributo indicado. Ao ativar, uma barra com cinco níveis aparece sobre o jogador indicando qual o nível atual de power up daquele atributo.</p>
+<ul>
+<li>Quepe: Força</li>
+<li>Coturno: Agilidade</li>
+<li>Distintivo: Presença</li>
+<li>Colete: Defesa</li>
+<li>Cinto: Proficiência</li>
+</ul>
+</section>
+<section class="docs-section" id="62-efeitos-ativos" data-title="6.2) Efeitos Ativos"><h5>6.2) Efeitos Ativos</h5>
+<p>Esta categoria de melhorias são aplicadas diretamente ou indiretamente no jogador, porém ele precisa ativar seus efeitos usando a ação de  para que ele possa controlar seus efeitos, geralmente ganhando uma nova habilidade que afeta outros personagens.</p>
+<ul>
+<li>Cacetete</li>
+<ul>
+<li>Aumenta o tempo de  do atingido no .</li>
+</ul>
+<li>Algemas</li>
+<ul>
+<li>Ao usar a interação com este powerup o personagem  não tem recuperação.</li>
+</ul>
+<li>Apito</li>
+<ul>
+<li>Tira os inimigos de uma área do estado ;</li>
+<li>Aplica o estado de ;</li>
+</ul>
+<li>Revolver de cola</li>
+<ul>
+<li>Prende o personagem no local por x tempo</li>
+<li>O tiro faz uma parábola para atingir o chão.</li>
+</ul>
+<li>Bolinha de Gude</li>
+<ul>
+<li>Tem a área imediatamente abaixo coberta pelos objetos que forçam o próximo personagem a entrar nela ficar no estado</li>
+</ul>
+<li>Pistola</li>
+<ul>
+<li>Uma arma com 3 cargas e aplica  nos personagens</li>
+</ul>
+<li>Taser</li>
+<ul>
+<li>Uma arma com 3 cargas e aplica o no mesmo ataque que derrubou os itens do do inimigo (médio alcance).</li>
+</ul>
+<li>Buraco mágico</li>
+<ul>
+<li>Faz o personagem ser teleportado por um lugar aleatório do cenário.</li>
+</ul>
+<li>Armadilha de “urso”</li>
+<ul>
+<li>Aplica no personagem que perde</li>
+</ul>
+<li>Lanterna</li>
+<ul>
+<li>Remove a escuridão do ambiente, tirando os inimigos do estado “”</li>
+</ul>
+<li>Diciclo</li>
+<ul>
+<li>Aumenta a e a mobilidade do jogador por um período de tempo</li>
+<li>Este power up é aplicado pelo objeto funcionando como um  , ao acabar ele fica indisponível por um período de tempo até retornar aplicar.</li>
+</ul>
+</ul>
+</section>
+<section class="docs-section" id="7-inimigos" data-title="7) Inimigos"><h4>7) Inimigos</h4>
+</section>
+<section class="docs-section" id="71-atacando" data-title="7.1) Atacando"><h5>7.1) Atacando</h5>
+<p>Para o inimigo efetuar um ataque algumas condições devem ser atendidas:</p>
+<ul>
+<li>Um alvo deve estar colidindo com o objeto do atacante.</li>
+<li>O alvo <strong>não </strong>pode estar nos seguintes estados:</li>
+<ul>
+<li>;</li>
+<li>;</li>
+<li>;</li>
+<li>;</li>
+<li>;</li>
+</ul>
+<li>O alvo deve ter um valor de  e não pode estar em ;</li>
+</ul>
+<p>Atendendo estes critérios o <strong>ataque </strong>é realizado com sucesso.</p>
+</section>
+<section class="docs-section" id="711-atingindo-um-alvo" data-title="7.1.1) Atingindo um alvo"><h6>7.1.1) Atingindo um alvo</h6>
+<p>Se o atacante realizou um com sucesso, o alvo é <strong>atingido </strong>e recebe um <strong>dano </strong>que corresponde a fórmula:</p>
+<p>se ( - ) &lt; 0</p>
+<p>dano = 0</p>
+<p>caso contrário</p>
+<p>dano = ( - )</p>
+<p>O alvo ao receber o dano, deve reagir aos seguintes critérios:</p>
+<ul>
+<li>Se no do alvo possuir ao menos 1 item:</li>
+<ul>
+<li>O alvo derruba todos os itens que estão no seu inventário.</li>
+<li>Se o alvo for outro inimigo, o alvo realiza um <em>.</em></li>
+<ul>
+<li><em>Falhando o alvo entra no estado: </em></li>
+<li><em>Passando o alvo escolhe uma ação de comportamento do tipo: </em></li>
+</ul>
+</ul>
+<li>Se o inventário do alvo <strong>não </strong>possuir itens, o inimigo subtrai o valor do dano de seu total de .</li>
+<ul>
+<li>Se o valor resultante for menor ou igual a 0 o alvo entra no estado .</li>
+<li>Se o valor resultante for maior que zero e o alvo for um inimigo, o alvo faz um teste de presença.</li>
+<ul>
+<li><em>Falhando o inimigo entra no estado: </em></li>
+<li><em>Passando ele escolhe uma ação de comportamento do tipo: </em></li>
+</ul>
+<li>Se o alvo for um jogador, o alvo fica imune a outros ataques por um número de tempo igual sua  base (não conta power up).</li>
+</ul>
+</ul>
+</section>
+<section class="docs-section" id="72-inventariando-furtando" data-title="7.2) Inventariando (Furtando)"><h5>7.2) Inventariando (Furtando)</h5>
+<p>Quando os inimigos estão furtando os itens de cenário, eles colocam estas peças em seu inventário limitado. O inventário do inimigo é representado por um saco de roubo. Sua aparência também identifica se o inventário está com algum item ( “saco médio” ) e se o inventário está completo(“saco grande”).</p>
+<p>Quando o inimigo é atingido e possui itens no inventário, ele primeiro derruba todos os seus itens do inventário no chão, possibilitando qualquer outro personagem de roubá-los.</p>
+<p>Na sequência ele faz um, para decidir qual comportamento ele irá tomar na sequência.</p>
+<p>A quantidade limite é definida pela sua patente somando + .</p>
+</section>
+<section class="docs-section" id="721-itens-mundanos" data-title="7.2.1) Itens mundanos"><h6>7.2.1) Itens mundanos</h6>
+<p>No cenário existem itens que apenas os inimigos podem interagir para furtar, estes objetos são marcados com a características <em>“</em><em>Furtavel</em><em>”, </em>indicando que aquele item pode fazer parte do inventário do inimigo.</p>
+<p>Estes objetos têm um valor menor que os , mas também são contabilizados para a  do jogador.</p>
+<p>Referências: Computadores, vasos, quadros menores etc.</p>
+</section>
+<section class="docs-section" id="722-itens-de-desejo" data-title="7.2.2) Itens de desejo"><h6>7.2.2) Itens de desejo</h6>
+<p>No cenário em uma área específica  existem itens que são prioridade para os inimigos e eles tentarão furtá-los com maior persistência. Estes objetos são marcados com a características “<em>Furtavel</em>” , indicando que aquele item pode fazer parte do do inimigo, e “<em>Desejável</em>” indicando que ele tem prioridade sobre todos os outros itens furtados, configurando como um  do personagem, estes itens tem um peso maior no valor de  do jogador.</p>
+<p>Referências: Joia, Obra de arte, Tesouro.</p>
+</section>
+<section class="docs-section" id="73-comportamentos" data-title="7.3) Comportamentos"><h5>7.3) Comportamentos</h5>
+<p>Além das ações básicas e dos estados possíveis para os inimigos, eles possuem comportamentos específicos para lidar com mudança de estados e escolhas de comportamento, geralmente refletem o seu estado inicial e suas reações.</p>
+</section>
+<section class="docs-section" id="731-desejando" data-title="7.3.1) Desejando"><h6>7.3.1) Desejando</h6>
+<p>Cada inimigo tem uma missão que é roubar um item específico do cenário, este item é colocado como parte da sua lista de “<em>desejo</em>”. Se um item de desejo estiver listado, o comportamento deste personagem é modificado em caso de:</p>
+<ul>
+<li>Estiver mais próximo do Item de desejo que do jogador;</li>
+<li>O  para o assalto é atingido.</li>
+<li>Outro personagem está em posse do item da sua lista de desejo (entre os NPCs eles sempre sabem quem está com o que);</li>
+</ul>
+<p>As ações do personagem para se aproximar e/ou retirar o objeto do outro personagem ganha um peso maior nas suas escolhas se cumprir um ou mais itens da lista.</p>
+<ul>
+<li>Se o item desejável ainda estiver em sua  ou no chão, o estado preferível (+60 %) é o .</li>
+<li>Se o Item desejável estiver em posse de outro personagem, o estado preferível (60%) é o</li>
+<li>Se o item desejável estiver em posse de outro personagem dentro de sua “ ele tem preferência (60%) pelo estado ;</li>
+<li>Se o item de desejo estiver em sua posse, o estado preferível (60%) é o .</li>
+<li>Se algum Item desejável de sua lista não estiver mais disponível para furto ele deve decidir entre os comportamentos:</li>
+<ul>
+<li>Procurar por outro item de desejo que não está em sua lista, que esteja está disponível no cenário;</li>
+<li>Furtar outros itens menores e/ou agredir outros personagens para adquirir itens;</li>
+<li>Fugir do Cenário</li>
+</ul>
+</ul>
+</section>
+<section class="docs-section" id="732-percebendo-outros-personagens" data-title="7.3.2) Percebendo outros Personagens"><h6>7.3.2) Percebendo outros Personagens</h6>
+<p>Os inimigos possuem uma área de visão que define sua capacidade de detectar o jogador. Quando o jogador entra nesse espaço, o inimigo pode realizar um teste de presença para decidir se deve reagir. Esse teste pode levar em conta variáveis como o nível de iluminação, se o jogador está em movimento rápido, se está escondido e a distância do inimigo. Dependendo do peso atribuído à percepção desse inimigo específico, ele pode agir de forma mais agressiva ou priorizar outra ação.</p>
+<p>Os personagens podem perceber uns aos outros de acordo com as regras abaixo:</p>
+<ul>
+<li>Personagens pertencentes ao mesmo grupo, têm ciência de suas presenças sempre.</li>
+<li>Personagens pertencentes a outros grupos têm percepção parcial de sua posição:</li>
+<ul>
+<li>Se são ambos inimigos, eles se percebem sempre.</li>
+</ul>
+<li>Personagens inimigos percebem um jogador que compartilham da mesma área, exigindo um  para mudanças de comportamento.</li>
+<li>O personagem perde a percepção do jogador quando se afasta dele um valor x e faz um novo teste.</li>
+</ul>
+<p>O personagem que se afasta uma distância x do jogador é considerado fora de percepção e será testado apenas se a distância diminuir.</p>
+</section>
+<section class="docs-section" id="733-reacao-a-perda-dos-itens-do-inventario" data-title="7.3.3) Reação à perda dos itens do inventário"><h6>7.3.3) Reação à perda dos itens do inventário</h6>
+<p>Quando o personagem é atingido e possui algum item no seu inventário, todo seu inventário fica disposto no chão, no local que foi atingido, a partir disso o personagem deve tomar uma decisão para mudar de comportamento fazendo um .</p>
+<p>Após derrubar os itens o personagem fica  a outros ataque por um determinado espaço de tempo até voltar ao estado padrão, sugestão (2 segundos)</p>
+<p>Superando o teste de presença o personagem possui um leque de opções para a mudança de comportamento, em especial quando perde seu inventário, podendo mudar para as seguintes condições, de acordo com seu grupo/patente ele pode ter pesos de escolhas diferentes (tabela) esta tabela dita o peso de cada escolha para esta reação exemplo:</p>
+<p>(50%),  (20%), (15%), (10%), (5%)</p>
+</section>
+<section class="docs-section" id="734-reacao-a-dano-sofrido" data-title="7.3.4) Reação à dano sofrido"><h6>7.3.4) Reação à dano sofrido</h6>
+<p>Quando o personagem é atingido e tem o dano subtraído de seu vigor, o personagem deve tomar uma decisão para mudar de comportamento fazendo um .</p>
+<p>Após derrubar os itens o personagem fica  a outros ataque por um determinado espaço de tempo até voltar ao estado padrão, sugestão (2 segundos)</p>
+<p>Superando o teste de presença o personagem possui um leque de opções para a mudança de comportamento, em especial quando perde seu inventário, podendo mudar para as seguintes condições, de acordo com seu grupo/patente ele pode ter pesos de escolhas diferentes (tabela) esta tabela dita o peso de cada escolha para esta reação exemplo:</p>
+<p>(50%), (20%), (15%), (10%),  (5%)</p>
+</section>
+<section class="docs-section" id="75-habilidades" data-title="7.5) Habilidades"><h5>7.5) Habilidades</h5>
+<p>As habilidades são ações especiais que os personagens podem usar durante o jogo, estas ações são independentes e não são influenciadas por seus , as habilidades acontecem de forma automática de acordo com a escolha da AI do personagem, considerando , proximidade do  e .</p>
+<p>Estas habilidades podem ser usadas um número de vezes limitados ao atributo especial “”</p>
+</section>
+<section class="docs-section" id="752-habilidades" data-title="7.5.2) Habilidades"><h6>7.5.2) Habilidades</h6>
+<p>Cada larápio pode ou não possuir uma habilidade que confere ações próprias que concedem personalidade e vantagens durante o jogo.</p>
+</section>
+<section class="docs-section" id="7521-disfarcando" data-title="7.5.2.1) Disfarçando"><h6>7.5.2.1) Disfarçando</h6>
+</section>
+<section class="docs-section" id="cada-larapio-que-possui-esta-habilidade-pode-trocar-sua-aparencia-por-um-objeto-eou-outro-npc-pertencente-a-uma-lista-previamente-configurada-com-itens-pertencentes-a-este-cenario-o-jogador-pode-reconhecer-o-disfarce-pois-o-item-nao-se-encontra-no-mesmo-lugar-usual-ou-mesmo-por-caracteristicas-fisicas" data-title="Cada larápio que possui esta habilidade pode trocar sua aparência por um objeto e/ou outro NPC pertencente a uma lista previamente configurada com itens pertencentes a este cenário. O jogador pode reconhecer o disfarce pois o item não se encontra no mesmo lugar usual, ou mesmo por características físicas."><h6>Cada larápio que possui esta habilidade pode trocar sua aparência por um objeto e/ou outro NPC pertencente a uma lista previamente configurada com itens pertencentes a este cenário. O jogador pode reconhecer o disfarce pois o item não se encontra no mesmo lugar usual, ou mesmo por características físicas.</h6>
+</section>
+<section class="docs-section" id="7522-escondendo" data-title="7.5.2.2) Escondendo"><h6>7.5.2.2) Escondendo</h6>
+<p>Cada larápio que possui esta habilidade pode  com objetos no cenário com a característica <em>“Esconder” </em>mudando seu status para .</p>
+</section>
+<section class="docs-section" id="7523-tocaia" data-title="7.5.2.3) Tocaia"><h6>7.5.2.3) Tocaia</h6>
+<p>Cada larápio que possui esta habilidade pode  com objetos no cenário com a característica <em>“Esconder” </em>mudando seu status para . Durante este estado ele fica alerta para a , quando o jogador se aproxima a uma distância x, o personagem faz um ataque sem , saindo do estado .</p>
+</section>
+<section class="docs-section" id="7524-invisibilidade" data-title="7.5.2.4) Invisibilidade"><h6>7.5.2.4) Invisibilidade</h6>
+<p>Cada larápio que possui esta habilidade pode ficar imperceptível para outros personagens por um determinado prazo de tempo de acordo com sua .</p>
+<p>O personagem usando esta habilidade ainda pode ser percebida pois sua malha não está completamente oculta.</p>
+</section>
+<section class="docs-section" id="7525-atacando-corpo-a-corpo" data-title="7.5.2.5) Atacando corpo a corpo"><h6>7.5.2.5) Atacando corpo a corpo</h6>
+<p>Cada larápio que possui esta habilidade pode realizar um  que  a outro personagem e esta ação faz parte do seu grupo de ações possíveis, ou seja sem essa habilidade o personagem não pode escolher realizar um ataque corpo a corpo.</p>
+<p>Um ataque corpo a corpo exige que o objeto esteja sob posse do atacante e colida com o seu alvo, o alcance é medido através da arma utilizada.</p>
+</section>
+<section class="docs-section" id="7526-atacando-media-distancia" data-title="7.5.2.6) Atacando média distância"><h6>7.5.2.6) Atacando média distância</h6>
+<p>Cada larápio que possui esta habilidade pode realizar um  que cause a outro personagem e esta ação faz parte do seu grupo de ações possíveis, ou seja, sem essa habilidade o personagem não pode escolher realizar um ataque de média distância.</p>
+<p>Um ataque médio exige que o objeto esteja sob posse do atacante e colida com o seu alvo, o alcance é medido através da arma utilizada.</p>
+</section>
+<section class="docs-section" id="7527-atacando-longa-distancia" data-title="7.5.2.7) Atacando longa distância"><h6>7.5.2.7) Atacando longa distância</h6>
+<p>Cada larápio que possui esta habilidade pode realizar um  que cause a outro personagem e esta ação faz parte do seu grupo de ações possíveis, ou seja, sem essa habilidade o personagem não pode escolher realizar um ataque de longa distância.</p>
+<p>Um ataque longo exige que o objeto seja arremessado pelo atacante e colida com o seu alvo, o alcance é medido através da arma utilizada.</p>
+</section>
+<section class="docs-section" id="7528-imobilizado" data-title="7.5.2.8) Imobilizado"><h6>7.5.2.8) Imobilizado</h6>
+<p>Cada larápio que possui esta habilidade pode realizar um  que força o estado de “” em outro personagem. O personagem atingido realiza o mesmo procedimento para . a mudança é cosmética utilizando uma animação característica para esta habilidade, pois depende das características físicas do personagem, ex: faixas da múmia.</p>
+</section>
+<section class="docs-section" id="7529-desativar-armadilhas" data-title="7.5.2.9) Desativar Armadilhas"><h6>7.5.2.9) Desativar Armadilhas</h6>
+<p>Cada larápio que possui esta habilidade pode desativar uma armadilha, ou seja, torna o objeto de armadilha inativo  por um tempo determinado pela sua  e complexidade informada pela armadilha.</p>
+</section>
+<section class="docs-section" id="75210-roubar-outro-larapio" data-title="7.5.2.10) Roubar outro Larápio"><h6>7.5.2.10) Roubar outro Larápio</h6>
+<p>Cada larápio que possui esta habilidade pode retirar um  de outro larápio que pertença a outro grupo de larápios, caso o item esteja na sua lista de itens desejados. Para esta ação basta um larápio colidir com outro, a mudança de itens se dá automaticamente e é demonstrada através de animação.</p>
+</section>
+<section class="docs-section" id="75211-arrombando-portas" data-title="7.5.2.11) Arrombando portas"><h6>7.5.2.11) Arrombando portas</h6>
+<p>Cada larápio que possui esta habilidade pode transpassar  (a inutilizando) usando sua  física, Dependendo da força do personagem contra a dificuldade de abrir a porta, o personagem pode destruí-la e acessar outras sessões.</p>
+</section>
+<section class="docs-section" id="75212-trancando-fechaduras" data-title="7.5.2.12) Trancando fechaduras"><h6>7.5.2.12) Trancando fechaduras</h6>
+<p>Cada larápio que possui esta habilidade pode abrir e fechar as  com a característica “<em>Trancável</em>”, usando a  do personagem contra a dificuldade de trancar/abrir a porta, usando este método a porta continua utilizável para ser trancada novamente.</p>
+</section>
+<section class="docs-section" id="75213-destrancando-fechadura-digital" data-title="7.5.2.13) Destrancando fechadura digital"><h6>7.5.2.13) Destrancando fechadura digital</h6>
+<p>Cada larápio que possui esta habilidade pode abrir e fechar as  com a característica “<em>Trancável Digital</em>”, usando a  do personagem contra a dificuldade de trancar/abrir a porta, usando este método a porta continua utilizável para ser trancada novamente.</p>
+<p>A característica principal destas portas é sua tranca digital, uma forma eletrônica de fechar portas e só com habilidades de hacker é possível abri-las.</p>
+</section>
+<section class="docs-section" id="75214-apagando-luzes" data-title="7.5.2.14) Apagando luzes"><h6>7.5.2.14) Apagando luzes</h6>
+<p>Cada larápio que possui esta habilidade pode apagar as luzes de uma área do cenário usando a  (interruptor) até outro personagem interagir com o objeto.</p>
+<p>A sala escura torna todos os objetos de sala com a característica “<em>Esconder</em>” tornando mais fácil personagens com a habilidade de  utilizar esta habilidade.</p>
+</section>
+<section class="docs-section" id="75215-hackeando-cameras-de-seguranca" data-title="7.5.2.15) Hackeando câmeras de segurança"><h6>7.5.2.15) Hackeando câmeras de segurança</h6>
+<p>Cada larápio que possui esta habilidade pode hackear as câmeras,desativando sua transmissão pelas câmeras no  por um determinado espaço tempo.</p>
+</section>
+<section class="docs-section" id="75216-nao-aparecer-na-camera" data-title="7.5.2.16) Não aparecer na câmera"><h6>7.5.2.16) Não aparecer na câmera</h6>
+<p>Cada larápio que possui esta habilidade pode ocultar sua presença nas câmeras no e no  por um determinado espaço tempo. Durante este tempo o personagem está no estado ;</p>
+</section>
+<section class="docs-section" id="75217-interagindo-com-objetos" data-title="7.5.2.17) Interagindo com objetos"><h6>7.5.2.17) Interagindo com objetos</h6>
+<p>Cada larápio que possui esta habilidade pode interagir com  conforme a habilidade. Sem esta habilidade o personagem não pode usar interações com objeto como ação padrão.</p>
+</section>
+<section class="docs-section" id="75218-arrastando-objetos" data-title="7.5.2.18) Arrastando objetos"><h6>7.5.2.18) Arrastando objetos</h6>
+<p>Cada larápio que possui esta habilidade pode interagir com  conforme a habilidade e se o objeto possuir a característica “Segurável” o personagem pode pegar o item e soltá-lo em outra, dificultando a mobilidade dos personagens.</p>
+</section>
+<section class="docs-section" id="75219-teleportando" data-title="7.5.2.19) Teleportando"><h6>7.5.2.19) Teleportando</h6>
+<p>Cada larápio que possui esta habilidade pode se mover instantaneamente para um espaço vazio e <strong>aleatório </strong>no cenário.</p>
+</section>
+<section class="docs-section" id="75220-atalho" data-title="7.5.2.20) Atalho"><h6>7.5.2.20) Atalho</h6>
+<p>Cada larápio que possui esta habilidade pode se mover utilizando objetos de  podendo alcançar pontos diferentes no cenário instantaneamente.</p>
+</section>
+<section class="docs-section" id="75221-andando-pelas-parede" data-title="7.5.2.21) Andando pelas parede"><h6>7.5.2.21) Andando pelas parede</h6>
+<p>Cada larápio que possui esta habilidade pode se mover livremente sobre todas as superfícies, piso e parede, sem perder mobilidade, por um determinado prazo de tempo.</p>
+</section>
+<section class="docs-section" id="753-habilidades-especiais" data-title="7.5.3) Habilidades especiais"><h6>7.5.3) Habilidades especiais</h6>
+</section>
+<section class="docs-section" id="7531-tufao" data-title="7.5.3.1) Tufão"><h6>7.5.3.1) Tufão</h6>
+<p>O personagem com esta habilidade cria pequenos tufões que ao atingir o jogador o empurra para trás. Se tiver objetos no  ele derruba os itens. Caso não tenha objetos, força o estado . (Nômades do Deserto)</p>
+</section>
+<section class="docs-section" id="7532-rampage" data-title="7.5.3.2) Rampage"><h6>7.5.3.2) Rampage</h6>
+<p>O personagem com esta habilidade provoca todos os inimigos da fase a entrarem no estado “” por um período de tempo (Rei do crime dá as ordens)</p>
+</section>
+<section class="docs-section" id="7533-apagao" data-title="7.5.3.3) Apagão"><h6>7.5.3.3) Apagão</h6>
+<p>O personagem com esta habilidade torna todas as  e  o  inativo por um determinado espaço de tempo. Capitão hacker desativar tudo.</p>
+</section>
+<section class="docs-section" id="7534-sismico" data-title="7.5.3.4) Sísmico"><h6>7.5.3.4) Sísmico</h6>
+<p>O personagem com esta habilidade cria ondas de choque que ao atingir o jogador o empurra para trás. Se tiver objetos no  ele derruba os itens. Caso não tenha objetos, força o estado . (Papagaio na armadura)</p>
+</section>
+<section class="docs-section" id="7535-multiplo" data-title="7.5.3.5) Múltiplo"><h6>7.5.3.5) Múltiplo</h6>
+<p>O personagem com esta habilidade cria cópias falsas de si mesmo, entrando no estado de , existe uma verdadeira marcada graficamente, e outras 3 falsas que atingidas desaparecerão em fumaça.</p>
+</section>
+<section class="docs-section" id="7536-terror" data-title="7.5.3.6) Terror"><h6>7.5.3.6) Terror</h6>
+<p>O personagem com esta habilidade pode  imediatamente o jogador. (Amon-ha assusta o jogador e ele cai duro!)</p>
+</section>
+<section class="docs-section" id="7537-transformacao" data-title="7.5.3.7) Transformação"><h6>7.5.3.7) Transformação</h6>
+<p>O personagem com esta habilidade, sempre que estiver com o  abaixo da metade, ele usará a habilidade para se transformar em um morcego (maior agilidade e mais difícil de acertar pelo seu tamanho) e entra automaticamente no estado de . (Vampiro)</p>
+</section>
+<section class="docs-section" id="7538-transpor" data-title="7.5.3.8) Transpor"><h6>7.5.3.8) Transpor</h6>
+<p>O personagem com esta habilidade pode transpor  e  sem perder mobilidade. (fantasma atravessando paredes)</p>
+</section>
+<section class="docs-section" id="7539-arremessar-tortas" data-title="7.5.3.9) Arremessar tortas"><h6>7.5.3.9) Arremessar tortas</h6>
+<p>O personagem pode fazer um ataque à distância usando uma torta que além de causar suja a tela para dificultar a visibilidade. (palhaço)</p>
+</section>
+<section class="docs-section" id="75310-parede-invisivel" data-title="7.5.3.10) Parede Invisível"><h6>7.5.3.10) Parede Invisível</h6>
+<p>O personagem com esta habilidade cria um objeto sólido transparente que impede a mobilidade dos personagens, este objeto fica no cenário durante um período determinado de tempo. (mímico)</p>
+</section>
+<section class="docs-section" id="75311-uppercut" data-title="7.5.3.11) Uppercut"><h6>7.5.3.11) Uppercut</h6>
+<p>O Personagem que possui esta habilidade pode se transformar em uma poça d&#x27;água (diminuindo seu colíder se tornando mais difícil de acertar) e na sequência entrando no estado  atingindo o jogador com um uppercut, causando, força o jogador a entrar no estado .</p>
+<p>Tabela de Habilidades</p>
+</section>
+<section class="docs-section" id="8-modos-de-jogo-e-classificacao-do-jogador" data-title="8) Modos de jogo e Classificação do Jogador"><h4>8) Modos de jogo e Classificação do Jogador</h4>
+</section>
+<section class="docs-section" id="81-progresso-do-jogo" data-title="8.1) Progresso do jogo"><h5>8.1) Progresso do jogo</h5>
+<p>Determina quando o jogador pode escolher uma nova fase utilizando de seus créditos para avançar o jogo.</p>
+<p>Cada estágio tem um custo em crédito, que o jogador pode suar para acessá-la, o jogador ganha créditos por  alcançada,</p>
+</section>
+<section class="docs-section" id="811-dificuldade" data-title="8.1.1) Dificuldade"><h5>8.1.1) Dificuldade</h5>
+<p>Cada cenário possui 3 níveis de dificuldades em escala, mantendo seu layout, porém aumentando seus obstáculos e desafios. Cada nível de dificuldade possui crédito diferente (pela quantidade de itens, tempo e inimigos) mas contribui com a mesma escala de .</p>
+</section>
+<section class="docs-section" id="82-classificacao-do-jogador" data-title="8.2) Classificação do Jogador"><h5>8.2) Classificação do Jogador</h5>
+<p>A escala de classificação é medida em 8 níveis, do menor para o maior : F,E,D,C,B,A,S,S+. Sendo <strong>S+</strong> a excelência, <strong>A </strong>o desejável, e<strong> F</strong> o fracasso.</p>
+<p>Para determinar a pontuação e receber créditos para progredir no jogo, Cada cenário medirá o desempenho do jogador em 3 quesitos:</p>
+<ul>
+<li>Prisão de Inimigos</li>
+<ul>
+<li>Cada inimigo tem um nível de dificuldade e a soma destes níveis, totaliza a excelência deste quesito, ou seja, todos os inimigos capturados. A classificação diminui conforme os inimigos fogem ou ficam no cenário até o fim do tempo limite, tirando uma porcentagem de sucesso variando de 95% a 50%.</li>
+</ul>
+<li>Segurança dos itens de desejo</li>
+<ul>
+<li>Cada item possui um valor de desejo, o valor somado de todos os itens “furtados” do cenário representa a excelência neste quesito, ou seja, todos os itens se mantém no cenário ao término do tempo limite, se os inimigos fugirem com o item em posse, este valor é reduzido diminuindo a classificação, variando o sucesso em 95% a 50%.</li>
+</ul>
+<li>Tempo excedente</li>
+<ul>
+<li>Cada fase tem um tempo limite para o assalto ocorrer, este tempo limite representa o fracasso do jogador para esta classificação. Cada fase tem um tempo de excelência, o valor que exceder este tempo é reduzido da classificação a cada 10%.</li>
+</ul>
+<li>Total</li>
+<ul>
+<li>Cada fase tem um total de créditos para ser superado e abrir novas fases, este total é contabilizado pela somatória de pontos  dos 3 quesitos anteriores e quando o jogador atinge o total de excelência do grupo de fases, ele estará apto a abrir uma nova fase.</li>
+</ul>
+</ul>
+</section>
+<section class="docs-section" id="83-modos-de-jogo" data-title="8.3) Modos de Jogo"><h5>8.3) Modos de Jogo</h5>
+<p>Campanha</p>
+<p>Segue a história dos personagens, com um ou dois jogadores.</p>
+<p>Endless</p>
+<p>Desafia o jogador a deter o maior número de larápios possível durante um assalto, a dificuldade aumenta de acordo com as ondas inimigas.</p>
+</section>
+<section class="docs-section" id="9-outras-mecanicas" data-title="9) Outras Mecânicas"><h3>9) Outras Mecânicas</h3>
+<p>Aqui são listadas mecânicas que não fazem grupo de outros objetos porém fazem parte do gameplay do jogo.</p>
+</section>
+<section class="docs-section" id="91-assalto" data-title="9.1) Assalto"><h4>9.1) Assalto</h4>
+<p>O Assalto é onde se dá todo o gameplay do jogo, onde é limitado às ações e começo, meio e fim.</p>
+<p>Um assalto é chamado também de fase, é o momento em que a ação se desenrola no jogo ele é composto das seguintes etapas:</p>
+</section>
+<section class="docs-section" id="911-apresentacao-do-cenario" data-title="9.1.1) Apresentação do cenário"><h5>9.1.1) Apresentação do cenário</h5>
+<p>Um assalto inicia com uma breve apresentação do cenário com câmeras móveis mostrando partes importantes do cenário como seu início, locais de power up e principalmente os locais dos itens de valores.</p>
+</section>
+<section class="docs-section" id="912-exploracao-inicial" data-title="9.1.2) Exploração inicial"><h5>9.1.2) Exploração inicial</h5>
+<p>Após a apresentação, o jogador toma posse do seu personagem e pode iniciar uma exploração pelo cenário por um curto período de tempo, até que o jogo realmente se inicia.</p>
+</section>
+<section class="docs-section" id="913-entrada-dos-larapios" data-title="9.1.3) Entrada dos Larápios"><h5>9.1.3) Entrada dos Larápios</h5>
+<p>Após o período de exploração, é apresentado para o jogador, através de splashscreen, que um grupo de larápios adentrou no cenário.</p>
+<p>Está screen mostra o nome do grupo e ao menos um de seus representantes, a screen deve conter também alguma informação de dificuldade. (aumentando o número de representando na splashscreen. esta imagem não deve durar mais que 2 segundos.</p>
+<p>Os larápios tem uma janela de tempo (1 min) de entrada, então o número de larápios pode entrar em grupos diferentes dentro deste tempo.</p>
+<p>O jogo já se tem início porém não é considerado o tempo para classificação.</p>
+</section>
+<section class="docs-section" id="914-tempo-limite-de-assalto" data-title="9.1.4) Tempo limite de assalto"><h5>9.1.4) Tempo limite de assalto</h5>
+<p>Quando todos os larápios adentram no cenário, a janela de tempo se fecha e inicia a verdadeira contagem para o término do assalto de forma decrescente e tem início real pela classificação de tempo.</p>
+<p>Cada cenário tem seu próprio tempo limite, de acordo com a dificuldade e complexidade do cenário.</p>
+</section>
+<section class="docs-section" id="915-tempo-critico-de-assalto" data-title="9.1.5) Tempo crítico de assalto"><h6>9.1.5) Tempo crítico de assalto</h6>
+<p>A partir de uma determinada porcentagem (20%) do tempo restante, os ladrões começam a tentar fugir com o que conseguiram até então, procurando saídas para completar o assalto, antes do fim do tempo limite.</p>
+</section>
+<section class="docs-section" id="92-sistema-de-cameras---sala-de-controle" data-title="9.2) Sistema de câmeras - Sala de Controle"><h4>9.2) Sistema de câmeras - Sala de Controle</h4>
+<p>Na sala de controle há uma interface de interação simples com cerca de 6 monitores, exibindo gravações de locais no cenário específico, indicado por uma numeração,</p>
+<p>Neste  o jogador poderá identificar as entradas dos larápios, suas posições e tentar identificar seu trajeto, para poder interceptá-lo.</p>
+<p>Se a câmera estiver exibindo uma área que possui uma armadilha de , o jogador pode interagir com o monitor e ativá-lo.</p>
+</section>
+<section class="docs-section" id="93-progressao-do-jogo" data-title="9.3) Progressão do jogo"><h4>9.3) Progressão do jogo</h4>
+<p>A progressão do jogo ainda será definida com base em testes do MVP, mas a ideia central é que os desafios sejam ajustados conforme o jogador avança.</p>
+<p>Cada nível apresentará dificuldades específicas, podendo variar em:</p>
+<ul>
+<li>Complexidade dos labirintos e cenários</li>
+<li>Quantidade de inimigos</li>
+<li>Inteligência dos inimigos e suas ações</li>
+<li>Disponibilidade de power-ups</li>
+<li>Tempo para executar objetivos</li>
+</ul>
+<p>A intenção é que a dificuldade não aumente apenas pelo aumento no número de inimigos, mas também pelas condições que limitam o jogador em cada fase, criando variedade na experiência.</p>
+</section>
+<section class="docs-section" id="94-menu-de-jogo" data-title="9.4) Menu de jogo"><h4>9.4) Menu de jogo</h4>
+<p>Usando o botão de ação pausar, o jogador pode acessar um menu de pause, que além de pausar o jogo, também dá acesso às opções:</p>
+</section>
+<section class="docs-section" id="941-continue" data-title="9.4.1) Continue"><h6>9.4.1) Continue</h6>
+<p>Retornar a ação do jogo de onde parou.</p>
+</section>
+<section class="docs-section" id="941-salvar" data-title="9.4.1) Salvar"><h6>9.4.1) Salvar</h6>
+<p>Salvar o jogo no momento em que pausou.</p>
+</section>
+<section class="docs-section" id="941-carregar" data-title="9.4.1) Carregar"><h6>9.4.1) Carregar</h6>
+<p>Carregar um slot de jogo Salvo.</p>
+<p>9.4.1) Opções</p>
+<p>Alterar alterações de gameplay e de configurações do jogo.</p>
+<p>9.4.1) Retornar à tela inicial</p>
+<p>Encerra a partida para levar o jogador para o menu inicial do jogo.</p>
+</section>
+<section class="docs-section" id="95-hud" data-title="9.5) HUD"><h4>9.5) HUD</h4>
+<p>Aqui são descritas as informações dadas ao jogador na tela de gameplay.</p>
+</section>
+<section class="docs-section" id="951-mini-mapa" data-title="9.5.1) Mini mapa"><h5>9.5.1) Mini mapa</h5>
+<p>O Mini mapa segue o padrão convencional, com o formato quadriculado, indicando no centro a posição atual do jogador e navegando com o norte relativo (opção para norte fixo)</p>
+<p>O minimapa irá apresentar além de um esquema de layout de planta do cenário, indicação de larápios próximos (distância máxima) para detectar, indica também os itens de desejo, este sem distância máxima.</p>
+<p>Sala de controle e cofres e prisão também possuem sua própria marcação e não possuem limites de detecção.</p>
+</section>
+<section class="docs-section" id="952-inventario-atual" data-title="9.5.2) Inventário atual"><h5>9.5.2) Inventário atual</h5>
+<p>Mostra para os jogadores os itens em posse, indicando os itens recuperados e os itens salvos no cofre identificando itens mundanos e itens de desejo.</p>
+<p>Mostra a quantidade de inimigos capturados na sala de prisão.</p>
+</section>
+<section class="docs-section" id="953-relogio" data-title="9.5.3) Relógio"><h5>9.5.3) Relógio</h5>
+<p>Indica o tempo restante para o fim do assalto, o relógio deve mostrar um alerta para quando atingir o tempo crítico.</p>
+</section>
+<section class="docs-section" id="954-hud-do-personagem-pop-up" data-title="9.5.4) Hud do Personagem (Pop-up)"><h5>9.5.4) Hud do Personagem (Pop-up)</h5>
+<p>Quando o jogador recebe um power up ou perde o efeito de um, uma barra temporária surge próximo ao personagem indicando este movimento através de cubos se enchendo ou esvaziando na cor de cada atributo e o nome (abreviado) do atributo em questão.</p>
+</section>
+<section class="docs-section" id="cenas-de-corte" data-title="Cenas de corte"><h3>Cenas de corte</h3>
+<p>Intro</p>
+<p>fim de jogo</p>
+</section>
+<section class="docs-section" id="mercado" data-title="Mercado"><h3>Mercado</h3>
+</section>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <footer class="docs-footer">
+    <p>PEGA GDD documentation package. Generated with <code>com.immersivegames.docs</code>.</p>
+    <nav aria-label="Footer links">
+      <a href="source/gdd.md">Markdown source</a>
+      <a href="#gdd-title">Voltar ao topo</a>
+    </nav>
+  </footer>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/glossary.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

@@ -6,7 +6,10 @@
   const searchResults = document.querySelector("[data-search-results]");
   const searchEmpty = document.querySelector("[data-search-empty]");
   const searchSummary = document.querySelector("[data-search-summary]");
+  const documents = Array.from(document.querySelectorAll("[data-document]"));
   let globalMode = false;
+  let searchActive = false;
+  let previousScrollY = 0;
 
   if (!input) return;
 
@@ -53,6 +56,37 @@
     return title === documentTitle ? documentTitle : `${documentTitle} / ${title}`;
   }
 
+  function getActiveDocument() {
+    return window.docsNavigation ? window.docsNavigation.getActiveDocument() : document.querySelector(".docs-document.is-active");
+  }
+
+  function showSearchView() {
+    if (!searchActive) {
+      previousScrollY = window.scrollY;
+    }
+
+    searchActive = true;
+    documents.forEach((doc) => {
+      doc.hidden = true;
+      doc.setAttribute("aria-hidden", "true");
+    });
+  }
+
+  function restoreDocumentView(options = {}) {
+    const active = getActiveDocument();
+    searchActive = false;
+
+    documents.forEach((doc) => {
+      const visible = doc === active;
+      doc.hidden = !visible;
+      doc.setAttribute("aria-hidden", String(!visible));
+    });
+
+    if (options.restoreScroll) {
+      window.scrollTo({ top: previousScrollY, behavior: "auto" });
+    }
+  }
+
   function createSearchResult(result) {
     const item = document.createElement("article");
     item.className = "docs-search-result";
@@ -65,7 +99,11 @@
     link.textContent = result.title;
 
     const documentLabel = document.createElement("small");
-    documentLabel.textContent = result.documentTitle;
+    documentLabel.textContent = `Document: ${result.documentTitle}`;
+
+    const section = document.createElement("span");
+    section.className = "docs-search-result__section";
+    section.textContent = `Section: ${result.sectionTitle}`;
 
     const path = document.createElement("span");
     path.className = "docs-search-result__path";
@@ -76,13 +114,14 @@
 
     item.appendChild(link);
     item.appendChild(documentLabel);
+    item.appendChild(section);
     item.appendChild(path);
     item.appendChild(snippet);
 
     return item;
   }
 
-  function clearSearchPanel() {
+  function clearSearchPanel(options = {}) {
     if (searchPanel) searchPanel.hidden = true;
     if (searchEmpty) searchEmpty.hidden = true;
     if (searchResults) {
@@ -91,24 +130,24 @@
     if (searchSummary) {
       searchSummary.textContent = getIdleSearchSummary();
     }
+
+    restoreDocumentView({ restoreScroll: Boolean(options.restoreScroll) });
   }
 
-  function clearFiltering() {
+  function clearFiltering(options = {}) {
     document.querySelectorAll(".is-search-hidden").forEach((node) => node.classList.remove("is-search-hidden"));
-    clearSearchPanel();
+    clearSearchPanel(options);
   }
 
   function renderResults(results, query) {
     if (!searchPanel || !searchResults || !searchEmpty || !searchSummary) return;
 
+    showSearchView();
     searchPanel.hidden = false;
     searchResults.innerHTML = "";
     searchEmpty.hidden = results.length !== 0;
 
-    const scope = globalMode ? "all documents" : "the active document";
-    searchSummary.textContent = results.length === 0
-      ? `No matches for "${query}" in ${scope}.`
-      : `${results.length} result${results.length === 1 ? "" : "s"} for "${query}" in ${scope}.`;
+    searchSummary.textContent = `${results.length} Result${results.length === 1 ? "" : "s"}`;
 
     results.forEach((result) => {
       searchResults.appendChild(createSearchResult(result));
@@ -116,7 +155,7 @@
   }
 
   function activeDocumentSearch(query) {
-    const active = window.docsNavigation ? window.docsNavigation.getActiveDocument() : document.querySelector(".docs-document.is-active");
+    const active = getActiveDocument();
     if (!active) return 0;
 
     const sections = Array.from(active.querySelectorAll(".docs-section"));
@@ -125,24 +164,17 @@
 
     sections.forEach((section) => {
       const match = section.textContent.toLowerCase().includes(query);
-      section.classList.toggle("is-search-hidden", !match);
       if (match) {
         const title = getSectionTitle(section);
         results.push({
           documentId: active.dataset.document,
           documentTitle: docTitle,
           title,
+          sectionTitle: title,
           path: getDocumentPath(docTitle, title),
           id: section.id,
           snippet: getSnippet(section.textContent || "", query)
         });
-      }
-    });
-
-    document.querySelectorAll("[data-nav-target], [data-toc-target]").forEach((link) => {
-      const target = active.querySelector(`#${CSS.escape(link.dataset.navTarget || link.dataset.tocTarget || "")}`);
-      if (target && target.classList.contains("docs-section")) {
-        link.classList.toggle("is-search-hidden", target.classList.contains("is-search-hidden"));
       }
     });
 
@@ -162,6 +194,7 @@
             documentId: doc.dataset.document,
             documentTitle: docTitle,
             title,
+            sectionTitle: title,
             path: getDocumentPath(docTitle, title),
             id: section.id,
             snippet: getSnippet(text, query)
@@ -176,9 +209,9 @@
 
   function runSearch() {
     const query = normalize(input.value);
-    clearFiltering();
 
     if (!query) {
+      clearFiltering({ restoreScroll: searchActive });
       status.textContent = "Search is ready.";
       return;
     }
@@ -214,7 +247,7 @@
       event.preventDefault();
       window.docsNavigation.setActiveDocument(result.dataset.documentId, { preserveScroll: true });
       input.value = "";
-      clearFiltering();
+      clearFiltering({ restoreScroll: false });
       status.textContent = "Search is ready.";
 
       window.requestAnimationFrame(() => {
@@ -228,7 +261,7 @@
 
   document.addEventListener("docs:document-changed", () => {
     input.value = "";
-    clearFiltering();
+    clearFiltering({ restoreScroll: false });
     status.textContent = "Search reset for active document.";
   });
 

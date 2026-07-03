@@ -36,3 +36,9 @@ Use these for the new package-based Immersive Framework work. They intentionally
 - `immersive-framework-architecture-audit`: audit package/module ownership, public naming and Inspector UX without editing files.
 - `immersive-framework-package-implementation`: implement cuts in packages while preserving runtime/Unity/Editor assembly boundaries.
 - `immersive-framework-core-architecture`: design the future `com.immersive.framework` package and its internal modules without copying Base 2.0.
+
+## Documentation Framework skills
+
+Use these for `com.immersivegames.docs` documentation framework work.
+
+- `immersive-documentation-framework`: official operational entry point for authoring, updating, maintaining, validating, and rendering Documentation Projects according to the framework guidelines.
